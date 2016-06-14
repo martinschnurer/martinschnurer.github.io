@@ -1,4 +1,3 @@
-# martinschnurer.github.io
 This is artificial intelligence - searching space solution to 8 or more MxN dimensional puzzle.
 
 You can choose between two heuristics:
