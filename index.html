@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Nope.</title>
+  <script>
+    function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+
+
+if(detectmob())
+  window.location.replace("./m/index.html");
+
+  </script>
+  
+  </head>
+  
+  <body>
+    <p>I'm almost certain to say that tomorrow will be better than today</p>  
+    <a href="uizadanie1.docx">UI Zadanie 1 dokument</a><br>
+    <a href="navytlacenie.docx">TOTO VYTLAC PROJEKT PSI</a>
+    <hr>
+    <a href="/8puzzle/index.html">PUZZLE -> ARTIFICIAL INTELLIGENCE SOLUTION</a>
+    <hr>
+    <a href="/uidoc.pdf">Uidoc</a>
+  </body>
+  
+  </html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Problem D</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<p>Zvolte rozmery cols,rows: 
+		<input id="cols" type="number" style='width:50px;' onchange="recreate(this);">
+		<input id="rows" type="number" style='width:50px' onchange="recreate(this);">
+	</p>
+	
+	<p><br><b>Zvolte heuristiku</b></p>
+	<p>Sucet potrebnych policok<input h=1 type='radio' name='heuristic' checked onchange='changeHeuristic(this);'></p>
+	<p>Pocet policok ktore nie su na svojom placu<input h=2 type='radio' name='heuristic' onchange='changeHeuristic(this);'>	   </p>
+	<div id='result' style='position:absolute;right:100px;'></div>
+	<div><table id="matrix"></table></div>
+	<button onclick="startSimulation();">POTVRD</button>
+
+
+	<script src='problemD.js'></script>
+
+</body>
+
+</html>
