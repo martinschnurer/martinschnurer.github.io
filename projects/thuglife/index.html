@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>THUG LIFE</title>
+		<meta charset="utf-8">
+		<meta name=”description” content=”Online thug life maker editor. Edit your photo, easy and fast, download and share. Enjoy and have fun!”>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="./../../bootstrap/css/bootstrap.min.css">
+		<script src="../../fabric/dist/fabric.min.js"></script>
+		<script src="../../jquery-1.12.4.min.js"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container mar-bot-50">
+			<div class="col-md-12">
+				<h1 id="mainTitle" class="text-center">THUG LIFE MAKER</h1>
+				<input id="chooseImage" type="file">
+				<div class="flex-display flex-column">
+					<div id="options" style="display:none">
+						<img id="greyScale" data-toggle="tooltip"
+							title="Enable/Disable grey filter"
+							src="thumbs/greyscale.png">
+						<img id="addCigarette" class="ref" src="thumbs/marijuana.png">
+						<img id="addGlasses" class="ref" src="thumbs/Thug-Life-Glasses.png">
+						<img class="ref" src="thumbs/diamond-necklace.png">
+						<img class="ref" src="thumbs/snoop-dog.png">
+						<img class="ref" src="thumbs/snoop-thug.png">
+						<img class="ref" src="thumbs/Thug-Life.png">
+						<img class="ref" src="thumbs/thug-life-cap.png">
+						<img class="ref" src="thumbs/thug-life-cap-1.png">
+						<img class="ref" src="thumbs/thug-life-caption.png">
+						<img class="ref" src="thumbs/thug-life-CD.png">
+						<img class="ref" src="thumbs/Thug-Life-Cigarette.png">
+						<img class="ref" src="thumbs/thug-life-face.png">
+						<img class="ref" src="thumbs/Thug-Life-Gold-Chain.png">
+						<img class="ref" src="thumbs/Thug-Life-Hat.png">
+						<img class="ref" src="thumbs/Thug-Life-Sticker.png">
+						<img class="ref" src="thumbs/Thug-Life-Text.png">
+						<div style="margin-top:15px;margin-bottom:15px;">
+							<button id="showImage" src="">Show image</button>
+							<a id="downloadImage" class="pointer">Download Image</a>
+						</div>
+					</div>
+
+                    <input id="url_image" placeholder="input Url of Image">
+                    <button id="button_accept_url_image">Add Image</button>
+
+
+					<canvas id="mainCanvas" height=5 width=5 style="border: 1px solid black"></canvas>
+				</div>
+
+
+				<div id="bottomInfo" class="flexible-row">
+					<div target="Back" class="col-md-4">
+						<p class="text-center">Back</p>
+					</div>
+					<div target="About" class="col-md-4">
+						<p class="text-center">About</p>
+					</div>
+					<div target="Contact" class="col-md-4">
+						<p class="text-center">Found bug or have idea?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+	<script>
+		document.onpaste = function(e) {
+			console.log(e)
+		}
+	</script>
+
+	<script src="thugify.js"></script>
+
+	<script src="bottomInfo.js"></script>
+
+
+
+
+
+
+</html>

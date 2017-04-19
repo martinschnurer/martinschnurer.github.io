@@ -1,0 +1,62 @@
+#options {
+	width:100%
+}
+
+#options button{
+	height: 25px;
+	width: 200px
+}
+
+#options .disabled{
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+#options img{
+	height: 50px;
+	width: auto;
+	border-radius: 50%;
+	border:1px solid black;
+	padding:5px;
+	cursor: pointer
+}
+
+.flexible-row{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+}
+
+#bottomInfo{
+	background-color:black;
+	color:white;
+}
+
+#bottomInfo p{
+	padding:10px;
+	margin:0px;
+	cursor:pointer;
+}
+
+#bottomInfo p:hover{
+	background-color:white;
+	color:black;
+
+	-webkit-transition:  background-color 500ms, color 500ms;
+	transition: background-color 500ms, color 500ms;
+	-moz-transition: background-color 500ms, color 500ms;
+}
+
+.mar-bot-50{
+	margin-bottom:50px;
+}
+
+
+.flex-display{
+	display:flex;
+}
+
+.flex-column{
+	flex-direction: column
+}
