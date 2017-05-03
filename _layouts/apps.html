@@ -4,6 +4,14 @@ layout: default
 
 {{ content }}
 
+
 {% for app in page.apps %}
-{{ app }}
+
+<a href="{{ app.app.link }}">
+    <div class="app">
+        <div class="app-name">{{ app.app.name }}</div>
+        <div class="app-image">{{ app.app.image_url }}</div>
+    </div>
+</a>
+
 {% endfor %}

@@ -4,51 +4,114 @@ var mainPhoto = undefined
 var greyScale_active = false
 
 
+class Publisher {
+    constructor() {
+        this.fns = []
+    }
+
+    subscribe(fn) {
+        if (typeof fn !== 'function')
+            throw 'Type Error'
+        this.fns.push(fn)
+    }
+
+    emit(e) {
+        let self = this
+        console.log(this)
+        this.fns.forEach(function(f) {
+            f(e)
+        })
+    }
+}
+
+
+
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 })
 
 
 
-function downloadCanvas(link, canvasId, filename) {
-	link.href = document.getElementById(canvasId).toDataURL('image/jpeg', 0.7);
-	link.download = filename;
+const publisher = new Publisher()
+
+
+const fnBeforeImgLoad = function () {
+    $img = $('<img>', { src: url_image.value });
+
+    // When image loaded
+    $img.load(function(e) {
+        $img_width = $img[0].width;
+        $img_height = $img[0].height;
+
+        // if height more than 600px, change ratio = height to 600px and width auto
+        if( this.naturalWidth > 600 ) {
+            $crop_ratio = 600 / this.naturalWidth
+            $img_height = this.naturalHeight * $crop_ratio
+            $img_width  = this.naturalWidth * $crop_ratio
+        }
+
+        // if height more than 600px, change ratio = height to 600px and width auto
+        if( this.naturalHeight > 600 ) {
+            $crop_ratio = 600 / this.naturalHeight
+            $img_height = this.naturalHeight * $crop_ratio
+            $img_width  = this.naturalWidth * $crop_ratio
+        }
+
+        canvas.setHeight($img_height)
+        canvas.setWidth($img_width)
+
+        let props = {
+            "width": $img_width,
+            "height": $img_height,
+            "selectable": false,
+            "hoverCursor": "arrow",
+            "cornerColor" : "#FFF300"
+        }
+
+        mainPhoto = new fabric.Image(this, props)
+        canvas.add(mainPhoto)
+
+        // enable options under canvas (buttons)
+        enableOptions()
+
+        button_accept_url_image.eventToOccur = fnAfterImgLoad
+
+        // change size of title, more vertical space
+        $('#mainTitle').hide(400)
+    })
 }
 
 
-
-document.getElementById('downloadImage').addEventListener('click', function() {
-
-	// DO NOT DOWNLOAD EDITOR SELECTION BORDER
-	canvas.deactivateAll().renderAll();
-
-	downloadCanvas(this, 'mainCanvas', getImageName());
-}, false);
-
-
-console.log('wtf')
-
-$('#button_accept_url_image').click(function() {
-    console.log('bam bam')
+const fnAfterImgLoad = function () {
     let element = document.querySelector('#url_image')
     let url = element.value
 
-
     fabric.Image.fromURL(url, function(oImg) {
-			var l = Math.random()*10
-			var t = Math.random()*10;
+			var l = Math.random() * 10
+			var t = Math.random() * 10;
 			oImg.scale(0.3);
 			oImg.set({'left':l});
 			oImg.set({'top':t});
 			oImg.set("cornerColor", "#FFF300")
 			canvas.add(oImg);
 	});
+}
+
+
+// set default event to occur if button is clicked
+button_accept_url_image.eventToOccur = fnBeforeImgLoad
+
+
+$('#button_accept_url_image').click(function() {
+    this.eventToOccur()
 })
+
 
 
 $('.ref').click(function() {
 	let source = $(this).attr("src")
-	source = source.split('/')[1]
+	source = source.split('/')
+    source = source[source.length - 1]
 	fabric.Image.fromURL('./images/' + source, function(oImg) {
 			var l = Math.random()*10
 			var t = Math.random()*10;
@@ -156,16 +219,22 @@ function fileOnload(e) {
 			"cornerColor" : "#FFF300"
 		}
 
-		mainPhoto = new fabric.Image(this, props)
+		let mainPhoto = new fabric.Image(this, props)
 		canvas.add(mainPhoto)
 
 		// enable options under canvas (buttons)
 		enableOptions()
 
+        //
+        button_accept_url_image.eventToOccur = fnAfterImgLoad
+
 		// change size of title, more vertical space
 		$('#mainTitle').hide(400)
 	})
 }
+
+publisher.subscribe(fileOnload)
+
 
 
 /*
@@ -173,20 +242,39 @@ this function is event listener on change input of imageType
 IMage is loaded into canvas (fabric)
 */
 $('#chooseImage').change(function (e) {
-	var file = e.target.files[0],
+	let file = e.target.files[0],
 	imageType = /image.*/;
 
 	if (!file.type.match(imageType))
 		return;
 
 	var reader = new FileReader();
-	reader.onload = fileOnload;
+	reader.onload = publisher.emit.bind(publisher);
 	reader.readAsDataURL(file);
 });
 
 
 
 
-function loadImage(){
-	console.log("loading image")
+document.getElementById('downloadImage').addEventListener('click', function() {
+
+	// DO NOT DOWNLOAD EDITOR SELECTION BORDER
+	canvas.deactivateAll().renderAll();
+
+	downloadCanvas(this, 'mainCanvas', getImageName());
+}, false);
+
+
+
+function downloadCanvas(link, canvasId, filename) {
+	link.href = document.getElementById(canvasId).toDataURL('image/jpeg', 0.7);
+	link.download = filename;
 }
+
+
+
+const clipBoard = new ClipBoard(function (img) {
+    canvas.add(new fabric.Image(img))
+})
+
+/******************************************************************************/

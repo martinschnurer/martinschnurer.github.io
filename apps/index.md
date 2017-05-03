@@ -1,12 +1,15 @@
 ---
 layout: apps
 permalink: /apps
+
 apps:
-    app:
-        name: lol
-        some: shit
-    fucking:
-        name: lol
-        some: hell  
+    - app:
+        name: Photo to Thug Life
+        link: /projects/thuglife
+        image_url: '/'
+    - app:
+        name: ololol
+        link: lol
+        image_url: '/'
 ---
-This is apps pageawda
+# Apps I created
