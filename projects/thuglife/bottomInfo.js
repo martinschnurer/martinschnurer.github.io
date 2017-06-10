@@ -1,1 +1,0 @@
-$('#bottomInfo').find('div[target]')
