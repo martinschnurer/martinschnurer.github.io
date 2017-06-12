@@ -26,13 +26,15 @@
 
 	<script>
 
+	var SIZE = 50;
 	var G = 6.7e-11;
 	var Mz = 5.972e24;
 	var Rz = 6378; //km
 
-	function bod(x,y) {
+	const bod = function(x, y, visibility) {
 		this.x = x;
 		this.y = y;
+		this.visible = visibility
 	}
 
 	function vector(x,y) {
@@ -45,48 +47,68 @@
 		this.vector = vector;
 	}
 
-	function planeta(bod,r,vector) {
-		this.bod = bod;
+	function planeta(point, r, vector) {
+		this.bod = point;
 		this.vector = vector;
 		this.r = r;
-		this.historyPoints = []
+		this.historyPoints = (function(){
+			let arr = []
+			for (let i = 0; i < SIZE; i++) 
+				arr.push(new bod(-1,-1, false))
+			return arr
+		})()
+		this.historyPointer = 0;
 	}
 
-	function scitajVector(vector1,vector2) {
+	function scitajVector(vector1, vector2) {
 		var novyvektor = new vector(0,0)
 		novyvektor.x = vector1.x + vector2.x
 		novyvektor.y = vector1.y + vector2.y
 		return novyvektor;
 	}
 
-	function distance(bod1,bod2) {
+	function distance(bod1, bod2) {
 		var dlzkax = bod1.x - bod2.x;
 		var dlzkay= bod1.y - bod2.y;
 		return Math.sqrt(dlzkax*dlzkax+dlzkay*dlzkay);
 	}
 
-	function velkostVektora(vektor){
+	function velkostVektora(vektor) {
 		return Math.sqrt(vektor.x*vektor.x + vektor.y*vektor.y);
 	}
 
-	function vynasobVektor(vektor,cislo) {
+	function vynasobVektor(vektor, cislo) {
 		vektor.x = vektor.x * cislo;
 		vektor.y = vektor.y * cislo
 	}
 
 	function multiplyBezierCurves(ctx, planet) {
-		var i = 0,
-		len = planet.historyPoints.length;
+		let points = planet.historyPoints
+		let len = points.length;
+		let point_from, point_to;
+		let fade_iterator = 0
+
 		ctx.beginPath()
+		ctx.strokeStyle = "white";
 		ctx.moveTo(planet.bod.x, planet.bod.y)
-		while (i < len - 3) {
-			ctx.strokeStyle = "white";
-			ctx.lineWidth =  5 / i;
-			ctx.lineTo(planet.historyPoints[i].x, planet.historyPoints[i].y)
-			ctx.lineTo(planet.historyPoints[i+1].x, planet.historyPoints[i+1].y)
-			ctx.lineTo(planet.historyPoints[i+2].x, planet.historyPoints[i+2].y)
-			ctx.stroke()
-			i += 3;
+		ctx.lineWidth = 1;
+
+		for (let i = planet.historyPointer; i !== (planet.historyPointer + 1) % SIZE; i--) {
+
+			fade_iterator++;
+			ctx.lineWidth = 2 / fade_iterator
+			
+			first_point = points[i]
+			second_point = points[(i + SIZE + 1) % SIZE]
+
+			if (first_point.visible && second_point.visible) {
+				ctx.lineTo(first_point.x, first_point.y)
+				ctx.lineTo(second_point.x, second_point.y)
+				ctx.stroke()	
+			}
+			// important if
+			if ( i == 0)
+				i = SIZE
 		}
 		ctx.closePath()
 		ctx.lineWidth = 1;
@@ -97,8 +119,8 @@
 
 	plocha.translate(500,300);
 
-	var polohaZac = new bod(0,50);
-	var stred = new bod(0,0);
+	var polohaZac = new bod(0, 50);
+	var stred = new bod(0,0, true);
 
 	var zem = new planeta(stred, 20, new vector(0,0));
 	var mesiac = new planeta(polohaZac, 5, new vector(-900,0));
@@ -128,12 +150,13 @@
 
 	var menovatel, vzdialenost, konst;
 	var step = 0;
+
 	function makeStep() {
 
 		step++;
 
 		plocha.beginPath();
-			plocha.clearRect(-500,-300,1000,600);
+			plocha.clearRect(-500, -300, 1000, 600);
 			plocha.fillStyle = "black";
 			plocha.fill();
 		plocha.closePath();
@@ -159,7 +182,7 @@
 
 		plocha.beginPath()
 			plocha.moveTo(mesiac.bod.x, mesiac.bod.y)
-			plocha.lineTo(mesiac.bod.x + ax*0.01, mesiac.bod.y + ay*0.01)
+			plocha.lineTo(mesiac.bod.x + ax * 0.01, mesiac.bod.y + ay * 0.01)
 			plocha.strokeStyle = "red"
 			plocha.stroke()
 		plocha.closePath()
@@ -182,13 +205,16 @@
 		vy = vy + ay * dt
 
 		/* zmena polohy podla rychlosti */
-		mesiac.bod.x = mesiac.bod.x + vx*dt
-		mesiac.bod.y = mesiac.bod.y + vy*dt
+		mesiac.bod.x = mesiac.bod.x + vx * dt
+		mesiac.bod.y = mesiac.bod.y + vy * dt
 
-		if (step % 2 == 0) {
-			mesiac.historyPoints.unshift(new bod(mesiac.bod.x, mesiac.bod.y))
-			mesiac.historyPoints.length = Math.min(500, mesiac.historyPoints.length)
-		}
+		
+		mesiac.historyPoints[mesiac.historyPointer].x = mesiac.bod.x
+		mesiac.historyPoints[mesiac.historyPointer].y = mesiac.bod.y
+		mesiac.historyPoints[(mesiac.historyPointer + SIZE + 1) % SIZE].visible = false
+		mesiac.historyPoints[mesiac.historyPointer].visible = true
+		mesiac.historyPointer = (mesiac.historyPointer + 1) % SIZE
+
 		multiplyBezierCurves(plocha, mesiac)
 
 		window.requestAnimationFrame(makeStep)
