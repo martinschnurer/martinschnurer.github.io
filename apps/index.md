@@ -14,4 +14,5 @@ apps:
         link: /projects/counter
         image_url: '/'
 ---
-# Apps I created
+
+# Not shown

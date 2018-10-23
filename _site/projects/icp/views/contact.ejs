@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset='utf-8'></meta>
+        <link rel="stylesheet" type="text/css" href='/bootstrap/css/bootstrap.css'>
+        <link rel='stylesheet' href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+        <script><%- include ../public/jquery-1.12.4.min.js %></script>
+        <script src="/bootstrap/js/bootstrap.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400" rel="stylesheet">
+
+        <style>
+
+            div{
+                border:1px dashed red;
+            }
+
+            #profile-div{
+                height:200px;
+            }
+
+            .tctr{
+                text-align:center;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <%- include ./header.ejs %>
+
+        <div class="container">
+            <div class="row">
+                <div id="profile-div" class="col-md-12">
+                    <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/"
+                    style="height:200px;position:absolute;margin:0 auto;right:0;left:0"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="tctr">Martin Schnurer</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

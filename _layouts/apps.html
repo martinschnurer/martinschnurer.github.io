@@ -4,10 +4,3 @@ layout: default
 
 {{ content }}
 
-<ul>
-{% for app in page.apps %}
-
-<li><a href="{{ app.app.link }}"> {{ app.app.name }}</a> - {{ app.app.description }}</li>
-
-{% endfor %}
-</ul>

@@ -1,0 +1,271 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" type="text/css" href='../public/bootstrap/css/bootstrap.css'>
+        <link rel='stylesheet' href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+        <script src="../public/jquery-1.12.4.min.js"></script>
+        <script src="../public/bootstrap/js/bootstrap.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400" rel="stylesheet">
+        <script>
+	        var showed = 1;
+	            function showFilter(){
+	                showed = !showed;
+
+	                if(!showed)
+	                    $('.filter').show(400);
+	                else
+	                    $('.filter').hide(400);
+
+	            }
+        </script>
+        <style>
+
+            .information{
+                float:right;
+            }
+
+        </style>
+    </head>
+
+    <body>
+		<div id="header-placeholder">
+		</div>
+	    <script>
+			$.ajax({
+				'url': './header.html',
+				'type': 'get',
+				'dataType':'html'
+			}).done( function(data) {
+				$('#header-placeholder').append(data)
+			})
+		</script>
+
+        <div class="container">
+            <div class="row" style="padding:30px 0px 30px 0px">
+                <div class="col-md-3">
+                    <p style="font-size:20px;line-height:50px;">/<span class="pointer underline">Domov</span>/<span class="pointer underline">Fórum</span></p>
+                </div>
+                <div class="col-md-9">
+                    <div onclick="showFilter()" class="menu-button pointer" style="background-color:#888">
+                        <p>Filter</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row filter" style="display:none;background-color:black;color:white;padding:20px 10px 20px 10px;">
+                <div class="col-md-2" style="border-right:1px solid #555">
+                    <p style="font-weight:bold;font-size:20px;">Typ otázok:</p>
+                    <p style="line-height:18px;margin:0px;"><input type="checkbox">Ubytovanie </p>
+                    <p style="line-height:18px;margin:0px;"><input type="checkbox">Trasy </p>
+                    <p style="line-height:18px;margin:0px;"><input type="checkbox">Turistika </p>
+                    <p style="line-height:18px;margin:0px;"><input type="checkbox">Sťažnosti </p>
+                    <p style="line-height:18px;margin:0px;"><input type="checkbox">Recenzie </p>
+                </div>
+                <div class="col-md-2 order" style="border-right:1px solid #555">
+                    <p style="font-weight:bold;font-size:20px;">Zoradiť podľa:</p>
+                    <div class="btn-group">
+                        <input type="radio" name="gender" value="relevance" checked> Relevancia<br>
+                        <input type="radio" name="gender" value="date"> Dátum<br>
+                        <input type="radio" name="gender" value="views"> Počet videní
+                    </div>
+                </div>
+                <div class="col-md-8 tags">
+                    <p style="font-weight:bold;font-size:20px;">Okamžité zobrazenie príspevku s tagom:</p>
+                    <p id="cont"><span class="underline pointer">#Túra</span> <span class="underline pointer">#chodnicky</span> <span class="underline pointer">#jazera</span> <span class="underline pointer">#ubytovanie</span> <span class="underline pointer">#spokojnost</span> <span class="underline pointer">#relax </span><span class="underline pointer">#priroda</span>
+                    <span class="underline pointer">#potok</span>
+                    <span class="underline pointer">#vyhlad</span> <span class="underline pointer">#pohorie </span><span class="underline pointer">#lacne</span> <span class="underline pointer">#kanoistika</span></p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="menu-button pointer green">
+                            <p>Zobraziť (38)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row" style="margin-top:50px;;">
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Spacak + karimatka</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                                <div class="desc pointer">
+                                    <p>Ahojte plánujem si kupiť spacák s karimatkou, nie do tak od jari do jesene niečo na naších slovenských horách asi páperia najlepšie, pozeral som Sir Joseph Rime II 600 alebo viete mi poradiť nejakú lacnejšiu náhradu ??</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="information">
+                            <p style="line-height:100px;vertical-align:center;">Napísal Martin Porubiak 19.05.2015 15:08</p>
+                        </div> -->
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Obuv</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                                <div class="desc pointer">
+                                    <span>Caute, chcel by som si kupit nejake poriadne topanky na turistiku, tak aby som v nich vedel vyjst napriklad aj Krivan, ale aby zas neboli moc horolezecke :D ... ake by ste mi poradili?</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Stolické vrchy</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                                <div class="desc pointer">
+                                    <span>Ahojte, nemá niekto informáciu o aktuálnej prechodnosti zelenej značky medzi Ostrým vrchom nad Slavošovským tunelom a sedlom Kohúta??</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="information">
+                        <p style="line-height:100px;vertical-align:center;">Napísal Martin Porubiak 19.05.2015 15:08</p>
+                    </div> -->
+                </div>
+
+
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Snežienky v Malých Karpatoch</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                                <div class="desc pointer">
+                                    <span>Kde sa v Malých Karpatoch vyskytujú fakt vo velkých množstvách ,chcel by som ist buduci týžden pozriet</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="information">
+                        <p style="line-height:100px;vertical-align:center;">Napísal Martin Porubiak 19.05.2015 15:08</p>
+                    </div> -->
+                </div>
+
+
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Velký Rozsutec - aktuální stav</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                                <div class="desc pointer">
+                                    <span>Zdravím, rád bych se zeptal, jestli byl někdo z vás v tomto období na Velkém Rozsutci? Jak to tam vypadá se sněhem a jestli je schůdný i bez vybavení (kocůry,sněžnice,hole). Chtěl bych tam vyrazit s přítelkyní, ale nejsem si jistý jestli to není příliš velké sousto v tomto čase. Díky za odpovědi.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="information">
+                        <p style="line-height:100px;vertical-align:center;">Napísal Martin Porubiak 19.05.2015 15:08</p>
+                    </div> -->
+                </div>
+
+
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Stanovanie</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                                <div class="desc pointer">
+                                    <span>Zdravim, chcel by som sa spytat. Pochadzam s Martina a s kamaratom by sme strasne chceli ist niekde stanovat do lesa kde nechodi vela ludi je tam klud a mozme tam zit aspon nachvilu "survival" Vedel by mi prosim niekdo poradit? Vopred dakujem za odpoved.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="information">
+                        <p style="line-height:100px;vertical-align:center;">Napísal Martin Porubiak 19.05.2015 15:08</p>
+                    </div> -->
+                </div>
+
+
+                <div class="col-md-12 forum-post" style="height:100px;border-left:2px solid black;margin-bottom:50px;border-bottom:0.5px solid #eaeaea">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="pointer" src="https://image.freepik.com/free-icon/question-mark_318-52837.jpg" style="height:100px;display:inline-block;vertical-align:top">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="content" style="display:inline-block">
+                                <div class="caption pointer" style="display:inline-block;margin:0px;">
+                                    <h2 style="margin:0px;display:inline-block">Veľký batoh</h2>
+                                    <p style="color:#999;font-size:14px"> 24.05.2015 15:08 Martin Schnurer</p>
+                                </div>
+                            <div class="description pointer">
+                                <span>Zvažujem kúpiť na "expedície" s teraz 4. ročným synom väčší expedičný batoh, ktorý by sme vedeli využiť aj na jednodňových túrach v Karpatoch, tak aj na viacdňových výletoch vlakom. Viem, že univerzálne riešenie neexistuje, ale zvažujem LOWE ALPINE Axiom 7 Cerro Torre 75:100 (65:85) resp. Deuter Aircontact 75+10. Mám 2 metre. Viete odporučiť, poradiť ? Máte skúsenosti s takto veľkým batohom naplneným len z malej časti ?</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="information">
+                        <p style="line-height:100px;vertical-align:center;">Napísal Martin Porubiak 19.05.2015 15:08</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var container = $('.tags').find('#cont');
+            var tags = $(container).find('span');
+            for (var i = 0; i < tags.length; i++) {
+                tags[i].count = Math.floor(Math.random()*50);
+            }
+
+            tags.sort(function(a, b) {
+                return a.count > b.count ? -1 : 1;
+            });
+
+            // console.log(tags);
+
+            $(container).empty();
+
+            for (var i = 0; i < tags.length; i++) {
+                $(tags[i]).css('fontSize', Math.max(25, tags[i].count / 1.5) + 'px');
+                $(container).append( $(tags[i]).append('(' +tags[i].count + ')') );
+                $(container).append(' ');
+            }
+
+        </script>
+
+    </body>
+</html>

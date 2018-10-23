@@ -1,7 +1,6 @@
 markdown: kramdown
-permalink: /index.md
+# permalink: /:year
 exlude: projects
 future: true
 profile: true
-
-
+highlighter: rouge

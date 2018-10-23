@@ -1,0 +1,230 @@
+<html>
+<head>
+	<title>gravity</title>
+
+	<style>
+	body{margin:0px;left:0px;top:0px;}
+
+
+	#okey{
+		background-color:black;
+	}
+
+	#planeta{
+		background-color: blue;
+	}
+
+	#slnko{
+		background-color: yellow;
+	}
+
+	</style>
+</head>
+<body>
+
+	<canvas id="okey" width=1000px height=600px></canvas>
+
+	<script>
+
+	var SIZE = 50;
+	var G = 6.7e-11;
+	var Mz = 5.972e24;
+	var Rz = 6378; //km
+
+	const bod = function(x, y, visibility) {
+		this.x = x;
+		this.y = y;
+		this.visible = visibility
+	}
+
+	function vector(x,y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	function rychlost(velkost, vector) {
+		this.velkost = velkost;
+		this.vector = vector;
+	}
+
+	function planeta(point, r, vector) {
+		this.bod = point;
+		this.vector = vector;
+		this.r = r;
+		this.historyPoints = (function(){
+			let arr = []
+			for (let i = 0; i < SIZE; i++) 
+				arr.push(new bod(-1,-1, false))
+			return arr
+		})()
+		this.historyPointer = 0;
+	}
+
+	function scitajVector(vector1, vector2) {
+		var novyvektor = new vector(0,0)
+		novyvektor.x = vector1.x + vector2.x
+		novyvektor.y = vector1.y + vector2.y
+		return novyvektor;
+	}
+
+	function distance(bod1, bod2) {
+		var dlzkax = bod1.x - bod2.x;
+		var dlzkay= bod1.y - bod2.y;
+		return Math.sqrt(dlzkax*dlzkax+dlzkay*dlzkay);
+	}
+
+	function velkostVektora(vektor) {
+		return Math.sqrt(vektor.x*vektor.x + vektor.y*vektor.y);
+	}
+
+	function vynasobVektor(vektor, cislo) {
+		vektor.x = vektor.x * cislo;
+		vektor.y = vektor.y * cislo
+	}
+
+	function multiplyBezierCurves(ctx, planet) {
+		let points = planet.historyPoints
+		let len = points.length;
+		let point_from, point_to;
+		let fade_iterator = 0
+
+		ctx.beginPath()
+		ctx.strokeStyle = "white";
+		ctx.moveTo(planet.bod.x, planet.bod.y)
+		ctx.lineWidth = 1;
+
+		for (let i = planet.historyPointer; i !== (planet.historyPointer + 1) % SIZE; i--) {
+
+			fade_iterator++;
+			ctx.lineWidth = 2 / fade_iterator
+			
+			first_point = points[i]
+			second_point = points[(i + SIZE + 1) % SIZE]
+
+			if (first_point.visible && second_point.visible) {
+				ctx.lineTo(first_point.x, first_point.y)
+				ctx.lineTo(second_point.x, second_point.y)
+				ctx.stroke()	
+			}
+			// important if
+			if ( i == 0)
+				i = SIZE
+		}
+		ctx.closePath()
+		ctx.lineWidth = 1;
+	}
+
+	var c = document.getElementById('okey');
+	var plocha = c.getContext("2d");
+
+	plocha.translate(500,300);
+
+	var polohaZac = new bod(0, 50);
+	var stred = new bod(0,0, true);
+
+	var zem = new planeta(stred, 20, new vector(0,0));
+	var mesiac = new planeta(polohaZac, 5, new vector(-900,0));
+
+	plocha.beginPath()
+	plocha.arc(zem.bod.x,zem.bod.y,zem.r,0,2*Math.PI)
+	plocha.fillStyle = "yellow"
+	plocha.stroke()
+	plocha.fill()
+	plocha.closePath()
+
+	plocha.beginPath()
+	plocha.arc(mesiac.bod.x, mesiac.bod.y, mesiac.r, 0, 2 * Math.PI)
+	plocha.fillStyle = "blue"
+	plocha.fill()
+	plocha.stroke()
+	plocha.closePath()
+
+
+
+	var a;
+	const dt = 0.008;
+	var ax;
+	var ay;
+	var vx = mesiac.vector.x;
+	var vy = mesiac.vector.y;
+
+	var menovatel, vzdialenost, konst;
+	var step = 0;
+
+	function makeStep() {
+
+		step++;
+
+		plocha.beginPath();
+			plocha.clearRect(-500, -300, 1000, 600);
+			plocha.fillStyle = "black";
+			plocha.fill();
+		plocha.closePath();
+
+		plocha.beginPath();
+			plocha.arc(zem.bod.x,zem.bod.y,zem.r,0,2*Math.PI);
+			plocha.fillStyle="blue";
+			plocha.fill();
+		plocha.closePath();
+
+		plocha.beginPath();
+			plocha.arc(mesiac.bod.x, mesiac.bod.y, mesiac.r, 0, 2 * Math.PI)
+			plocha.fillStyle = "white"
+			plocha.fill()
+		plocha.closePath()
+
+		plocha.beginPath()
+			plocha.moveTo(mesiac.bod.x,mesiac.bod.y)
+			plocha.lineTo(mesiac.bod.x + vx * 0.2, mesiac.bod.y + vy * 0.2)
+			plocha.strokeStyle = "green"
+			plocha.stroke()
+		plocha.closePath()
+
+		plocha.beginPath()
+			plocha.moveTo(mesiac.bod.x, mesiac.bod.y)
+			plocha.lineTo(mesiac.bod.x + ax * 0.01, mesiac.bod.y + ay * 0.01)
+			plocha.strokeStyle = "red"
+			plocha.stroke()
+		plocha.closePath()
+
+
+		//vypocet//
+		menovatel = Math.pow(318900 + 1000 * distance(mesiac.bod, zem.bod), 2)
+
+		a =  G * Mz / menovatel
+
+		vzdialenost = distance(mesiac.bod, zem.bod)
+		konst = a / vzdialenost
+
+		/* zmena zrychlenia */
+		ax = konst * (zem.bod.x - mesiac.bod.x)
+		ay = konst * (zem.bod.y - mesiac.bod.y)
+
+		/* zmena rychlosti */
+		vx = vx + ax * dt
+		vy = vy + ay * dt
+
+		/* zmena polohy podla rychlosti */
+		mesiac.bod.x = mesiac.bod.x + vx * dt
+		mesiac.bod.y = mesiac.bod.y + vy * dt
+
+		
+		mesiac.historyPoints[mesiac.historyPointer].x = mesiac.bod.x
+		mesiac.historyPoints[mesiac.historyPointer].y = mesiac.bod.y
+		mesiac.historyPoints[(mesiac.historyPointer + SIZE + 1) % SIZE].visible = false
+		mesiac.historyPoints[mesiac.historyPointer].visible = true
+		mesiac.historyPointer = (mesiac.historyPointer + 1) % SIZE
+
+		multiplyBezierCurves(plocha, mesiac)
+
+		window.requestAnimationFrame(makeStep)
+	}
+
+	makeStep()
+
+
+	</script>
+
+</body>
+
+</html>

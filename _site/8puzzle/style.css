@@ -1,0 +1,28 @@
+
+		body{
+			background-color:#eee;
+		}
+
+		.cube{
+			height:50px;
+			width:50px;
+			background-color: #cec;
+			cursor:pointer;
+		}
+
+		.inputik{
+			height:50px;
+			width:50px;
+			background-color: rgb(96, 126, 255);
+			color:white;
+			box-shadow: none;
+			border:none;
+			text-align: center;
+		}
+
+		p{
+			line-height: 17px;
+			margin:0px;
+		}
+
+
