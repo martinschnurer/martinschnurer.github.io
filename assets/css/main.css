@@ -133,8 +133,12 @@ p {
     display: flex;
 }
 
-#subscribe-form {
+#subscription-form input {
     color: black;
+}
+
+#subscription-form {
+    color: white;
 }
 
 
