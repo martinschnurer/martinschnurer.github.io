@@ -12,3 +12,12 @@ do first. Plus I have to go to work now at least 20 hours a week as contract say
 I am so proud of me, because I had some serious thoughts about leaving school at the moment. In life, we are sometimes supposed to do things we don't like. Maybe it is a good decision, maybe not. We'll see.
 
 Martin.
+
+<script>
+	document.title = 'Hard times';
+	var headElement = document.querySelector('head')
+	var newMeta = document.createElement('meta')
+	newMeta.setAttribute('name', 'description');
+	newMeta.setAttribute('content', 'I am not giving up.');
+	headElement.prepend(newMeta);
+</script>
