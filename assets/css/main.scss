@@ -1,3 +1,6 @@
+---
+---
+
 html, body {
     margin: 0px;
     padding: 0px;
@@ -7,9 +10,6 @@ body {
     background-color: #eee;
 }
 
-div {
-    /*border:1px solid red;*/
-}
 
 pre {
     background-color: transparent;
@@ -63,16 +63,6 @@ p {
 }
 
 
-/*
-.about-user{
-    background-image: url('/assets/images/bg.jpeg');
-    min-height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center
-}
-*/
 
 .about-user .my-photo {
     overflow:hidden;
@@ -102,62 +92,89 @@ p {
     text-align: center;
     width: auto;
     margin: 10px;
+
+    .photo img {
+        height: 80px;
+        /*max-width: 80px;*/
+    }
 }
 
-.person-item .photo{
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
-
-}
-
-.person-item .photo img {
-    height: 80px;
-    /*max-width: 80px;*/
-}
-
-.person-item .name {
-
-}
 
 .footer {
     margin-top: 15px;
     padding-top: 30px;
+
+    .icon img {
+        height: 25px;
+    }
 }
 
-.footer .icon img {
-    height: 25px;
-}
 
-.flexy {
+.d-flex {
     display: flex;
 }
 
-#subscription-form input {
-    color: black;
-}
 
 #subscription-form {
     color: white;
+
+    input {
+        color: black;
+    }
 }
 
 
 .post {
     margin-top: 10px;
-    background-color: #eee;
+    background-color: #fff;
     box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
     padding: 10px 25px;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
     color: rgba(0, 0, 0, 0.84);
+    transition: background-color 200ms ease-in-out, box-shadow 200ms ease-in-out;
+
+    h1 {
+        font-size: 25px;
+    }
+
+    p {
+        margin-bottom: 38px;
+        font-size: 21px;
+        line-height: 1.58;
+        letter-spacing: -.003em;
+        font-weight: 400;
+        font-family: 'Krub', sans-serif;
+    }
+
+    &.clickable:hover {
+        background-color: #fefefe;
+        box-shadow: 0 0 10px 1px rgba(0,0,0,0.45);
+        cursor: pointer;
+    }
+
+    .post-date {
+        color: rgba(0,0,0,0.38);
+    }
+
+    .description {
+        color: rgba(0,0,0,0.59);
+    }
+
+    .post-head {
+        display: flex;
+        align-items: center;
+
+        .title {
+            flex-grow: 2;
+            margin: 15px auto;
+        }
+
+        .time {
+            color: #ccc;
+        }
+    }
 }
 
-.post p {
-    margin-bottom: 38px;
-    font-size: 21px;
-    line-height: 1.58;
-    letter-spacing: -.003em;
-    font-weight: 400;
-}
 
 .post li {
     font-size: 21px;
