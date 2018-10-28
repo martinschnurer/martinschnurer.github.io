@@ -2,7 +2,11 @@
 layout: post
 ---
 
+[See my CV also in slovak language](/cv/sk)
+
 One sentence about me: IT guy, born in eastern Slovakia, since that I was moving always to the west. First on High School to Kosice, then to the Bratislava where I actually studying computer science and I am seriously thinking about moving to the west again (But for now I am staying here in Bratislava as I am actually studying here).
+
+**Keywords**: Javascript, React, Front-End, Git, Postgres, PostGIS, Python
 
 # Education
 
