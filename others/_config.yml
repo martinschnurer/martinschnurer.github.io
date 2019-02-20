@@ -1,0 +1,9 @@
+markdown: kramdown
+# permalink: /:year
+exlude: projects
+future: true
+profile: true
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - rouge

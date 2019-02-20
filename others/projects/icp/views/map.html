@@ -1,0 +1,266 @@
+<html>
+    <head>
+        <meta charset='utf-8'></meta>
+        <link rel="stylesheet" type="text/css" href='../public/bootstrap/css/bootstrap.css'>
+        <link rel='stylesheet' href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+        <script src="../public/jquery-1.12.4.min.js"></script>
+        <script src="../public/bootstrap/js/bootstrap.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400" rel="stylesheet">
+
+        <style>
+
+        .post{
+            border:1px solid #dedede;
+            padding:10px 20px 10px 20px;
+            font-family: "Roboto";
+            margin-bottom:20px;
+        }
+
+        .post .post-head h1{
+            font-weight: 300;
+            margin:0
+        }
+
+
+        .post .post-description p::first-letter{
+            font-size:25px;
+            text-decoration: bold;
+        }
+
+            .filter span{
+                font-weight: bold;
+                color:white;
+            }
+
+            .filter input,.filter select{
+                color:black;
+            }
+
+            .row{
+                margin-bottom:5px;
+            }
+
+            .filter{
+                color:white;
+                padding:10px;
+                z-index: 50000;
+                background-color: rgba(0,0,0,0.1);
+                -webkit-transition: background-color 400ms linear;
+                -moz-transition: background-color 400ms linear;
+                -o-transition: background-color 400ms linear;
+                -ms-transition: background-color 400ms linear;
+                transition: background-color 400ms linear;
+            }
+
+            .filter:hover{
+                background-color: rgba(0,0,0,0.7);
+                -webkit-transition: background-color 400ms linear;
+                -moz-transition: background-color 400ms linear;
+                -o-transition: background-color 400ms linear;
+                -ms-transition: background-color 400ms linear;
+                transition: background-color 400ms linear;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+		<div id="header-placeholder">
+		</div>
+        <script>
+			$.ajax({
+				'url': './header.html',
+				'type': 'get',
+				'dataType':'html'
+			}).done( function(data) {
+				$('#header-placeholder').append(data)
+			})
+		</script>
+
+    <div class="container-fluid" >
+        <div class="filter" style="width:350px;height:500px;position:absolute;">
+            <div class="row">
+                <div class="col-md-12">
+                    <span>Zvoľte typ vyhľadávania  </span>
+                    <select>
+                         <option value="Trasy">Trasy</option>
+                         <option value="Miesta">Miesta</option>
+                         <option value="Vyhlady">Rozhľadne</option>
+                         <option value="Ubytovanie">Ubytovanie</option>
+                         <option value="Jazera">Jazerá</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">Dĺžka trasy
+                    <input type="number" placeholder=0 style="width:100px;" step="0.1"> do
+                    <input type="number" style="width:100px;" step="0.1">
+                </div>
+            </div>
+            <div class="row" style="position:absolute;bottom:0;width:100%">
+                <div class="col-md-12">
+                    <div class="pointer" style="width:100%;height:30px;border-radius:15px;background-color:white">
+                        <p style="padding:0px;width:100%;text-align:center;color:black;font-size:22px;">Vyhľadať</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map" style="width:100%;height:500px;display:inline-block"></div>
+    </div>
+
+    <div class="arrow" style="width:100%;height:50px;position:relative;margin-top:10px;">
+        <p style="width:100%;text-align:center">
+            <i id="arrow" class="material-icons" style="font-size:40px;" >arrow_downward</i>
+        </p>
+    </div>
+
+    <div class="container" style="padding-top:20px;">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="post">
+                    <div class="post-head"><h1 class="pointer">Revúca – Voniaca – Hradová – Ostrá – Hnúšťa</h1></div>
+                    <div class="pointer post-author">
+                        <p style="color:#888">Napísal Michal Zbončák 26.03.2015 15:03</p>
+                    </div>
+                    <div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('../image1.jpg');background-size:cover;">
+                        <!-- <img src="/image1.jpg" style="width:100%"> -->
+                    </div>
+                    <div class="post-description" style="width:100%">
+                        <p>Na prvú vandrovku v roku 2016 som sa vybral v polovici apríla. Vtedy som ešte netušil, že kvôli povinnostiam sa na jar na ďalšiu nedostanem. Vybral som sa z Revúcej na západ.</p>
+                    </div>
+                    <div style="width:100%">
+                        <p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+                    </div>
+                    <div class="post-options">
+                        <img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+                        <img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <br>
+                        <p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-head"><h1 class="pointer">Nový ročník festivalu HOROMIL FEST</h1></div>
+                    <div class="pointer post-author">
+                        <p style="color:#888">Napísal Michal Zbončák 26.03.2015 15:03</p>
+                    </div>
+                    <div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('../image2.jpg');background-size:cover;">
+                        <!-- <img src="/image1.jpg" style="width:100%"> -->
+                    </div>
+                    <div class="post-description" style="width:100%">
+                        <p>Pozor, všetci milovníci hôr, cestovania, adrenalínu a športu, prichádza Horomil fest, ktorý už po 8-krát ponúkne v Považskej Bystrici, v srdci Strážovských vrchov, zaujímavú nádielku filmov a prezentácií. </p>
+                    </div>
+                    <div style="width:100%">
+                        <p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+                    </div>
+                    <div class="post-options">
+                        <img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+                        <img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <br>
+                        <p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-head"><h1 class="pointer">(Cyklotúra) Tokajská vyhliadková veža nad Malou Tŕňou</h1></div>
+                    <div class="pointer post-author">
+                        <p style="color:#888">Napísal Michal Zbončák 26.03.2015 15:03</p>
+                    </div>
+                    <div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('../image3.jpg');background-size:cover;">
+                        <!-- <img src="/image1.jpg" style="width:100%"> -->
+                    </div>
+                    <div class="post-description" style="width:100%">
+                        <p>Je ráno, ešte dosť skoro a len tak sedím pri počítači a pozerám maily. Čo dnes budem robiť? Veď je sobota, ísť niekde na huby? Bol som v pondelok... Už to mám, dlho som nesedel na bicykli, veď väčšinou chodím pešo po horách. Prečo sa neísť práve dnes previezť len tak po okolí a možno mi niečo napadne cestou. </p>
+                    </div>
+                    <div style="width:100%">
+                        <p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+                    </div>
+                    <div class="post-options">
+                        <img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+                        <img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <br>
+                        <p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+                    </div>
+                </div>
+
+
+                <div class="post">
+                    <div class="post-head"><h1 class="pointer">(Chata) Majláthova chata pri Popradskom plese</h1></div>
+                    <div class="pointer post-author">
+                        <p style="color:#888">Napísal Michal Zbončák 26.03.2015 15:03</p>
+                    </div>
+                    <div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('../image4.jpg');background-size:cover;">
+                        <!-- <img src="/image1.jpg" style="width:100%"> -->
+                    </div>
+                    <div class="post-description" style="width:100%">
+                        <p>Donedávna bol návštevníkom Popradského plesa známy horský hotel na jeho brehu, avšak od zimy 2010/2011 pribudla v tesnom susedstve hotela historizujúca napodobenina pôvodnej Majláthovej chaty zo začiatku 20. storočia. Moderný hrazdený objekt ponúka okrem stravovania útulné ubytovanie vyššieho štandardu.</p>
+                    </div>
+                    <div style="width:100%">
+                        <p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+                    </div>
+                    <div class="post-options">
+                        <img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+                        <img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <br>
+                        <p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+                    </div>
+                </div>
+
+                <div class="post">
+                    <div class="post-head"><h1 class="pointer">(Chata) Turistická základňa Tiešňava Krpeľany</h1></div>
+                    <div class="pointer post-author">
+                        <p style="color:#888">Napísal Michal Zbončák 26.03.2015 15:03</p>
+                    </div>
+                    <div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('../image5.jpg');background-size:cover;">
+                        <!-- <img src="/image1.jpg" style="width:100%"> -->
+                    </div>
+                    <div class="post-description" style="width:100%">
+                        <p>Klub slovenských turistov Dynamo Krpeľany si na podhorí Veľkej Fatry postavil jednoduchú turistickú základňu, ktorú pomenovali Tiešňava. Stojí na opačnom brehu Váhu, ako je obec Krpeľany, blízko hydroelektrárne Krpeľany. </p>
+                    </div>
+                    <div style="width:100%">
+                        <p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+                    </div>
+                    <div class="post-options">
+                        <img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+                        <img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+                        <br>
+                        <p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function myMap() {
+      var mapCanvas = document.getElementById("map");
+      var mapOptions = {
+        center: new google.maps.LatLng(48.914985, 19.928760),
+		scrollwheel: false,
+        zoom: 8
+      }
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB82P2u53dLW_LducO0CilFjqkYO8PxJ94&callback=myMap"></script>
+
+    </body>
+</html>

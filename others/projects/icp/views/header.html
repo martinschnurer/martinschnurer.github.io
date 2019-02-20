@@ -1,0 +1,258 @@
+<style>
+
+    * {
+    box-sizing: border-box;
+    }
+
+    .user-description p{
+        margin: 1px;
+    }
+
+    i.small{
+        font-size: 10px;
+    }
+    i.medium{
+        font-size: 14px;
+    }
+    i.large{
+        font-size: 18px;
+    }
+
+    .menu .menu-button{
+        display:inline-block;
+    }
+
+    .menu{
+        color:white;
+        font-size:16px;
+        display:inline-block;
+        font-size: 0;
+    }
+
+    .menu-button{
+        padding:5px 15px 5px 15px;
+        height:50px;
+        text-align:center;
+        font-weight: bold;
+        line-height: 40px;
+        font-size: 15px;
+    }
+
+    .menu-button *{
+        display: inline-block;
+    }
+
+    .menu-button{
+        color:white;
+        -webkit-transition: background-color 400ms linear,color 400ms linear;
+        -moz-transition: background-color 400ms linear,color 400ms linear;
+        -o-transition: background-color 400ms linear,color 400ms linear;
+        -ms-transition: background-color 400ms linear,color 400ms linear;
+        transition: background-color 400ms linear,color 400ms linear;
+    }
+
+    .menu-button:hover {
+        background-color: white;
+        color:black;
+        -webkit-transition: background-color 400ms linear, color 400ms linear;
+        -moz-transition: background-color 400ms linear, color 400ms linear;
+        -o-transition: background-color 400ms linear, color 400ms linear;
+        -ms-transition: background-color 400ms linear, color 400ms linear;
+        transition: background-color 400ms linear, color 400ms linear;
+    }
+
+    .pointer{
+        cursor:pointer;
+    }
+
+    .underline:hover{
+        text-decoration: underline;
+    }
+
+    .user-profile *{
+        /*float:left;*/
+    }
+
+    .red{background-color:red}
+    .green{background-color:green}
+    .yellow{background-color:#ffcc33}
+    .orange{background-color:orange}
+    .red{background-color:red}
+    .blue{background-color: #3399ff}
+
+	#login input{
+		color:black;
+	}
+
+	#register-font{
+		font-size:18px;
+		cursor:pointer;
+	}
+	#register-font:hover{
+		font-size:18px;
+		text-decoration: underline;
+	}
+
+	#login p{
+		margin:2px 0px 2px 0px;
+	}
+
+	#login input:last-child{
+		margin-bottom:5px;
+	}
+
+	#logo-image {
+		max-width:100%;
+		max-height:100px;
+	}
+
+
+	@media screen and (max-width: 800px) {
+		#header .row.flexy{
+			display:block;
+		}
+	}
+
+	@media screen and (min-width: 800px) {
+		#header .row.flexy{
+			display:flex;
+		}
+	}
+
+</style>
+
+
+<div id="header" style="width:100%;background-color:black;color:white">
+    <div class="container">
+    	<div class="row flexy" style="align-items:center">
+    		<div class="col-md-2" style="flex-direction:column">
+                <a href="./index.html" style="width:100%;display:flex;justify-content:center">
+                    <img id="logo-image" src="../images/logo.png">
+                </a>
+                <p class="pointer" style="width:100%;font-size:25px;font-weight:400;text-align:center">Tourism.sk</p>
+            </div>
+    		<div class="col-md-7">
+                <!-- <div style="margin-leearft:20px;background-image:url('/images/sunset.png');
+                background-size: auto 60px;background-position:center; ;background-repeat:no-repeat;height:60px;margin-bottom:-20px;">
+
+                </div> -->
+                <div class="menu col-md-12 col-sm-12 col-xs-12">
+                    <div onclick="window.location='./forum.html'" class="col-md-3 col-sm-12 col-xs-12 menu-button green pointer"><span><i class="material-icons medium">forum</i> Fórum</span></div>
+                    <div onclick="window.location='./map.html'" class="col-md-3 col-sm-12 col-xs-12 menu-button yellow pointer"><span><i class="material-icons medium">place</i> Mapa</span></div>
+                    <div onclick="window.location='./ubytovanie.html'" class="col-md-3 col-sm-12 col-xs-12 menu-button red pointer"><span><i class="material-icons medium">local_hotel</i> Ubytovanie</span></div>
+                    <div class="menu-button blue pointer col-md-3 col-xs-12 col-sm-12"><span><i class="material-icons medium">local_post_office</i> Kontakt</span></div>
+                </div>
+    		</div>
+
+
+			<div class="col-md-3 col-xs-12">
+				<div id="show-login" class="menu-button green pointer"><span>Log in</span></div>
+			</div>
+
+			<!-- LOGIN INTO SITE -->
+			<div class="col-md-3 col-xs-12 user-profile" id="login" style="display:none">
+                <div class="col-md-12 col-xs-12"><p>Prihlasovacie meno</p></div>
+                <div class="col-md-12 col-xs-12"><input class="col-md-12 col-xs-12" name="meno" type="text"></div>
+                <div class="col-md-12 col-xs-12"><p>Heslo</div>
+                <div class="col-md-12 col-xs-12"><input class="col-md-12 col-xs-12" name="heslo" type="password"></div>
+				<div class="col-md-12 col-xs-12" style="margin-bottom:5px;">
+					<div id="action-btn-login" class="btn btn-success col-md-12 col-xs-12">Login</div>
+				</div>
+				<div class="col-md-12 col-xs-12">
+					<p class="col-md-12 col-xs-12">Nemáte účet ? <span id="register-font">Zaregistrujte sa!</span></p>
+				</div>
+			</div>
+
+			<!-- USER PROFILE -->
+        	<div class="col-md-3 col-xs-12 user-profile" id="user-profile-swap" style="display:none;">
+                <div class="row" style="height:100px;">
+                    <div class="col-md-12">
+                        <a href="./profile">
+                              <img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/"
+                              style="height:100px;position:absolute;margin:0 auto;right:20px"/>
+                        </a>
+                    </div>
+            	</div>
+    			<div class="row user-description">
+				    <div class="col-md-12" style="text-align:right">
+                        <p><b class="pointer">Martin Schnurer</b> (4.3 <i class="material-icons" style="font-size:10px;color:#ffbf00">star</i>)</p>
+                        <p class="pointer">Saved paths: <b>3</b></p>
+                        <p class="pointer">Friends online: <b>15</b></p>
+                    </div>
+			    </div>
+				<div class="row">
+					<div class="col-md-12 col-sm-6">
+						<span class="underline pull-right pointer">Log out</span>
+					</div>
+				</div>
+    		</div>
+
+
+
+			<div id="badLogin" class="modal fade" role="dialog" style="color:black">
+	  			<div class="modal-dialog modal-md">
+
+				    <!-- Modal content-->
+				    <div class="modal-content" style="text-align:center">
+				      	<i class="material-icons">cancel</i>
+						<p>Bad user name or password!</p>
+						<div class="btn btn-success" onclick="$('#badLogin').modal('hide')">OK</div>
+	    			</div>
+	  			</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+<script>
+
+	$('#show-login').click(function() {
+		$(this).parent().hide(200, function() {
+			$('#login').show(200);
+		})
+	})
+
+    $('#map').click(function () {
+        window.location = '/map';
+    });
+
+	$('#action-btn-login').click(function() {
+
+		var first = $('#user-profile-swap')
+		var second = $('#login')
+
+		if ($('input[name="meno"]').val() !== "martin" || $('input[name="heslo"]').val()!== "schnurer")
+		{
+			$('#badLogin').modal('show');
+			return;
+		}
+
+		if ($(first).css("display") === "none") {
+			$(second).hide(400, function() {
+				$(first).show(400);
+			})
+		}
+	})
+
+	$(document).on('keydown',function(e) {
+		if (e.which === 13) {
+
+			var first = $('#user-profile-swap')
+			var second = $('#login')
+
+			if ($('input[name="meno"]').val() !== "martin" || $('input[name="heslo"]').val()!== "schnurer")
+			{
+				$('#badLogin').modal('show');
+				return;
+			}
+
+			if ($(first).css("display") === "none") {
+				$(second).hide(400, function() {
+					$(first).show(400);
+				})
+			}
+
+		}
+	})
+
+</script>

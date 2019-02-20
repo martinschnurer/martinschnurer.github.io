@@ -1,0 +1,422 @@
+<html>
+    <head>
+        <meta charset='utf-8'></meta>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href='../bootstrap/css/bootstrap.css'>
+        <link rel='stylesheet' href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+		<link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+		<script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+		<script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400" rel="stylesheet">
+
+        <style>
+            .modal-admin{
+                padding:20px;
+				margin-top:100px;
+            }
+
+            .modal-admin .follower{
+                border-bottom: 1px solid #ddd;
+            }
+
+            .modal-admin .follower img{
+                border-radius:100%
+            }
+
+            .modal-admin .follower .btn{
+                margin-bottom:5px;
+                margin-top:5px;
+            }
+
+			.custom-user-menu {
+				margin-top:20px;
+			}
+
+			.custom-user-menu div.active {
+				background-color:#aaa;
+			}
+
+			.custom-user-menu div{
+				background-color:#dedede;
+				font-weight: 600;
+				cursor:pointer;
+				padding:10px;
+				font-size:18px;
+				text-align:center;
+
+				-webkit-transition: background-color 400ms linear,color 400ms linear;
+		        -moz-transition: background-color 400ms linear,color 400ms linear;
+		        -o-transition: background-color 400ms linear,color 400ms linear;
+		        -ms-transition: background-color 400ms linear,color 400ms linear;
+		        transition: background-color 400ms linear,color 400ms linear;
+			}
+
+			.custom-user-menu div:hover{
+				background-color: #555;
+		        color:white;
+		        -webkit-transition: background-color 400ms linear, color 400ms linear;
+		        -moz-transition: background-color 400ms linear, color 400ms linear;
+		        -o-transition: background-color 400ms linear, color 400ms linear;
+		        -ms-transition: background-color 400ms linear, color 400ms linear;
+		        transition: background-color 400ms linear, color 400ms linear;
+			}
+
+			.user-section .caption {
+				color: #555;
+				border-bottom: 1px solid #ccc;
+			}
+
+			.profile-fotogallery {
+				cursor:pointer;
+			}
+
+			#imgToShow{
+				max-height:600px;
+			}
+
+			#photos {
+			  /* Prevent vertical gaps */
+			  line-height: 0;
+
+			  -webkit-column-count: 5;
+			  -webkit-column-gap:   0px;
+			  -moz-column-count:    5;
+			  -moz-column-gap:      0px;
+			  column-count:         5;
+			  column-gap:           0px;
+			}
+
+			#photos img {
+			  /* Just in case there are inline attributes */
+			  width: 100% !important;
+			  height: auto !important;
+			  -webkit-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+			  -moz-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+			  -o-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+			  -ms-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+			  transition: margin-bottom 400ms linear, margin-top 400ms linear;
+			}
+
+			#photos img:hover{
+				margin-top:5px;
+				margin-bottom:5px;
+				-webkit-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+		        -moz-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+		        -o-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+		        -ms-transition: margin-bottom 400ms linear, margin-top 400ms linear;
+		        transition: margin-bottom 400ms linear, margin-top 400ms linear;
+			}
+
+			@media (max-width: 1200px) {
+			  #photos {
+			  -moz-column-count:    4;
+			  -webkit-column-count: 4;
+			  column-count:         4;
+			  }
+			}
+			@media (max-width: 1000px) {
+			  #photos {
+			  -moz-column-count:    3;
+			  -webkit-column-count: 3;
+			  column-count:         3;
+			  }
+			}
+			@media (max-width: 800px) {
+			  #photos {
+			  -moz-column-count:    2;
+			  -webkit-column-count: 2;
+			  column-count:         2;
+			  }
+			}
+			@media (max-width: 400px) {
+			  #photos {
+			  -moz-column-count:    1;
+			  -webkit-column-count: 1;
+			  column-count:         1;
+			  }
+			}
+
+			.saved_path{
+				height : 200px;
+				cursor:pointer;
+			}
+
+			.user-section-favorite .content{
+				margin-left:30px;
+			}
+
+			.hlig{
+				font-style: italic;
+				font-weight: 600;
+			}
+
+			#photoModal img{
+				width: 100%;
+			}
+
+        </style>
+    </head>
+
+    <body>
+        <%- include header.ejs %>
+
+        <div class="container">
+            <div class="row">
+                <div id="profile-picture" class="col-md-2" style="overflow:hidden">
+                    <img src="http://lorempixel.com/140/140/" style="width:100%;cursor:pointer">
+                    <div id="upload-overlay" style="display:none;top:-30px;height:30px;position:relative;background-color:rgba(0,0,0,0.3)">
+                        <p style="color:white;font-size:18px;width:100%;text-align:center;cursor:pointer"><i style="color:white"class="material-icons">file_upload</i> Upload</p>
+                    </div>
+                </div>
+                <div id="user-information" class="col-md-10">
+                    <h1>Martin Schnurer</h1>
+                    <h3 style="color:grey">Place for your bio...</h3>
+                    <h4 class="underline" style="color:#333;display:inline-block;cursor:pointer"><b>Follows: 32</b></h4>
+                    <h4 class="underline" style="color:#333;display:inline-block;margin-left:20px;cursor:pointer"><b>Followers: 384</b></h4>
+                </div>
+            </div>
+
+			<div class="row custom-user-menu">
+				<div class="col-md-3" goto="user-posts">Príspevky užívateľa</div>
+				<div class="col-md-3" goto="fotogallery">Fotogaléria</div>
+				<div class="col-md-3" goto="favourite">Aktivita</div>
+				<div class="col-md-3" goto="saved-paths">Uložené trasy</div>
+			</div>
+
+			<!-- USER POSTS -->
+			<div class="row user-section" >
+				<a name="user-posts" style="position:relative;top:-40px;"></a>
+				<h1 class="caption"><i class="material-icons">collections</i> Príspevky užívateľa </h1>
+				<div class="content" style="padding-top:50px;">
+					<div class="post col-md-6">
+						<div class="post-head"><h4 class="pointer">Nový ročník festivalu HOROMIL FEST</h4></div>
+						<div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('./image2.jpg');background-size:cover;">
+							<!-- <img src="/image1.jpg" style="width:100%"> -->
+						</div>
+						<div class="post-description" style="width:100%">
+
+						</div>
+						<div style="width:100%">
+							<p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+						</div>
+						<!-- <div class="post-options">
+							<img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+							<img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+							<img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+							<br>
+							<p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+						</div> -->
+					</div>
+
+					<div class="post col-md-6" >
+						<div class="post-head"><h4 class="pointer">(Cyklotúra) Tokajská vyhliadková veža nad Malou Tŕňou</h4></div>
+						<div class="pointer post-author">
+							<!-- <p style="color:#888">Napísal Michal Zbončák 26.03.2015 15:03</p> -->
+						</div>
+						<div class="post-image pointer" style="width:100%;height:200px;position:relative;background:url('./image3.jpg');background-size:cover;">
+							<!-- <img src="/image1.jpg" style="width:100%"> -->
+						</div>
+						<!-- <div class="post-description" style="width:100%">
+							<p>Je ráno, ešte dosť skoro a len tak sedím pri počítači a pozerám maily. Čo dnes budem robiť? Veď je sobota, ísť niekde na huby? Bol som v pondelok... Už to mám, dlho som nesedel na bicykli, veď väčšinou chodím pešo po horách. Prečo sa neísť práve dnes previezť len tak po okolí a možno mi niečo napadne cestou. </p>
+						</div> -->
+						<div style="width:100%">
+							<p style="width:100%;text-align:center" class="show-more pointer">Zobraziť viac</p>
+						</div>
+						<!-- <div class="post-options">
+							<img src="https://maxcdn.icons8.com/windows8/PNG/512/Social_Networks/facebook-512.png" style="height:25px" class="pointer" alt="zdielat"/>
+
+							<img src="https://zato.io/static/img/icons/twitter-icon2.png" style="height:25px" class="pointer" alt="zdielat"/>
+							<img src="https://cdn1.iconfinder.com/data/icons/simple-icons/2048/instagram-2048-black.png" style="height:25px" class="pointer" alt="zdielat"/>
+							<br>
+							<p class="pointer show-comments" style="margin-top:8px;font-size:18px">Zobraz komentáre (3)</p>
+
+						</div> -->
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+			<!-- FOTOGALERY -->
+			<div class="row user-section" name="fotogallery">
+				<a name="fotogallery" style="position:relative;top:-40px;"></a>
+ 				<h1 class="caption"><i class="material-icons">camera_alt</i> Fotogaléria</h1>
+				<div class="content">
+					<section id="photos">
+						<img src="./profile-images/1.jpg" class="profile-fotogallery">
+						<img src="./profile-images/2.jpg" class="profile-fotogallery">
+						<img src="./profile-images/3.jpg" class="profile-fotogallery">
+						<img src="./profile-images/4.jpg" class="profile-fotogallery">
+						<img src="./profile-images/5.jpg" class="profile-fotogallery">
+						<img src="./profile-images/6.jpg" class="profile-fotogallery">
+						<img src="./profile-images/7.jpg" class="profile-fotogallery">
+						<img src="./profile-images/8.jpg" class="profile-fotogallery">
+						<img src="./profile-images/9.jpg" class="profile-fotogallery">
+						<img src="./profile-images/10.jpg" class="profile-fotogallery">
+						<img src="./profile-images/11.jpg" class="profile-fotogallery">
+						<img src="./profile-images/12.jpg" class="profile-fotogallery">
+						<img src="./profile-images/13.jpg" class="profile-fotogallery">
+						<img src="./profile-images/14.jpg" class="profile-fotogallery">
+						<img src="./profile-images/15.jpg" class="profile-fotogallery">
+					</section>
+				</div>
+			</div>
+
+			<!-- OBLUBENE -->
+			<div class="row user-section user-section-favorite" >
+				<a name="favourite" style="position:relative;top:-40px;"></a>
+				<h1 class="caption"><i class="material-icons">favorite</i> Aktivita</h1>
+				<div class="content">
+					<p>15:12 <i class="material-icons small">favorite</i>  You liked <span class="underline pointer hlig">Michal Zboncak</span> <span class="underline pointer hlig">post</span></p>
+					<p>15:00 <i class="material-icons small">favorite</i>  You liked <span class="underline pointer hlig">Janko Mrkvicka</span> <span class="underline pointer hlig">post</span></p>
+					<p>14:05 <i class="material-icons small">comment</i>  You commented <span class="underline pointer hlig">Andrej Kukuricudus</span> <span class="underline pointer hlig">photo</span></p>
+					<p>13:50 <i class="material-icons small">favorite</i>  You liked <span class="underline pointer hlig">Patrik Vrbovsky</span> <span class="underline pointer hlig">post</span></p>
+					<p>15:12 <i class="material-icons small">comment</i>  You commented <span class="underline pointer hlig">Michal Straka</span> <span class="underline pointer hlig">photo</span></p>
+					<p>10:12 <i class="material-icons small">favorite</i>  You liked <span class="underline pointer hlig">Lucifer Morningstar</span> <span class="underline pointer hlig">post</span></p>
+					<p>9:12 <i class="material-icons small">map</i>  You saved <span class="underline pointer hlig">Janko Maly</span> <span class="underline pointer hlig">path</span></p>
+				</div>
+			</div>
+
+			<!-- SAVED PATHS -->
+			<div class="row user-section">
+				<a name="saved-paths" style="position:relative;top:-40px;"></a>
+				<h1 class="caption"><i class="material-icons">directions_walk</i> Uložené trasy</h1>
+				<div class="content">
+					<img src="./saved_paths/img1.jpg" class="saved_path">
+					<img src="./saved_paths/img2.gif" class="saved_path">
+				</div>
+			</div>
+        </div>
+
+
+
+
+		<!-- MODALS -->
+        <div class="modal" id="Modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content pad-15 modal-admin">
+                    <div class="row follower-list">
+                        <div class="col-md-12 follower">
+                            <img src="./images/cap.jpg" height="35px">
+                            <p style="display:inline-block">Jozef spiatocny</p>
+                            <div class="btn btn-success pull-right">Follows</div>
+                        </div>
+
+                        <div class="col-md-12 follower">
+                            <img src="./images/cap.jpg" height="35px">
+                            <p style="display:inline-block">Martin Osmy</p>
+                            <div class="btn btn-success pull-right">Follows</div>
+                        </div>
+
+                        <div class="col-md-12 follower">
+                            <img src="/images/cap.jpg" height="35px">
+                            <p style="display:inline-block">Juraj Deviaty</p>
+                            <div class="btn btn-success pull-right">Follows</div>
+                        </div>
+
+                        <div class="col-md-12 follower">
+                            <img src="./images/cap.jpg" height="35px">
+                            <p style="display:inline-block">Anna Jedenásta</p>
+                            <div class="btn btn-success pull-right">Follows</div>
+                        </div>
+
+                        <div class="col-md-12 follower">
+                            <img src="./images/cap.jpg" height="35px">
+                            <p style="display:inline-block">Jozef spiatocny</p>
+                            <div class="btn btn-success pull-right">Follows</div>
+                        </div>
+
+                        <div class="col-md-12 follower">
+                            <img src="./images/cap.jpg" height="35px">
+                            <p style="display:inline-block">Jozef spiatocny</p>
+                            <div class="btn btn-success pull-right">Follows</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+		<div class="modal" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content pad-15 modal-admin">
+                    <img id="imgToShow"/>
+                </div>
+            </div>
+        </div>
+
+
+
+		<div id="scrollUp" style="height:50px;width:50px;border-radius:100%;background-color:#aaa;color:white;position:fixed;bottom:50px;right:50px;cursor:pointer">
+			<p style="text-align:center;line-height:25px;margin-top:12px;"><i class="material-icons" style="font-size:28px;">keyboard_arrow_up</i></p>
+		</div>
+
+
+        <script>
+            $('#profile-picture').hover(
+                function(){
+                    $('#upload-overlay').show(400);
+                },
+                function(){
+                    $('#upload-overlay').hide(400);
+            })
+
+            $('#user-information h4.underline').click(function() {
+                if ($(this).find('b').text().indexOf("Follows") > -1) {
+                    $('#Modal').modal('show');
+                }
+                else {
+                    $('#Modal').modal('show');
+                }
+            })
+
+			function scrollToAnchor(aid, callback) {
+    			var aTag = $("a[name='"+ aid +"']");
+    			$('html,body').animate({scrollTop: aTag.offset().top}, 'slow', callback());
+			}
+
+			$('#scrollUp').click(function() {
+				$('html, body').animate({scrollTop: 0}, 'slow');
+			});
+
+			$('.custom-user-menu div').click(function() {
+				var loc = document.location.toString().split('#')[0];
+				var where = $(this).attr('goto');
+				scrollToAnchor(where, function () {
+					$("a[name='"+ where +"']").parent().find('.caption')
+					.animate({"backgroundColor":"#000","color":"#fff"}, 500, function() {
+						$(this).animate({"backgroundColor":"#fff","color":"#000"}, 1000)
+					});
+				});
+
+  				return false;
+			});
+
+			var USER_MENU = $('.custom-user-menu');
+			var USER_MENU_POSITION_Y = $(USER_MENU).offset().top;
+
+			$(document).on('scroll',function (e) {
+
+				if (e.target.scrollingElement.scrollTop + 5 > USER_MENU_POSITION_Y) {
+					$(USER_MENU).css({position : "fixed", zIndex : 5000, width: "inherit" ,top:0 , "margin-top" : 0})
+				} else {
+					$(USER_MENU).css({position : "relative",top : "0", width: "auto", zIndex : 0, "margin-top" : 0})
+				}
+			})
+
+			$('#photos img').click(function () {
+				$('#photoModal').find('#imgToShow').attr('src',$(this).attr('src'));
+				$('#photoModal').modal('show')
+			});
+
+
+        </script>
+    </body>
+</html>

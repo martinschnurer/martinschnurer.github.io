@@ -1,0 +1,53 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	background-color: #eee;
+	margin:0px;
+	padding: 0px;
+}
+
+body *{
+	display: inline-block;
+}
+
+.row {
+	width: 100%;
+}
+
+@media screen and (max-width: 699px) and (min-width: 20px) {
+    .container {
+    	width: 100%;
+    }
+}
+
+.square {
+	position:relative;
+	text-align: center;
+	
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+
+}
+
+.square:active {
+	background-color: white
+}
+
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.mainTable {
+	width : 100%;
+}
