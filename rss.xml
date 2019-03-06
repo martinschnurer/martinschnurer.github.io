@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Very boring blog]]></title><description><![CDATA[.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 06 Mar 2019 08:24:08 GMT</lastBuildDate><item><title><![CDATA[Easy and effective way of managing expenses]]></title><description><![CDATA[Motivation If you are not interested in the story about my unsuccessful start with the app,  JUMP As a student, self-financing person I have…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//ridiculous-expense-app/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//ridiculous-expense-app/</guid><pubDate>Fri, 01 Mar 2019 13:43:00 GMT</pubDate><content:encoded>&lt;h1&gt;Motivation&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Very boring blog]]></title><description><![CDATA[.]]></description><link>https://gatsby-starter-blog-demo.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 06 Mar 2019 11:11:58 GMT</lastBuildDate><item><title><![CDATA[Simple and effective way of tracking expenses]]></title><description><![CDATA[Motivation If you are not interested in the story about my unsuccessful start with the app,  JUMP As a student, self-financing person I have…]]></description><link>https://gatsby-starter-blog-demo.netlify.com//ridiculous-expense-app/</link><guid isPermaLink="false">https://gatsby-starter-blog-demo.netlify.com//ridiculous-expense-app/</guid><pubDate>Fri, 01 Mar 2019 13:43:00 GMT</pubDate><content:encoded>&lt;h1&gt;Motivation&lt;/h1&gt;
 &lt;p&gt;If you are not interested in the story about my unsuccessful start with the app, &lt;a href=&quot;#md-ridiculous-expense-start&quot;&gt;JUMP&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As a student, self-financing person I have a lot of places where I spending
 money, I did want some easy way to control better my expenses. &lt;/p&gt;
@@ -50,11 +50,11 @@ exist and who won’t use what I would create.&lt;/p&gt;
 &lt;p&gt;I don’t know where it came from, but I get the idea I will tracking my expenses
 with Google Forms and Google Sheet. I have set up a new form, added form questions
 necessary for tracking expense such as value, category, tags. You can even request
-to upload photo (for example book of receipts). some&lt;/p&gt;
+to upload photo (for example book of receipts).&lt;/p&gt;
 &lt;p&gt;Go to &lt;a href=&quot;https://docs.google.com/forms&quot;&gt;https://docs.google.com/forms&lt;/a&gt;.
 If you are paranoid about google tracking you and your data, I have bad
-news for you - this article and way is not suitable for you :(
-If you haven’t account on google/gmail - sign in, and then go to the link
+news for you - this way of tracking expenses is not suitable for you :(
+If you don’t have an account on google/gmail - sign up, and then go to the link
 above.&lt;/p&gt;
 &lt;p&gt;First step is simple. Create a new form. Don’t forget to give your new form
 some really nice name.&lt;/p&gt;
@@ -95,8 +95,8 @@ some really nice name.&lt;/p&gt;
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;Now you should see your blank form. On the right side you have small menu panel with
-a few options. You need only first menu option - &lt;em&gt;Add question&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Now you should see your blank form. On the right side you have small menu
+panel with a few options. You need only first menu option - &lt;em&gt;Add question&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
@@ -134,13 +134,14 @@ a few options. You need only first menu option - &lt;em&gt;Add question&lt;/em&g
   
   &lt;/a&gt;
     &lt;/p&gt;
-&lt;p&gt;Now, what you add is really up to you but you can inspire by my question setup.&lt;/p&gt;
+&lt;p&gt;Now, what you add is really up to you but you can inspire and use
+the same question set as I’m using.&lt;/p&gt;
 &lt;p&gt;Step 1. - &lt;em&gt;Expense value&lt;/em&gt; question asks you simple thing - how much money
 did you spend. We set up question as ”&lt;em&gt;short answer&lt;/em&gt;”.
 Next below the input you’ve got some options. One of them is to set your
 question as &lt;strong&gt;required&lt;/strong&gt;. You always want to force yourself to fill up this
 value, so it is pretty nice to validate if you actually fill this input. On the
-right from the “required” option you have three dots option. Click on that icon
+right to the “required” option you have three dots option. Click on that icon
 and select &lt;em&gt;Response validation&lt;/em&gt;. Now next options popped up. You want to
 choose validation by &lt;em&gt;Regular expression&lt;/em&gt;, where value &lt;strong&gt;matches&lt;/strong&gt; the
 expression &lt;code class=&quot;language-text&quot;&gt;^[\d]+(,[\d]+)?$&lt;/code&gt; and when value doesn’t match specified
@@ -612,7 +613,9 @@ Step 4. - Click the share icon in the middle of Safari menu &lt;/p&gt;
   &lt;/a&gt;
     &lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Step 5. - Find Add to homescreen&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&quot;center-image width-small&quot;&gt;
 &lt;p&gt;
   &lt;a
@@ -649,7 +652,9 @@ Step 4. - Click the share icon in the middle of Safari menu &lt;/p&gt;
   &lt;/a&gt;
     &lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Swipe and find &lt;em&gt;Add to Home Screen&lt;/em&gt; option.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&quot;center-image width-small&quot;&gt;
 &lt;p&gt;
   &lt;a
@@ -686,7 +691,9 @@ Step 4. - Click the share icon in the middle of Safari menu &lt;/p&gt;
   &lt;/a&gt;
     &lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Step 6. - Give your “App” a short name - this name is show under the app.&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&quot;center-image width-small&quot;&gt;
 &lt;p&gt;
   &lt;a
@@ -723,7 +730,9 @@ Step 4. - Click the share icon in the middle of Safari menu &lt;/p&gt;
   &lt;/a&gt;
     &lt;/p&gt;
 &lt;/div&gt;
+&lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Step 7 - Finish, your link to the app is added to the Home Screen&lt;/p&gt;
+&lt;/div&gt;
 &lt;div class=&quot;center-image width-small&quot;&gt;
 &lt;p&gt;
   &lt;a
