@@ -1,4 +1,189 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Very boring blog]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>RSS for Node</generator><lastBuildDate>Thu, 07 Mar 2019 15:53:52 GMT</lastBuildDate><item><title><![CDATA[Simple and effective way of tracking expenses]]></title><description><![CDATA[Motivation If you are not interested in the story about my unsuccessful start with the app,  JUMP As a student, self-financing person I have…]]></description><link>https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</link><guid isPermaLink="false">https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</guid><pubDate>Fri, 01 Mar 2019 13:43:00 GMT</pubDate><content:encoded>&lt;h1&gt;Motivation&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>RSS for Node</generator><lastBuildDate>Mon, 25 Mar 2019 23:25:30 GMT</lastBuildDate><item><title><![CDATA[Making stats from your gathered expenses data]]></title><description><![CDATA[In 
+ part one 
+I showed you how to create a simple way to track your expenses.  In this part I am going to show you how you can make some…]]></description><link>https://martinschnurer.net/creating-statistics-from-your-expenses-data/</link><guid isPermaLink="false">https://martinschnurer.net/creating-statistics-from-your-expenses-data/</guid><pubDate>Fri, 08 Mar 2019 20:26:00 GMT</pubDate><content:encoded>&lt;p&gt;In
+&lt;a href=&quot;/simple-and-effective-way-of-tracking-expenses&quot;&gt;part one&lt;/a&gt;
+I showed you how to create a simple way to track your expenses. &lt;/p&gt;
+&lt;p&gt;In this part I am going to show you how you can make some sexi, beautiful and useful charts.
+One of the chart we would like to see is how much money we spent on a given categories
+(present in the form - transport, free time, restaurants etc.)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Table of content:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#simple_chart&quot;&gt;Simple chart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#advanced_chart&quot;&gt;Queried chart (Advanced)&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#aggregation&quot;&gt;Aggregation explanation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#another_types&quot;&gt;List of possible queries and charts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#conclusion&quot;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&amp;#x26;ixid=eyJhcHBfaWQiOjEyMDd9&amp;#x26;auto=format&amp;#x26;fit=crop&amp;#x26;w=1655&amp;#x26;q=80&quot; alt=&quot;stastistic man&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;simple_chart&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Simple chart (barchart)&lt;/h1&gt;
+&lt;p&gt;If you haven’t created your response sheet yet, I highly recommend to read the &lt;a href=&quot;/simple-and-effective-way-of-tracking-expenses&quot;&gt;first part&lt;/a&gt;.
+This sheet is generated through &lt;em&gt;Forms responses&lt;/em&gt; section. However, if you have another source of data imported to the sheet, you can skip the first part.
+Open your sheet file and insert a blank chart. Next you have to choose the type of the chart.
+For this type of data we choose &lt;em&gt;Pie chart&lt;/em&gt; to see simply proportions where your money goes the most time.&lt;/p&gt;
+&lt;p&gt;See gif below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/choose_chart_2-16a5c9aa9300fd427660cac772448602.gif&quot; alt=&quot;choosing chart&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now choose the data ranges. Labels and values. First you need to specify data range. In this case, you need to choose
+two columns, &lt;em&gt;B&lt;/em&gt; to the end - which is value, and &lt;em&gt;D&lt;/em&gt; which is type -&gt; label. We set the B2:B100 to cover 100 next data rows in the table, and D2:D100. We also aggregate all values by value D. Aggregation is the sum of the values by the same label naming. In this case, you can see that &lt;em&gt;Transportation&lt;/em&gt; in the Pie diagram will be summed up. For next types of charts and views you gonna need some more information about aggregation - read further.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/input_data_1-62b738791380c61e92a31d0aa14639fb.gif&quot; alt=&quot;choose data&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;advanced_chart&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Advanced types of charts&lt;/h1&gt;
+&lt;p&gt;Let’s say you want to know how much money you spent in the given month or year. For this type of data we choose another approach. Google Sheet allow write QUERY for some range of data. QUERY is very similar to the SQL.
+If you have never heard about SQL, please google it.
+Basically it is query language to get, update or delete some data. In this case, however we are going to select (get) data. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: Google Sheet QUERY doesn’t have “FROM” clause.&lt;/p&gt;
+&lt;p&gt;For more information see &lt;a href=&quot;https://support.google.com/docs/answer/3093343?hl=en&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To see syntax of Google Sheet Query Language see &lt;a href=&quot;https://developers.google.com/chart/interactive/docs/querylanguage&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;=QUERY(
+   data,
+   query,
+   headers
+)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;data&lt;/em&gt; [Range]: Range of your data from sheet where the query will operate on.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;query&lt;/em&gt; [String]: Your query&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;headers&lt;/em&gt; [Number]: Optional, the number of rows under the actual row where the function inserts the result of your query &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are programmer, from now you probably know how to continue further. If you are normal person, you have probably no clue what I am talking about. You can ask, why I am explaining things about query function. Well, that’s because we need to transform the data a little bit. Let’s say we want to know how much money you spent over last months, or how money items (transaction) have you done through past months. Now you can’t just select some columns, create chart and you done - you are not done (like in the section described above), because you don’t have right data to create this type of charts.&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;aggregation&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Aggregation&lt;/h2&gt;
+&lt;p&gt;Imagine aggregation as throwing items to the buckets. Every bucket has a label (or name) and it’s inner value. When you make aggregation, you also &lt;strong&gt;&lt;em&gt;grouping&lt;/em&gt;&lt;/strong&gt; your data with some function. The most popular aggregation functions are &lt;em&gt;SUM&lt;/em&gt;, &lt;em&gt;COUNT&lt;/em&gt;, &lt;em&gt;AVG&lt;/em&gt;, &lt;em&gt;MAX&lt;/em&gt;, &lt;em&gt;MIN&lt;/em&gt;. When you throw an item to the bucket, the aggregation function is used on the item in the context of bucket where the item was assigned/thrown. Name of the function should actually tell you what it is supposed to do. If not, look at the reference &lt;a href=&quot;https://developers.google.com/chart/interactive/docs/querylanguage#aggregation-functions&quot;&gt;here&lt;/a&gt;. Then, you iterate over your specified data and search for &lt;strong&gt;specific value&lt;/strong&gt;. If this value is the naming of your bucket, throw this iterated row into the bucket. In real-world example, the &lt;strong&gt;specific value&lt;/strong&gt; is &lt;code class=&quot;language-text&quot;&gt;SELECT name GROUP BY specific_value&lt;/code&gt;. Now if you find next row with the same value you throw it to the same bucket again. Okay, now you finished iterating over the rows and you have bunch of buckets with a rows in it. &lt;/p&gt;
+&lt;p&gt;Let’s say you have a car shop. You sell several brands of cars (Toyota, BMW, …). You’ve got records of your sold cars - time, car brand, and the price you have sold the car. Now you want to know the total count of every sold brand.&lt;/p&gt;
+&lt;p&gt;Like so:
+Toyota - 15 cars, BMW - 8 cars, …&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;brand&lt;/th&gt;
+&lt;th&gt;count&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Toyota&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BMW&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The query for these type of problem would look like this:&lt;/p&gt;
+&lt;p&gt;SELECT brand, COUNT(*) FROM database GROUP BY brand&lt;/p&gt;
+&lt;p&gt;Or you want total money purchased for the sold cars - you can do it because you saved the price in your database.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;brand&lt;/th&gt;
+&lt;th&gt;sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Toyota&lt;/td&gt;
+&lt;td&gt;89325&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BMW&lt;/td&gt;
+&lt;td&gt;124140&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The query would look like this&lt;/p&gt;
+&lt;p&gt;SELECT brand, SUM(*) FROM database GROUP BY brand&lt;/p&gt;
+&lt;p&gt;If you look closer, only aggregation function changed from the previous query. Because bucket throwing mechanism remains the same, the final aggregation function is different.&lt;/p&gt;
+&lt;div class=&quot;warning&quot;&gt;
+Warning: This bucket mechanism I am describing here function as a small help for you to better imagine what is going on.
+RDBMS systems don&apos;t do that like this, they do a lot of optimizations and make things as they iterate over the rows and so on.
+&lt;/div&gt;
+&lt;p&gt;If you still have problems with understanding aggregation, see this &lt;a href=&quot;https://www.tutorialspoint.com/sql/sql-group-by.htm&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;You need another column&lt;/h1&gt;
+&lt;p&gt;I told you we are going to calculate our expenses over the past months so I suppose you imagine the result table (from which we create our final chart) somehow like this:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Month&lt;/th&gt;
+&lt;th&gt;Sum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Jan 2018&lt;/td&gt;
+&lt;td&gt;150&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Feb 2018&lt;/td&gt;
+&lt;td&gt;370&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mar 2018&lt;/td&gt;
+&lt;td&gt;210&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;…&lt;/td&gt;
+&lt;td&gt;…&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Now we are running into a few problems:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;We don’t have function, which returns format of the date like shown in the table above. (Now we have date like this = 03/03/2019 19:32:16)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Solution: We can extract &lt;em&gt;Month&lt;/em&gt; and &lt;em&gt;Year&lt;/em&gt; from that field.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Another problem is we don’t have name of that extracted month, but rather number of month from the beginning of the year.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Solution: See below&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There is no function for which returns you the name of the month based on a number. The solution is you define month names by yourself then you can reference to this namings with some value. So what you do is extract number of month from date and then look for the cell on the specified index (specified by month value).&lt;/p&gt;
+&lt;p&gt;For example “2018-07-14T15:00:00.00Z”. Extracted month value would by 7. Then you feed this number to your function and get 7th row in which we have &lt;em&gt;Jul&lt;/em&gt;. Now the &lt;em&gt;INDEX&lt;/em&gt; function helps - you select column of your defined month names.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/naming_columns-7fcb31de91b272a95192e248709f1394.gif&quot; alt=&quot;renaming month&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Note: &lt;em&gt;$&lt;/em&gt; sign before column and row is useful when you apply your formula on the other rows and you don’t want another formula values/ranges to slide - our defined month names are rock static and don’t slide :).&lt;/p&gt;
+&lt;p&gt;For the consistency I would create another sheet named &lt;em&gt;Constants&lt;/em&gt; and move the month namings there. If you didn’t know you can refer to the data in another sheets (bottom panel).&lt;/p&gt;
+&lt;p&gt;The next step is to extract the Year from the timestamp.
+&lt;code class=&quot;language-text&quot;&gt;=YEAR(A1)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now we have two more columns with month name and year. Now we want to concatenate these two values into
+one column.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: We could do the whole process within one formula, but for the sake of simplicity I chose this approach.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In the third column, write&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;=CONCAT(CONCAT(month_cell;&amp;quot; &amp;quot;); year_cell)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;replace “month_cell” and “year_cell” with your cells and slide the formula down to all rows.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/concatenating_month_year-80012045e89e62c70689cefa07a35a30.gif&quot; alt=&quot;concatenating month and year&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cool! now we have our label completed (bucket name for aggregation) and value (expense) in the second column. Time to make our first query&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Select the cell where you write a query. After execution of the function, this cell will be top left corner of your new table (after query). For this time, you can select the sheet where you have your raw data but I highly recommend to not mix raw data, constants and charts into one sheet. First argument of the &lt;em&gt;QUERY&lt;/em&gt; function is range of data which the query will operate on. In this case you want to select all columns from start to the end (end column is the column with concatenated month name and year). &lt;/p&gt;
+&lt;p&gt;The next argument is query. This is the most tricky part, as the query will aggregate your data, it knows nothing about how the result rows should be ordered - and you want your result rows nicely sorted (Jan 2018, Feb 2018, Mar 2018 …). &lt;/p&gt;
+&lt;p&gt;query = &lt;strong&gt;SELECT I, SUM(B), MIN(A) GROUP BY I ORDER BY MIN(A)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Breath in, breath out. This query will do the work. First we selected &lt;em&gt;Column I&lt;/em&gt; where is our “Mar 2018” values saved. The next is &lt;em&gt;SUM(B)&lt;/em&gt;, this is aggregation function over grouped bucket (same month). The next selected column is &lt;em&gt;MIN(A)&lt;/em&gt;, this is tricky one - we want to select “some” datetime value from the bucket (month). But we need to tell the query which one row to choose (as soon as the query doesn’t know) - this value tells us how we have to sort the result set. &lt;em&gt;GROUP BY&lt;/em&gt; is basically bucketing - it groups all rows into group with the same value I. So every row inside group has the same value. &lt;em&gt;ORDER BY MIN(A)&lt;/em&gt; is ordering function - it orders the final result of the query by &lt;em&gt;MIN(A)&lt;/em&gt; which is minimum date in every group. &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/creating_query_2-3d7b182d52d881e21160693e3edb8c2a.gif&quot; alt=&quot;creating a query&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Final step, show me the chart!&lt;/h2&gt;
+&lt;p&gt;Okay. Now you can choose your chart (barchart), select ranges from result query and you got it.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/chart_from_query-54586bef28250352066c4e160937d728.gif&quot; alt=&quot;creating a chart&quot;&gt;&lt;/p&gt;
+&lt;p&gt;And you got it. Your last months and expenses for these months :). I believe from now on you can play with these tools a little bit, customize the charts for your needs. In next section I am going to name some other types of queries you should consider to implement ;)&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;another_types&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Another types of charts and views&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Show hours of a day and sum of your money spent in the hour.&lt;/li&gt;
+&lt;li&gt;Show hours of a day and count of transactions in the hour.&lt;/li&gt;
+&lt;li&gt;Show me week (throughout whole dataset) and show me the days in a week and how much did you spend.&lt;/li&gt;
+&lt;li&gt;Show me week, days in a week and count of transactions.&lt;/li&gt;
+&lt;li&gt;Weeks in a year…(1..52)&lt;/li&gt;
+&lt;li&gt;Days in a month (1..31)&lt;/li&gt;
+&lt;li&gt;… You are creative, you can create one by yourself.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a name=&quot;conclusion&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I showed you how to make simple and advanced view and how to query your data. If you have any question, please comment below! If you see any imperfection (Nobody is perfect), please let me know in the comments and I can edit the text later - I give you credit :)&lt;/p&gt;
+&lt;p&gt;The Google Sheet has thousands of functions, a lot of which I haven’t even used yet - try to play around a little bit and have fun! Thank you for being here.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Simple and effective way of tracking expenses]]></title><description><![CDATA[Motivation If you are not interested in the story about my unsuccessful start with the app,  JUMP As a student, self-financing person I have…]]></description><link>https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</link><guid isPermaLink="false">https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</guid><pubDate>Fri, 01 Mar 2019 13:43:00 GMT</pubDate><content:encoded>&lt;h1&gt;Motivation&lt;/h1&gt;
 &lt;p&gt;If you are not interested in the story about my unsuccessful start with the app, &lt;a href=&quot;#md-ridiculous-expense-start&quot;&gt;JUMP&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As a student, self-financing person I have a lot of places where I spending
 money, I did want some easy way to control better my expenses. &lt;/p&gt;
