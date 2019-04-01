@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>RSS for Node</generator><lastBuildDate>Thu, 28 Mar 2019 20:20:31 GMT</lastBuildDate><item><title><![CDATA[Using reselect at React Class Components]]></title><description><![CDATA[Today at the work, I had a little trouble with refactoring our class components. The problem was our react frontend application was…]]></description><link>https://martinschnurer.net/using-reselect-at-react-class-components/</link><guid isPermaLink="false">https://martinschnurer.net/using-reselect-at-react-class-components/</guid><pubDate>Wed, 27 Mar 2019 21:08:00 GMT</pubDate><content:encoded>&lt;p&gt;Today at the work, I had a little trouble with refactoring our class components. The problem was our react frontend application was unresponsive and lags on user input. Too many key-downs and an input started to filling a few seconds later after user stopped typing. Horrible experience - as for programmer, as for user. I tracked the app with Chrome DevTools. Some of our components were rerendered, but the data change was not intended for these components - so they shouldn’t be rerendered right ? Rerenders happen, when store changes - and store changes when we update input (and we have a lot of inputs). &lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>RSS for Node</generator><lastBuildDate>Mon, 01 Apr 2019 18:04:11 GMT</lastBuildDate><item><title><![CDATA[My don't know list for 2019]]></title><description><![CDATA[BTW, I am 23 years old, will be 24 in July 2019.  Let me share with you the list of what I don’t know yet. Life: Flat tire - If I had any…]]></description><link>https://martinschnurer.net/my-list-of-dont-knows/</link><guid isPermaLink="false">https://martinschnurer.net/my-list-of-dont-knows/</guid><pubDate>Thu, 28 Mar 2019 21:54:00 GMT</pubDate><content:encoded>&lt;p&gt;BTW, I am 23 years old, will be 24 in July 2019. &lt;/p&gt;
+&lt;p&gt;Let me share with you the list of what I don’t know yet.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Life:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Flat tire - If I had any, my dad repair. Always look at it, have never learned properly.&lt;/li&gt;
+&lt;li&gt;German language - I am learning since my high school. After the high school I had a pause. Now learning at Duolingo and I am in 84 days strike! It goes slowly, but steady. But still don’t have confidence to announce “I know speak german”.&lt;/li&gt;
+&lt;li&gt;English language - surprisingly I think I am not a good english writer/speaker. I can understand 99% spoken things in YouTube videos, read articles and so on. But when I have to create, speak - it’s a little bit clunky. My thoughts explanation is sometimes really pointlessly hard to read/listen. I don’t know a lot of phrasses, don’t know grammar - I guess a lot.&lt;/li&gt;
+&lt;li&gt;Life direction - I really don’t know where I end up in 5 years.&lt;/li&gt;
+&lt;li&gt;Build my own ebike - I really don’t know how, but I want to.&lt;/li&gt;
+&lt;li&gt;I still don’t know how it is possible that China is able to send a small product with at almost no shipping cost to the other side of the world. In my country, local postal service is quite expensive, despite the fact that China is sending their products almost at no shipping price.&lt;/li&gt;
+&lt;li&gt;Still don’t know if global warming is conspiracy or not.&lt;/li&gt;
+&lt;li&gt;Still don’t know if the Earth is round or flat. (Okay, this one is a joke)&lt;/li&gt;
+&lt;li&gt;Don’t know what exactly happened in Syria a few years ago.&lt;/li&gt;
+&lt;li&gt;Still don’t know how exactly has 2008 financial crysis happened. I know some information about it, but I don’t have details. I heard something about Lehman Brothers, Ireland or Island? &lt;/li&gt;
+&lt;li&gt;Still don’t know who the hell sets the live values at stocks.&lt;/li&gt;
+&lt;li&gt;Don’t understand bitcoin, I’ve got only shallow information about it, don’t know details.&lt;/li&gt;
+&lt;li&gt;Don’t know if there is the god or not :)&lt;/li&gt;
+&lt;li&gt;Don’t know how to make a cream from milk (for cappuccino).&lt;/li&gt;
+&lt;li&gt;Don’t know how to politely and properly communicate with people.&lt;/li&gt;
+&lt;li&gt;Don’t know how to live for more than 3 days without coffee.&lt;/li&gt;
+&lt;li&gt;Don’t know front wheelie on a bike.&lt;/li&gt;
+&lt;li&gt;Don’t know how e-shops work. How they send all the goods, how is the whole infrastructure made etc.&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;IT:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Have never tried: Any mobile development, no kotlin, no android, no iOS - once I compiled react-native hello world with Expo - nothing else.&lt;/li&gt;
+&lt;li&gt;Rust - tried it, but failed. I couldn’t solve compiler errors. Quite difficult from the begining.&lt;/li&gt;
+&lt;li&gt;Go - I tried a little of code. Would like to have a look for that, it could be useful at microservices.&lt;/li&gt;
+&lt;li&gt;95% AWS - Machine learning part, mobile development part… etc. It is easier to say what I know, rather than what I don’t know from AWS: I worked with Lambda, EC2, S3 and api-gateway - even these parts are not mastered at full.&lt;/li&gt;
+&lt;li&gt;Ruby - I once needed that for installing Jekyll. Never tried Ruby. Never tried Ruby on Rails.&lt;/li&gt;
+&lt;li&gt;Cassandra - I had a project at the school. Purpose was to find architectonic and design patterns in a code. But had never run cassandra. I don’t how to properly set up, how to manage clusters, nodes, how to make queries to db, how is transaction made. &lt;/li&gt;
+&lt;li&gt;ElasticSearch - Completely failed. I tried making queries, searching. Docs for me personally were confusing. I have frequently run out of memory. I was frustrated, uninstalled it and never looked back.&lt;/li&gt;
+&lt;li&gt;Electron - still don’t know how it works. Don’t know how to create hello-world app. Haven’t tried even once.&lt;/li&gt;
+&lt;li&gt;oAuth - I tried a few times, I did it somehow. But can’t say if it is save and properly settuped by the standard. I also don’t know how to implement login with Facebook, Twitter or any other third party session.&lt;/li&gt;
+&lt;li&gt;Payments - I know there is stripe and brainTree, but have never implemented something like this. Don’t know how it works, but looking forward to learn that one day.&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Using reselect at React Class Components]]></title><description><![CDATA[Today at the work, I had a little trouble with refactoring our class components. The problem was our react frontend application was…]]></description><link>https://martinschnurer.net/using-reselect-at-react-class-components/</link><guid isPermaLink="false">https://martinschnurer.net/using-reselect-at-react-class-components/</guid><pubDate>Wed, 27 Mar 2019 21:08:00 GMT</pubDate><content:encoded>&lt;p&gt;Today at the work, I had a little trouble with refactoring our class components. The problem was our react frontend application was unresponsive and lags on user input. Too many key-downs and an input started to filling a few seconds later after user stopped typing. Horrible experience - as for programmer, as for user. I tracked the app with Chrome DevTools. Some of our components were rerendered, but the data change was not intended for these components - so they shouldn’t be rerendered right ? Rerenders happen, when store changes - and store changes when we update input (and we have a lot of inputs). &lt;/p&gt;
 &lt;p&gt;Our main view looks something like this:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber 0&quot; class=&quot;language-jsx line-numbers&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Panel&lt;/span&gt; exntends PureComponent &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    
@@ -431,13 +467,12 @@ one column.&lt;/p&gt;
 &lt;p&gt;&lt;a name=&quot;conclusion&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;I showed you how to make simple and advanced view and how to query your data. If you have any question, please comment below! If you see any imperfection (Nobody is perfect), please let me know in the comments and I can edit the text later - I give you credit :)&lt;/p&gt;
-&lt;p&gt;The Google Sheet has thousands of functions, a lot of which I haven’t even used yet - try to play around a little bit and have fun! Thank you for being here.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Simple and effective way of tracking expenses]]></title><description><![CDATA[Motivation If you are not interested in the story about my unsuccessful start with the app,  JUMP As a student, self-financing person I have…]]></description><link>https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</link><guid isPermaLink="false">https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</guid><pubDate>Fri, 01 Mar 2019 13:43:00 GMT</pubDate><content:encoded>&lt;h1&gt;Motivation&lt;/h1&gt;
-&lt;p&gt;If you are not interested in the story about my unsuccessful start with the app, &lt;a href=&quot;#md-ridiculous-expense-start&quot;&gt;JUMP&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As a student, self-financing person I have a lot of places where I spending
-money, I did want some easy way to control better my expenses. &lt;/p&gt;
+&lt;p&gt;The Google Sheet has thousands of functions, a lot of which I haven’t even used yet - try to play around a little bit and have fun! Thank you for being here.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Simple and effective way of tracking expenses]]></title><description><![CDATA[Motivation If you are not interested in the story about my unsuccessful start jump  here As a student, self-financing person I had a lot of…]]></description><link>https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</link><guid isPermaLink="false">https://martinschnurer.net/simple-and-effective-way-of-tracking-expenses/</guid><pubDate>Fri, 01 Mar 2019 13:43:00 GMT</pubDate><content:encoded>&lt;h1&gt;Motivation&lt;/h1&gt;
+&lt;p&gt;If you are not interested in the story about my unsuccessful start jump &lt;a href=&quot;#md-ridiculous-expense-start&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As a student, self-financing person I had a lot of ways where my money were dancing out of my pocket. I did want some easy way to better control my expenses. &lt;/p&gt;
 &lt;h1&gt;First Thoughts&lt;/h1&gt;
-&lt;p&gt;First of all, as a programmer my first idea was to create an easy app just for
-writing down and saving expenses. Problem was, I don’t know how to create
+&lt;p&gt;First of all, as a programmer my first idea was to code an app just for
+writing down and saving expenses. Problem was I didn’t know how to create
 android/iOS applications and in past I had only experience with creating
 web applications.
 Loading web page and interacting with the web app inside a mobile
@@ -456,14 +491,16 @@ setupped docker for the easy database access.&lt;/p&gt;
 customization of charts, notifications, progress tracking, saving money
 strategy, tags for expenses etc.&lt;/p&gt;
 &lt;p&gt;Great start!&lt;/p&gt;
+&lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1541591708423-9001fe827349?ixlib=rb-1.2.1&amp;#x26;ixid=eyJhcHBfaWQiOjEyMDd9&amp;#x26;auto=format&amp;#x26;fit=crop&amp;#x26;w=800&amp;#x26;q=60&quot; alt=&quot;mobile phone&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;h1&gt;When you got the idea, there is a high chance someone implemented it already&lt;/h1&gt;
-&lt;p&gt;You know, my first intention was to easily and efficiently
-write down my expenses. As the ideas popped out, my mind focused on
+&lt;p&gt;My first intention was to easily and efficiently
+write down my expenses. As the ideas popped out my mind focused on
 accomplishing these little things for the app - fast app, great design, user
 experience, customization. &lt;/p&gt;
 &lt;p&gt;I knew there must be some finance app already implemented. I searched for these apps
-and I soon realized, there are thousands of these apps. I checked for a few of them
+and I soon realized there are thousands of these apps. I checked for a few of them
 and was crushed of their look and functionality. They also came with the
 solutions on a problems I didn’t even realize can occur (for example currency and
 periodical income). I was quite demotivated, as there were another apps (and
@@ -473,33 +510,25 @@ it had no really logical reason to do.&lt;/p&gt;
 and implemented a lot of features I was planning to add to my “app”.&lt;/p&gt;
 &lt;p&gt;&lt;a id=&quot;md-ridiculous-expense-start&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Back to the beginning&lt;/h1&gt;
-&lt;p&gt;My purpose was to track &lt;strong&gt;my&lt;/strong&gt; expenses. In the end, I was the person, that want
+&lt;p&gt;My purpose was to track &lt;strong&gt;my&lt;/strong&gt; expenses. In the end, I was the person that want
 to customize the charts and all the things I would probably don’t need
 at all. I was designing something for someone who doesn’t even
 exist and who won’t use what I would create.&lt;/p&gt;
 &lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;&lt;img src=&quot;https://media0.giphy.com/media/IHnROpQICe4kE/giphy.gif?cid=3640f6095c79ab2a366e45765165f017&quot; alt=&quot;simplify man&quot;&gt; &lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;I don’t know where it came from, but I get the idea I will tracking my expenses
+&lt;p&gt;I don’t know where it came from but I got the idea I will track my expenses
 with Google Forms and Google Sheet. I have set up a new form, added form questions
-necessary for tracking expense such as value, category, tags. You can even request
-to upload photo (for example book of receipts).&lt;/p&gt;
+necessary for tracking expense such as value, category, tags, description. You can even request
+to upload photo (for example your receipt from shopping).&lt;/p&gt;
 &lt;p&gt;Go to &lt;a href=&quot;https://docs.google.com/forms&quot;&gt;https://docs.google.com/forms&lt;/a&gt;.
-If you are paranoid about google tracking you and your data, I have bad
-news for you - this way of tracking expenses is not suitable for you :(
+&lt;em&gt;If you are paranoid about google tracking you and your data, I have bad
+news for you - this way of tracking expenses is not suitable for you :(&lt;/em&gt;
 If you don’t have an account on google/gmail - sign up, and then go to the link
 above.&lt;/p&gt;
 &lt;p&gt;First step is simple. Create a new form. Don’t forget to give your new form
 some really nice name.&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/3a642/s1.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -525,20 +554,10 @@ some really nice name.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Now you should see your blank form. On the right side you have small menu
 panel with a few options. You need only first menu option - &lt;em&gt;Add question&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3d68485b6e0a983998e681515c964994/3a642/s2.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -564,9 +583,7 @@ panel with a few options. You need only first menu option - &lt;em&gt;Add questi
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Now, what you add is really up to you but you can inspire and use
 the same question set as I’m using.&lt;/p&gt;
 &lt;p&gt;Step 1. - &lt;em&gt;Expense value&lt;/em&gt; question asks you simple thing - how much money
@@ -585,14 +602,6 @@ values for this questions. So it accepts digits and numbers, like 5 or 5,15. Eas
 &lt;p&gt;In validation options, there is also option &lt;em&gt;number&lt;/em&gt; validation. But it would
 accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/3a642/s3.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -618,21 +627,11 @@ accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Step 2. - Describe your item. For example “Bus tickets to NY”, “Groceries shopping”,
 “New clothes for party” etc.&lt;/p&gt;
 &lt;p&gt;This time, you just set question and short answer, nothing more.&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/fbb9747e970651416d1bff0a01963b58/3a642/s4.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -658,9 +657,7 @@ accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Step 3. - Add category to your item. Here you can add whatever you want. My
 recommendation is to sort items in list by the frequency of item usage. You want
 most frequent have always on the top. So if you are going to restaurant every day,
@@ -677,14 +674,6 @@ let &lt;em&gt;restaurant&lt;/em&gt; be at the very top of your list to make your
 &lt;li&gt;Clothing&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/067bc64edff49d5024d6a47246b3281c/3a642/s5.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -710,21 +699,11 @@ let &lt;em&gt;restaurant&lt;/em&gt; be at the very top of your list to make your
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Step 4. (Optional) - Google forms automatically remember exactly when you filled
 up the form but in case you track an expense in another date, you can manually
 fill the date (when you paid for something).&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/409ed5727a44eefb3461a5599838ce79/3a642/s6.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -750,22 +729,12 @@ fill the date (when you paid for something).&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Step 5. (Optional) - Do you want to save the photo of your receipt for some reason?
 It is possible to upload file! In this case, you want to upload photo.&lt;/p&gt;
 &lt;p&gt;At this question you can specify the file type - &lt;em&gt;Choose Image&lt;/em&gt;, let another
 settings to be as they are (as well as on the screenshot below).&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/3a642/s7.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -791,23 +760,13 @@ settings to be as they are (as well as on the screenshot below).&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;At this time you are done with the form. You can specify how much you spent,
 describe item, categorize and optionally set date when it happened and upload
 photo of your receipt.&lt;/p&gt;
-&lt;h1&gt;Let’s try if form works s!&lt;/h1&gt;
+&lt;h1&gt;Let’s Try The Form!&lt;/h1&gt;
 &lt;p&gt;Click on preview.&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e80b34d523d865dbd5a433820b52738a/3a642/s8.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -833,9 +792,7 @@ photo of your receipt.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;And now you see your form. Fill it with random values or if you remember your last
 expense, fill it and &lt;strong&gt;Submit&lt;/strong&gt; it.
 Now you should see &lt;strong&gt;1&lt;/strong&gt; at &lt;em&gt;Responses&lt;/em&gt;. It means you successfuly saved your first
@@ -843,14 +800,6 @@ expense. Congratulation.&lt;/p&gt;
 &lt;p&gt;See structured responses data in Google Sheet. Click on &lt;em&gt;Responses&lt;/em&gt;,
 and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b451a55f895ab14904475fb97e5f4585/3a642/s9.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -876,19 +825,9 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Save it to your drive with whatever name you want. Click &lt;em&gt;Create&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/3a642/s10.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -914,19 +853,9 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;And after the moment, google will redirect you on the sheet page.&lt;/p&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/3a642/s11.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -952,10 +881,12 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Wohoo! And you see your first value which you filled a moment back.&lt;/p&gt;
+&lt;div class=&quot;warning&quot;&gt;
+&lt;h4&gt;Edit and Warning&lt;/h4&gt;&lt;br/&gt;
+As I realized, there is no way to think about dot or comma in this way. There is a chance that you need to write a numbers with comma or with dot. It depends on the sheet&apos;s locale setting - which is by default set by the locale of your country (extracted from your browser settings). In my country we write numbers with comma, in your country it could be dot. If you are having trouble with this, see this &lt;a href=&quot;https://productforums.google.com/forum/#!topic/docs/I76MTzuxLKM&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt; to gather more information. There is option to convert already existing dot-locale to comma locale. So don&apos;t worry too much about it.
+&lt;/div&gt;
 &lt;p&gt;Basically, you are done. Let me explain why I previously wanted to rule the number
 to be with ”,” instead of ”.” . Google sheet doesn’t recognize the number with dot.
 When it sees dot inside the value, it switch the type of cell to &lt;em&gt;text&lt;/em&gt;. In the future,
@@ -968,14 +899,6 @@ valid values and you will be fine. &lt;/p&gt;
 &lt;p&gt;Warning: Do not give this link to anyone. The person with this link can see and submit form.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/fad2e/s12.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1001,9 +924,7 @@ valid values and you will be fine. &lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;p&gt;Step 2. - Open in your safari browser &lt;/p&gt;
 &lt;div class=&quot;warning&quot;&gt;
 &lt;p&gt;Warning: I don’t know how well is this feature supported on android phones.
@@ -1012,16 +933,8 @@ Android phones should support this feature.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;Step 3. - Open the link in your Safari browser (This one doesn’t need picture) &lt;/p&gt;
 &lt;p&gt;Step 4. - Click the share icon in the middle of Safari menu &lt;/p&gt;
-&lt;div class=&quot;center-image width-small&quot;&gt;
+&lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/db500/s13.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1044,23 +957,13 @@ Android phones should support this feature.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Step 5. - Find Add to homescreen&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;center-image width-small&quot;&gt;
+&lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/db500/s14.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1083,23 +986,13 @@ Android phones should support this feature.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Swipe and find &lt;em&gt;Add to Home Screen&lt;/em&gt; option.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;center-image width-small&quot;&gt;
+&lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/db500/s15.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1122,23 +1015,13 @@ Android phones should support this feature.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Step 6. - Give your “App” a short name - this name is show under the app.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;center-image width-small&quot;&gt;
+&lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/db500/s16.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1161,23 +1044,13 @@ Android phones should support this feature.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;text-center&quot;&gt;
 &lt;p&gt;Step 7 - Finish, your link to the app is added to the Home Screen&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;center-image width-small&quot;&gt;
+&lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/db500/s17.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1200,23 +1073,13 @@ Android phones should support this feature.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;When you click on the link, your form will be shown and you can interact.
 As soon as you pay for something, grab your phone, click on the icon, fill the form
 and submit.&lt;/p&gt;
-&lt;div class=&quot;center-image width-small&quot;&gt;
+&lt;div class=&quot;center-image width-medium&quot;&gt;
 &lt;p&gt;
-  &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/9462fa48036db73cd5baa89f3c78118c/db500/s18.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-  
   &lt;span
     class=&quot;gatsby-resp-image-wrapper&quot;
     style=&quot;position: relative; display: block;  max-width: 590px; margin-left: auto; margin-right: auto;&quot;
@@ -1239,9 +1102,7 @@ and submit.&lt;/p&gt;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
-  
-  &lt;/a&gt;
-    &lt;/p&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
 &lt;h1&gt;Conclusion&lt;/h1&gt;
 &lt;h3&gt;Advantages&lt;/h3&gt;
@@ -1263,5 +1124,4 @@ and submit.&lt;/p&gt;
 &lt;li&gt;You can’t programme your custom functionality to the app&lt;/li&gt;
 &lt;li&gt;Not so sexi at the native App.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;In the next part I will show you how to create some charts and stats for your
-accumulated data in the Google Sheet.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;Also take a look at &lt;a href=&quot;/creating-statistics-from-your-expenses-data&quot;&gt;part II.&lt;/a&gt; I will show you how I created some stats and charts for expenditures analysis. &lt;/p&gt;</content:encoded></item></channel></rss>
