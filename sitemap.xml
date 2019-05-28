@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://martinschnurer.net/rust-reference/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/so-when-is-actually-the-time-to-retire/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/my-list-of-dont-knows/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/using-reselect-at-react-class-components/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -11,5 +12,7 @@
 <url> <loc>https://martinschnurer.net/calculators/money_prediction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/calculators/realestatebus/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/calculators/stocksinvest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/grid/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/templates/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>

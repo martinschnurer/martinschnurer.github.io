@@ -1,4 +1,352 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>RSS for Node</generator><lastBuildDate>Wed, 01 May 2019 23:25:57 GMT</lastBuildDate><item><title><![CDATA[So when is actually the time to retire?]]></title><description><![CDATA[Silly question, isn’t it? Maybe the answer automatically popped up in your head - I retire, when my government retirement age tells me to…]]></description><link>https://martinschnurer.net/so-when-is-actually-the-time-to-retire/</link><guid isPermaLink="false">https://martinschnurer.net/so-when-is-actually-the-time-to-retire/</guid><pubDate>Wed, 01 May 2019 23:46:00 GMT</pubDate><content:encoded>&lt;p&gt;Silly question, isn’t it? Maybe the answer automatically popped up in your head - I retire, when my government retirement age tells me to retire.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>RSS for Node</generator><lastBuildDate>Tue, 28 May 2019 21:45:03 GMT</lastBuildDate><item><title><![CDATA[Rust Reference]]></title><description><![CDATA[First I heard about Rust in the summer 2018. Since then I didn’t have much time to run into learning new stuff.
+I’m glad this is the right…]]></description><link>https://martinschnurer.net/rust-reference/</link><guid isPermaLink="false">https://martinschnurer.net/rust-reference/</guid><pubDate>Tue, 07 May 2019 11:41:00 GMT</pubDate><content:encoded>&lt;p&gt;First I heard about Rust in the summer 2018. Since then I didn’t have much time to run into learning new stuff.
+I’m glad this is the right time to look at the Rust. This is the reference for Rust language and I’ll try my best to write parts of the language as clear as possible so everyone could understand. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Disclosure&lt;/strong&gt;: This reference doesn’t cover lifetimes, threads, generics and other advanced features of the language. This is just simple reference of syntax of the language.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;List of content:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#types&quot;&gt;Types&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#conditionals&quot;&gt;Conditionals&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2.1  &lt;a href=&quot;#simple_condition&quot;&gt;Simple condition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2.2  &lt;a href=&quot;#ternary_condition&quot;&gt;Ternary condition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#loops&quot;&gt;Loops&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3.1 &lt;a href=&quot;#while&quot;&gt;While&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;3.2 &lt;a href=&quot;#forever&quot;&gt;Forever&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;3.3 &lt;a href=&quot;#array_iterating&quot;&gt;Array iterating&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#variables&quot;&gt;Variables&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4.1 &lt;a href=&quot;#declaration&quot;&gt;Declaration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;4.2 &lt;a href=&quot;#change_primitive_value&quot;&gt;Change primitive value&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#function_definition&quot;&gt;Function definition&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5.1 &lt;a href=&quot;#static_classic_function&quot;&gt;Static (classic) function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;5.2 &lt;a href=&quot;#lambda_function&quot;&gt;Lambda function&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#enums&quot;&gt;Enums&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#struct&quot;&gt;Struct&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;7.1 &lt;a href=&quot;#struct_defintion_and_usage&quot;&gt;Struct definition and usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;7.2 &lt;a href=&quot;#methods&quot;&gt;Methods&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#ownership_and_borrowing&quot;&gt;Ownership and Borrowing&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;8.1 &lt;a href=&quot;#ownership&quot;&gt;Ownership&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;8.1.1 &lt;a href=&quot;#move_ownership&quot;&gt;Move ownership&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;8.1.2 &lt;a href=&quot;#returning_ownership_back_to_the_scope&quot;&gt;Returning ownership back to the scope&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;8.2 &lt;a href=&quot;#borrowing&quot;&gt;Borrowing&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;8.2.1 &lt;a href=&quot;#immutable_borrow&quot;&gt;Immutable borrow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;8.2.2 &lt;a href=&quot;#mutable_borrow&quot;&gt;Mutable borrow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#feelings_and_conclusion&quot;&gt;Feelings and conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a name=&quot;types&quot; /&gt;
+&lt;h1&gt;1. Types&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// unsigned integers&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; unsigned_8&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u8 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// // from 0 to 255 -&gt; FORMULA: 0 to (2^n)-1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; unsigned_16&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from 0 to 65536&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; unsigned_32&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u32 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from 0 to (2^32)-1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; unsigned_64&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u64 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from 0 to (2^64)-1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; unsigned_128&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u128 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from 0 to (2^128)-1&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// signed integers&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; signed_8&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i8 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from -128 to 127 -&gt; FORMULA: -(2^(n-1)) to (2^(n-1))-1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; signed_16&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i16 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from -32 768 to 32 767&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; signed_32&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from -(2^31) to (2^31-1)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; signed_64&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i64 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from -(2^63) to (2^63-1)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; signed_128&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i128 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// from -(2^127) to (2^127-1)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// lets get real here&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; floated_32bit&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; f32 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; floated_64bit&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; f64 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// bools&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; bool &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// static string - compile time strings&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; static_string&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;str &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;hello world&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// dynamic strings&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; std_string&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Hello world&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// vectors&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; num_vec&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Vec&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;i32&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;vec!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// vec! is macro for creating Vec&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;conditionals&quot; /&gt;
+&lt;h1&gt;2. Conditionals&lt;/h1&gt;
+&lt;a name=&quot;simple_condition&quot; /&gt;
+&lt;h2&gt;2.1 Simple condition&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; age &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Okay, now you can drink alcohol&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Sorry, alcohol is for people older than 18...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;ternary_condition&quot; /&gt;
+&lt;h2&gt;2.2 Ternary condition&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; condition &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; variable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; condition &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// 1 is assigned to variable if condition is true&lt;/span&gt;
+   &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// 0 is assigned to variable if condition is false&lt;/span&gt;
+   &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;loops&quot; /&gt;
+&lt;h1&gt;3. Loops&lt;/h1&gt;
+&lt;a name=&quot;while&quot; /&gt;
+&lt;h2&gt;3.1 While&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;{}!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   number &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;forever&quot; /&gt;
+&lt;h2&gt;3.2 Forever&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;forever!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;array_iterating&quot; /&gt;
+&lt;h2&gt;3.3 Array iterating&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; element &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;iter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;the value is: {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;variables&quot; /&gt;
+&lt;h1&gt;4. Variables&lt;/h1&gt;
+&lt;a name=&quot;declaration&quot; /&gt;
+&lt;h2&gt;4.1 Declaration&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// type - immutable integer variable&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// mutable integer variable - signed mutable variable&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;change_primitive_value&quot; /&gt;
+&lt;h2&gt;4.2 Change primitive value&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// all variables without &quot;mut&quot; are immutable by default&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// if declare variables with &quot;mut&quot; identifier, you can mutate t&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// these variables&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; year &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2018&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+year &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2019&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// code below can&apos;t be mutated&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// ERROR !!!!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;function_definition&quot; /&gt;
+&lt;h1&gt;5. Function definition&lt;/h1&gt;
+&lt;a name=&quot;static_classic_function&quot; /&gt;
+&lt;h2&gt;5.1 Static (classic) function&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum_two_numbers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; i32 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// OR&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// valid returning without return statement&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// see there is no semicolon ;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum_two_numbers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; i32 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;lambda_function&quot; /&gt;
+&lt;h2&gt;5.2 Lambda function&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; increment &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; increment_by &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; increment&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;increment 5 + 5 is {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;increment_by&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// OUTPUT: increment 5 + 5 is 10&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;enums&quot; /&gt;
+&lt;h1&gt;6. Enums&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; Color &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   Transparent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;RGB&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u8&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; u8&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; u8&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;RGBA&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u8&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; u8&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; u8&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; f32&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   Brown&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   Blue&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; kinda_red &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Color&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;RGBA&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;token keyword&quot;&gt;match&lt;/span&gt; kinda_red &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      Color&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;Transparent &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;This color is transparent&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      Color&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;RGB&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;RGB color with {} red, {} green, {} blue&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      Color&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;RGBA&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;RGBA colors {},{},{} transparency = {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      _ &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Other cases: Brown or Blue&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// in other languages: Default&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// We must cover all enum cases, because compiler gonna have problem with that.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;struct&quot; /&gt;
+&lt;h1&gt;7. Struct&lt;/h1&gt;
+&lt;a name=&quot;struct_defintion_and_usage&quot; /&gt;
+&lt;h3&gt;7.1 Struct definition and usage&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   first_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   last_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u32&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   address&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; me &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      first_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Martin&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      last_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Schnurer&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      address&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Some address&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&quot;I am {} {}, I am {} years old and I live at {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      me&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;first_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+      me&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;last_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      me&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      me&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;address
+   &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;//OUTPUT: I am Martin Schnurer, I am 23 years old and I live at Some address&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;methods&quot; /&gt;
+&lt;h3&gt;7.2 Methods&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   first_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   last_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u32&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   address&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;impl&lt;/span&gt; Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;find_girlfriend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;Self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; with_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Hi I am {} {} and I am looking for a girl with name {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+               &lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;first_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;last_name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; with_name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; me &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      first_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Martin&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      last_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Schnurer&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      address&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Some address&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+   me&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;find_girlfriend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Monica&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// OUTPUT: Hi I am Martin Schnurer and I am looking for a girl with name Monica&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;ownership_and_borrowing&quot; /&gt;
+&lt;h1&gt;8. Ownership and Borrowing&lt;/h1&gt;
+&lt;a name=&quot;ownership&quot; /&gt;
+&lt;h3&gt;8.1 Ownership&lt;/h3&gt;
+&lt;a name=&quot;move_ownership&quot; /&gt;
+&lt;h4&gt;8.1.1 Move ownership&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;This person is {} years old&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; bool &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;write_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK: This person is 23 years old  (ownership passed to the write_age function)&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// write_age is out of scope and john variable will be deleted there&lt;/span&gt;
+
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john_is_adult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// COMPILATION FAIL, variable john was moved to the write_age fn&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// we can&apos;t use variable.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After the ownership (variable) is moved into another scope, you can’t use this variable in the scope. See above how
+we tried to use &lt;em&gt;john&lt;/em&gt; variable passing into &lt;em&gt;is_adult&lt;/em&gt; function - this will not compile, because we moved ownership of john to the &lt;em&gt;write_age&lt;/em&gt; function scope and after &lt;em&gt;write_age&lt;/em&gt; is done (out of scope), the content of the &lt;em&gt;john&lt;/em&gt; variable is deleted.&lt;/p&gt;
+&lt;a name=&quot;returning_ownership_back_to_the_scope&quot; /&gt;
+&lt;h4&gt;8.1.2 Returning ownership back to the scope&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;This person is {} years old&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; person &lt;span class=&quot;token comment&quot;&gt;// Now we move back the ownership from the function&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; bool &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK: This person is 23 years old  (ownership passed to the write_age function)&lt;/span&gt;
+   &lt;span class=&quot;token comment&quot;&gt;// ownership is moved back from the write_age to the john, we can use john again &lt;/span&gt;
+
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john_is_adult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;john is adult = {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; john_is_adult&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;borrowing&quot; /&gt;
+&lt;h3&gt;8.2 Borrowing&lt;/h3&gt;
+&lt;a name=&quot;immutable_borrow&quot; /&gt;
+&lt;h4&gt;8.2.1 Immutable borrow&lt;/h4&gt;
+&lt;p&gt;Passing and returning ownerships is not always best decision to do - code overhead, &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;write_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// Not returning ownership anymore&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;This person is {} years old&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; bool &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;write_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK: passing reference&lt;/span&gt;
+   
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john_is_adult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK, passing reference&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;john is adult = {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; john_is_adult&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;mutable_borrow&quot; /&gt;
+&lt;h4&gt;8.2.2 Mutable borrow&lt;/h4&gt;
+&lt;p&gt;When we want to pass a reference to another scope, we need to use &lt;strong&gt;mut&lt;/strong&gt; keyword at the reference.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;increment_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   person&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; john &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// we need to mark john as mutable as the function will mutate our passed variable&lt;/span&gt;
+   &lt;span class=&quot;token function&quot;&gt;increment_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// instead of &amp;amp;john we pass &amp;amp;mut john&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;a name=&quot;borrowing_rules&quot; /&gt;
+&lt;h1&gt;8.3 Borrowing rules&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;In the given scope, you can borrow as much immutable borrows as you want. (To observe source value)&lt;/li&gt;
+&lt;li&gt;If you create one mutable borrow, you can’t create immutable borrows in that scope. (Only one variable can change source value)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a name=&quot;feelings_and_conclusion&quot; /&gt;
+&lt;h1&gt;Feelings and conclusion&lt;/h1&gt;
+&lt;p&gt;The one reason rust convinced me to look deeper at it was the claim that we can write rust in completely &lt;u&gt;safe&lt;/u&gt; manner without garbage collection - completely dependant on the out of a scope garbage collection. I haven’t written anything serious in rust - but I had the feeling that the compiler was a real dictator here didn’t allow me easily do whatever I want - but when it does, I had a good feeling about compiled code and large amount of executions of the code was bug free and has run as expected - without panicking. &lt;/p&gt;
+&lt;p&gt;On the other side, I had serious problem to get used to traits and lifetimes. I didn’t referenced lifetimes above, because I assume them to be more difficult to learn and as I wanted to let this reference as simple as possible - I didn’t describing them here (but it doesn’t mean I won’t describe them in another post later).&lt;/p&gt;
+&lt;p&gt;In C language, you probably didn’t have a problem to easily implement linked list. Well, good luck with trying that in Rust. Linked list is pretty all about pointers and pointer checking. Rust is pretty good at controlling (&lt;em&gt;Borrow checker&lt;/em&gt;) what exactly are you doing with pointers and memory - and if you do something unsafe, it won’t compile.&lt;/p&gt;
+&lt;p&gt;I found this &lt;a href=&quot;https://rust-unofficial.github.io/too-many-lists/&quot; target=&quot;_blank&quot;&gt;article&lt;/a&gt;
+to deeply describe linked list implementation in Rust. Have fun.&lt;/p&gt;
+&lt;p&gt;If you want to read full documentation and rust reference - go
+&lt;a href=&quot;https://doc.rust-lang.org/book/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[So when is actually the time to retire?]]></title><description><![CDATA[Silly question, isn’t it? Maybe the answer automatically popped up in your head - I retire, when my government retirement age tells me to…]]></description><link>https://martinschnurer.net/so-when-is-actually-the-time-to-retire/</link><guid isPermaLink="false">https://martinschnurer.net/so-when-is-actually-the-time-to-retire/</guid><pubDate>Wed, 01 May 2019 23:46:00 GMT</pubDate><content:encoded>&lt;p&gt;Silly question, isn’t it? Maybe the answer automatically popped up in your head - I retire, when my government retirement age tells me to retire.&lt;/p&gt;
 &lt;p&gt;Though, the second deeper questions may sounds like &lt;em&gt;“Can I retire earlier than the government allow me to?”&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The answer is &lt;em&gt;Maybe&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;There are some variables in the game, which could help us with predicting the age of retiring earlier:&lt;/p&gt;
@@ -623,14 +971,13 @@ some really nice name.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;google forms&quot;
         title=&quot;&quot;
-        src=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/40fad/s1.png&quot;
-        srcset=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/707e9/s1.png 148w,
-/static/e5be2cc7f8d18282385467aac6e02d69/649e0/s1.png 295w,
-/static/e5be2cc7f8d18282385467aac6e02d69/40fad/s1.png 590w,
-/static/e5be2cc7f8d18282385467aac6e02d69/b3fef/s1.png 885w,
-/static/e5be2cc7f8d18282385467aac6e02d69/301c0/s1.png 1180w,
-/static/e5be2cc7f8d18282385467aac6e02d69/b5a53/s1.png 1770w,
-/static/e5be2cc7f8d18282385467aac6e02d69/3a642/s1.png 2560w&quot;
+        src=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/b9e4f/s1.png&quot;
+        srcset=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/cf440/s1.png 148w,
+/static/e5be2cc7f8d18282385467aac6e02d69/d2d38/s1.png 295w,
+/static/e5be2cc7f8d18282385467aac6e02d69/b9e4f/s1.png 590w,
+/static/e5be2cc7f8d18282385467aac6e02d69/f9b6a/s1.png 885w,
+/static/e5be2cc7f8d18282385467aac6e02d69/2d849/s1.png 1180w,
+/static/e5be2cc7f8d18282385467aac6e02d69/8b984/s1.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -652,14 +999,13 @@ panel with a few options. You need only first menu option - &lt;em&gt;Add questi
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;creating your google form&quot;
         title=&quot;&quot;
-        src=&quot;/static/3d68485b6e0a983998e681515c964994/40fad/s2.png&quot;
-        srcset=&quot;/static/3d68485b6e0a983998e681515c964994/707e9/s2.png 148w,
-/static/3d68485b6e0a983998e681515c964994/649e0/s2.png 295w,
-/static/3d68485b6e0a983998e681515c964994/40fad/s2.png 590w,
-/static/3d68485b6e0a983998e681515c964994/b3fef/s2.png 885w,
-/static/3d68485b6e0a983998e681515c964994/301c0/s2.png 1180w,
-/static/3d68485b6e0a983998e681515c964994/b5a53/s2.png 1770w,
-/static/3d68485b6e0a983998e681515c964994/3a642/s2.png 2560w&quot;
+        src=&quot;/static/3d68485b6e0a983998e681515c964994/b9e4f/s2.png&quot;
+        srcset=&quot;/static/3d68485b6e0a983998e681515c964994/cf440/s2.png 148w,
+/static/3d68485b6e0a983998e681515c964994/d2d38/s2.png 295w,
+/static/3d68485b6e0a983998e681515c964994/b9e4f/s2.png 590w,
+/static/3d68485b6e0a983998e681515c964994/f9b6a/s2.png 885w,
+/static/3d68485b6e0a983998e681515c964994/2d849/s2.png 1180w,
+/static/3d68485b6e0a983998e681515c964994/8b984/s2.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -696,14 +1042,13 @@ accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;creating your google form&quot;
         title=&quot;&quot;
-        src=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/40fad/s3.png&quot;
-        srcset=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/707e9/s3.png 148w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/649e0/s3.png 295w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/40fad/s3.png 590w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/b3fef/s3.png 885w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/301c0/s3.png 1180w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/b5a53/s3.png 1770w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/3a642/s3.png 2560w&quot;
+        src=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/b9e4f/s3.png&quot;
+        srcset=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/cf440/s3.png 148w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/d2d38/s3.png 295w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/b9e4f/s3.png 590w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/f9b6a/s3.png 885w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/2d849/s3.png 1180w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/8b984/s3.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -726,14 +1071,13 @@ accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;description of your item&quot;
         title=&quot;&quot;
-        src=&quot;/static/fbb9747e970651416d1bff0a01963b58/40fad/s4.png&quot;
-        srcset=&quot;/static/fbb9747e970651416d1bff0a01963b58/707e9/s4.png 148w,
-/static/fbb9747e970651416d1bff0a01963b58/649e0/s4.png 295w,
-/static/fbb9747e970651416d1bff0a01963b58/40fad/s4.png 590w,
-/static/fbb9747e970651416d1bff0a01963b58/b3fef/s4.png 885w,
-/static/fbb9747e970651416d1bff0a01963b58/301c0/s4.png 1180w,
-/static/fbb9747e970651416d1bff0a01963b58/b5a53/s4.png 1770w,
-/static/fbb9747e970651416d1bff0a01963b58/3a642/s4.png 2560w&quot;
+        src=&quot;/static/fbb9747e970651416d1bff0a01963b58/b9e4f/s4.png&quot;
+        srcset=&quot;/static/fbb9747e970651416d1bff0a01963b58/cf440/s4.png 148w,
+/static/fbb9747e970651416d1bff0a01963b58/d2d38/s4.png 295w,
+/static/fbb9747e970651416d1bff0a01963b58/b9e4f/s4.png 590w,
+/static/fbb9747e970651416d1bff0a01963b58/f9b6a/s4.png 885w,
+/static/fbb9747e970651416d1bff0a01963b58/2d849/s4.png 1180w,
+/static/fbb9747e970651416d1bff0a01963b58/8b984/s4.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -768,14 +1112,13 @@ let &lt;em&gt;restaurant&lt;/em&gt; be at the very top of your list to make your
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Category&quot;
         title=&quot;&quot;
-        src=&quot;/static/067bc64edff49d5024d6a47246b3281c/40fad/s5.png&quot;
-        srcset=&quot;/static/067bc64edff49d5024d6a47246b3281c/707e9/s5.png 148w,
-/static/067bc64edff49d5024d6a47246b3281c/649e0/s5.png 295w,
-/static/067bc64edff49d5024d6a47246b3281c/40fad/s5.png 590w,
-/static/067bc64edff49d5024d6a47246b3281c/b3fef/s5.png 885w,
-/static/067bc64edff49d5024d6a47246b3281c/301c0/s5.png 1180w,
-/static/067bc64edff49d5024d6a47246b3281c/b5a53/s5.png 1770w,
-/static/067bc64edff49d5024d6a47246b3281c/3a642/s5.png 2560w&quot;
+        src=&quot;/static/067bc64edff49d5024d6a47246b3281c/b9e4f/s5.png&quot;
+        srcset=&quot;/static/067bc64edff49d5024d6a47246b3281c/cf440/s5.png 148w,
+/static/067bc64edff49d5024d6a47246b3281c/d2d38/s5.png 295w,
+/static/067bc64edff49d5024d6a47246b3281c/b9e4f/s5.png 590w,
+/static/067bc64edff49d5024d6a47246b3281c/f9b6a/s5.png 885w,
+/static/067bc64edff49d5024d6a47246b3281c/2d849/s5.png 1180w,
+/static/067bc64edff49d5024d6a47246b3281c/8b984/s5.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -798,14 +1141,13 @@ fill the date (when you paid for something).&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Add file&quot;
         title=&quot;&quot;
-        src=&quot;/static/409ed5727a44eefb3461a5599838ce79/40fad/s6.png&quot;
-        srcset=&quot;/static/409ed5727a44eefb3461a5599838ce79/707e9/s6.png 148w,
-/static/409ed5727a44eefb3461a5599838ce79/649e0/s6.png 295w,
-/static/409ed5727a44eefb3461a5599838ce79/40fad/s6.png 590w,
-/static/409ed5727a44eefb3461a5599838ce79/b3fef/s6.png 885w,
-/static/409ed5727a44eefb3461a5599838ce79/301c0/s6.png 1180w,
-/static/409ed5727a44eefb3461a5599838ce79/b5a53/s6.png 1770w,
-/static/409ed5727a44eefb3461a5599838ce79/3a642/s6.png 2560w&quot;
+        src=&quot;/static/409ed5727a44eefb3461a5599838ce79/b9e4f/s6.png&quot;
+        srcset=&quot;/static/409ed5727a44eefb3461a5599838ce79/cf440/s6.png 148w,
+/static/409ed5727a44eefb3461a5599838ce79/d2d38/s6.png 295w,
+/static/409ed5727a44eefb3461a5599838ce79/b9e4f/s6.png 590w,
+/static/409ed5727a44eefb3461a5599838ce79/f9b6a/s6.png 885w,
+/static/409ed5727a44eefb3461a5599838ce79/2d849/s6.png 1180w,
+/static/409ed5727a44eefb3461a5599838ce79/8b984/s6.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -829,14 +1171,13 @@ settings to be as they are (as well as on the screenshot below).&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;File types category&quot;
         title=&quot;&quot;
-        src=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/40fad/s7.png&quot;
-        srcset=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/707e9/s7.png 148w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/649e0/s7.png 295w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/40fad/s7.png 590w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/b3fef/s7.png 885w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/301c0/s7.png 1180w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/b5a53/s7.png 1770w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/3a642/s7.png 2560w&quot;
+        src=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/b9e4f/s7.png&quot;
+        srcset=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/cf440/s7.png 148w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/d2d38/s7.png 295w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/b9e4f/s7.png 590w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/f9b6a/s7.png 885w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/2d849/s7.png 1180w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/8b984/s7.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -861,14 +1202,13 @@ photo of your receipt.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Preview your form&quot;
         title=&quot;&quot;
-        src=&quot;/static/e80b34d523d865dbd5a433820b52738a/40fad/s8.png&quot;
-        srcset=&quot;/static/e80b34d523d865dbd5a433820b52738a/707e9/s8.png 148w,
-/static/e80b34d523d865dbd5a433820b52738a/649e0/s8.png 295w,
-/static/e80b34d523d865dbd5a433820b52738a/40fad/s8.png 590w,
-/static/e80b34d523d865dbd5a433820b52738a/b3fef/s8.png 885w,
-/static/e80b34d523d865dbd5a433820b52738a/301c0/s8.png 1180w,
-/static/e80b34d523d865dbd5a433820b52738a/b5a53/s8.png 1770w,
-/static/e80b34d523d865dbd5a433820b52738a/3a642/s8.png 2560w&quot;
+        src=&quot;/static/e80b34d523d865dbd5a433820b52738a/b9e4f/s8.png&quot;
+        srcset=&quot;/static/e80b34d523d865dbd5a433820b52738a/cf440/s8.png 148w,
+/static/e80b34d523d865dbd5a433820b52738a/d2d38/s8.png 295w,
+/static/e80b34d523d865dbd5a433820b52738a/b9e4f/s8.png 590w,
+/static/e80b34d523d865dbd5a433820b52738a/f9b6a/s8.png 885w,
+/static/e80b34d523d865dbd5a433820b52738a/2d849/s8.png 1180w,
+/static/e80b34d523d865dbd5a433820b52738a/8b984/s8.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -894,14 +1234,13 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Preview your form and create&quot;
         title=&quot;&quot;
-        src=&quot;/static/b451a55f895ab14904475fb97e5f4585/40fad/s9.png&quot;
-        srcset=&quot;/static/b451a55f895ab14904475fb97e5f4585/707e9/s9.png 148w,
-/static/b451a55f895ab14904475fb97e5f4585/649e0/s9.png 295w,
-/static/b451a55f895ab14904475fb97e5f4585/40fad/s9.png 590w,
-/static/b451a55f895ab14904475fb97e5f4585/b3fef/s9.png 885w,
-/static/b451a55f895ab14904475fb97e5f4585/301c0/s9.png 1180w,
-/static/b451a55f895ab14904475fb97e5f4585/b5a53/s9.png 1770w,
-/static/b451a55f895ab14904475fb97e5f4585/3a642/s9.png 2560w&quot;
+        src=&quot;/static/b451a55f895ab14904475fb97e5f4585/b9e4f/s9.png&quot;
+        srcset=&quot;/static/b451a55f895ab14904475fb97e5f4585/cf440/s9.png 148w,
+/static/b451a55f895ab14904475fb97e5f4585/d2d38/s9.png 295w,
+/static/b451a55f895ab14904475fb97e5f4585/b9e4f/s9.png 590w,
+/static/b451a55f895ab14904475fb97e5f4585/f9b6a/s9.png 885w,
+/static/b451a55f895ab14904475fb97e5f4585/2d849/s9.png 1180w,
+/static/b451a55f895ab14904475fb97e5f4585/8b984/s9.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -922,14 +1261,13 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Click on the create&quot;
         title=&quot;&quot;
-        src=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/40fad/s10.png&quot;
-        srcset=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/707e9/s10.png 148w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/649e0/s10.png 295w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/40fad/s10.png 590w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/b3fef/s10.png 885w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/301c0/s10.png 1180w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/b5a53/s10.png 1770w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/3a642/s10.png 2560w&quot;
+        src=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/b9e4f/s10.png&quot;
+        srcset=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/cf440/s10.png 148w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/d2d38/s10.png 295w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/b9e4f/s10.png 590w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/f9b6a/s10.png 885w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/2d849/s10.png 1180w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/8b984/s10.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -950,14 +1288,13 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Sheet page&quot;
         title=&quot;&quot;
-        src=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/40fad/s11.png&quot;
-        srcset=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/707e9/s11.png 148w,
-/static/5f5a8114038940e8f6ac21aa6655f476/649e0/s11.png 295w,
-/static/5f5a8114038940e8f6ac21aa6655f476/40fad/s11.png 590w,
-/static/5f5a8114038940e8f6ac21aa6655f476/b3fef/s11.png 885w,
-/static/5f5a8114038940e8f6ac21aa6655f476/301c0/s11.png 1180w,
-/static/5f5a8114038940e8f6ac21aa6655f476/b5a53/s11.png 1770w,
-/static/5f5a8114038940e8f6ac21aa6655f476/3a642/s11.png 2560w&quot;
+        src=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/b9e4f/s11.png&quot;
+        srcset=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/cf440/s11.png 148w,
+/static/5f5a8114038940e8f6ac21aa6655f476/d2d38/s11.png 295w,
+/static/5f5a8114038940e8f6ac21aa6655f476/b9e4f/s11.png 590w,
+/static/5f5a8114038940e8f6ac21aa6655f476/f9b6a/s11.png 885w,
+/static/5f5a8114038940e8f6ac21aa6655f476/2d849/s11.png 1180w,
+/static/5f5a8114038940e8f6ac21aa6655f476/8b984/s11.png 2560w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -993,14 +1330,13 @@ valid values and you will be fine. &lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;Copy link&quot;
         title=&quot;&quot;
-        src=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/40fad/s12.png&quot;
-        srcset=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/707e9/s12.png 148w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/649e0/s12.png 295w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/40fad/s12.png 590w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/b3fef/s12.png 885w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/301c0/s12.png 1180w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/b5a53/s12.png 1770w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/fad2e/s12.png 2542w&quot;
+        src=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/b9e4f/s12.png&quot;
+        srcset=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/cf440/s12.png 148w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/d2d38/s12.png 295w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/b9e4f/s12.png 590w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/f9b6a/s12.png 885w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/2d849/s12.png 1180w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/6de9f/s12.png 2542w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -1029,11 +1365,11 @@ Android phones should support this feature.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;safari form&quot;
         title=&quot;&quot;
-        src=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/40fad/s13.png&quot;
-        srcset=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/707e9/s13.png 148w,
-/static/63fcc287d8a1c4365233d62b3c60ec48/649e0/s13.png 295w,
-/static/63fcc287d8a1c4365233d62b3c60ec48/40fad/s13.png 590w,
-/static/63fcc287d8a1c4365233d62b3c60ec48/db500/s13.png 640w&quot;
+        src=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/b9e4f/s13.png&quot;
+        srcset=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/cf440/s13.png 148w,
+/static/63fcc287d8a1c4365233d62b3c60ec48/d2d38/s13.png 295w,
+/static/63fcc287d8a1c4365233d62b3c60ec48/b9e4f/s13.png 590w,
+/static/63fcc287d8a1c4365233d62b3c60ec48/e49a9/s13.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -1058,11 +1394,11 @@ Android phones should support this feature.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;safari form11&quot;
         title=&quot;&quot;
-        src=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/40fad/s14.png&quot;
-        srcset=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/707e9/s14.png 148w,
-/static/d0e23d5b109d7b7acaffa1b1d64c617b/649e0/s14.png 295w,
-/static/d0e23d5b109d7b7acaffa1b1d64c617b/40fad/s14.png 590w,
-/static/d0e23d5b109d7b7acaffa1b1d64c617b/db500/s14.png 640w&quot;
+        src=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/b9e4f/s14.png&quot;
+        srcset=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/cf440/s14.png 148w,
+/static/d0e23d5b109d7b7acaffa1b1d64c617b/d2d38/s14.png 295w,
+/static/d0e23d5b109d7b7acaffa1b1d64c617b/b9e4f/s14.png 590w,
+/static/d0e23d5b109d7b7acaffa1b1d64c617b/e49a9/s14.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -1087,11 +1423,11 @@ Android phones should support this feature.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;safari form add to home screen&quot;
         title=&quot;&quot;
-        src=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/40fad/s15.png&quot;
-        srcset=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/707e9/s15.png 148w,
-/static/8cabf1078498fbdb93466daa1b0b01d2/649e0/s15.png 295w,
-/static/8cabf1078498fbdb93466daa1b0b01d2/40fad/s15.png 590w,
-/static/8cabf1078498fbdb93466daa1b0b01d2/db500/s15.png 640w&quot;
+        src=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/b9e4f/s15.png&quot;
+        srcset=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/cf440/s15.png 148w,
+/static/8cabf1078498fbdb93466daa1b0b01d2/d2d38/s15.png 295w,
+/static/8cabf1078498fbdb93466daa1b0b01d2/b9e4f/s15.png 590w,
+/static/8cabf1078498fbdb93466daa1b0b01d2/e49a9/s15.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -1116,11 +1452,11 @@ Android phones should support this feature.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;safari name app&quot;
         title=&quot;&quot;
-        src=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/40fad/s16.png&quot;
-        srcset=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/707e9/s16.png 148w,
-/static/985eae3e4a5914e5a04930c4e5ea9226/649e0/s16.png 295w,
-/static/985eae3e4a5914e5a04930c4e5ea9226/40fad/s16.png 590w,
-/static/985eae3e4a5914e5a04930c4e5ea9226/db500/s16.png 640w&quot;
+        src=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/b9e4f/s16.png&quot;
+        srcset=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/cf440/s16.png 148w,
+/static/985eae3e4a5914e5a04930c4e5ea9226/d2d38/s16.png 295w,
+/static/985eae3e4a5914e5a04930c4e5ea9226/b9e4f/s16.png 590w,
+/static/985eae3e4a5914e5a04930c4e5ea9226/e49a9/s16.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -1145,11 +1481,11 @@ Android phones should support this feature.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;safari home screen app&quot;
         title=&quot;&quot;
-        src=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/40fad/s17.png&quot;
-        srcset=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/707e9/s17.png 148w,
-/static/dcfffd9ca27e5053d4bb42819c348ce6/649e0/s17.png 295w,
-/static/dcfffd9ca27e5053d4bb42819c348ce6/40fad/s17.png 590w,
-/static/dcfffd9ca27e5053d4bb42819c348ce6/db500/s17.png 640w&quot;
+        src=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/b9e4f/s17.png&quot;
+        srcset=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/cf440/s17.png 148w,
+/static/dcfffd9ca27e5053d4bb42819c348ce6/d2d38/s17.png 295w,
+/static/dcfffd9ca27e5053d4bb42819c348ce6/b9e4f/s17.png 590w,
+/static/dcfffd9ca27e5053d4bb42819c348ce6/e49a9/s17.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
@@ -1174,11 +1510,11 @@ and submit.&lt;/p&gt;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;safari app&quot;
         title=&quot;&quot;
-        src=&quot;/static/9462fa48036db73cd5baa89f3c78118c/40fad/s18.png&quot;
-        srcset=&quot;/static/9462fa48036db73cd5baa89f3c78118c/707e9/s18.png 148w,
-/static/9462fa48036db73cd5baa89f3c78118c/649e0/s18.png 295w,
-/static/9462fa48036db73cd5baa89f3c78118c/40fad/s18.png 590w,
-/static/9462fa48036db73cd5baa89f3c78118c/db500/s18.png 640w&quot;
+        src=&quot;/static/9462fa48036db73cd5baa89f3c78118c/b9e4f/s18.png&quot;
+        srcset=&quot;/static/9462fa48036db73cd5baa89f3c78118c/cf440/s18.png 148w,
+/static/9462fa48036db73cd5baa89f3c78118c/d2d38/s18.png 295w,
+/static/9462fa48036db73cd5baa89f3c78118c/b9e4f/s18.png 590w,
+/static/9462fa48036db73cd5baa89f3c78118c/e49a9/s18.png 640w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
