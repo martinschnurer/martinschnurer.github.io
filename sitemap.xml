@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://martinschnurer.net/category/personal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/finance</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/finance/investing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/finance/economy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/programming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/programming/javascript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/programming/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/category/programming/modelling</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/who-the-hell-is-lucinda/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/the-difference-between-includes-and-extends-in-use-case-diagram/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/i-had-the-app-idea/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -16,8 +24,8 @@
 <url> <loc>https://martinschnurer.net/calculators/money_prediction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/calculators/realestatebus/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/calculators/stocksinvest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.net/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/cv/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://martinschnurer.net/grid/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.net/templates/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
