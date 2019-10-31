@@ -1,6 +1,424 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 24 Oct 2019 11:56:14 GMT</lastBuildDate><item><title><![CDATA[The Main Reason Why Stocks Will (almost) Always Go Up]]></title><description><![CDATA[Long story short: Dopamine; The chemical released in our brains responsible for feeling good. Dopamine Chemical Structure I’m not financial…]]></description><link>https://martinschnurer.net/the-main-reason-why-stocks-will-always-go-up/</link><guid isPermaLink="false">https://martinschnurer.net/the-main-reason-why-stocks-will-always-go-up/</guid><pubDate>Mon, 14 Oct 2019 00:13:00 GMT</pubDate><content:encoded>&lt;p&gt;Long story short: &lt;strong&gt;Dopamine&lt;/strong&gt;; The chemical released in our brains responsible for feeling good.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/fcc11bf22f5134790008382211153c26/Dopamine.svg&quot; alt=&quot;Dopamine Chemical Structure&quot;&gt;&lt;/p&gt;
-&lt;p&gt;I’m not financial guru nor have studied finance but here is why I think globally, stock prices will always go up.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[What was my first Road Trip like and what would I Change the next time]]></title><description><![CDATA[It was 5AM. Alarm on my phone woke me up from already shallow sleep. You can’t really sleep when you know something big has to come. And so…]]></description><link>https://martinschnurer.net/what-was-the-first-road-trip-like-and-what-would-i-change-next-time/</link><guid isPermaLink="false">https://martinschnurer.net/what-was-the-first-road-trip-like-and-what-would-i-change-next-time/</guid><pubDate>Mon, 30 Sep 2019 18:26:00 GMT</pubDate><content:encoded>&lt;p&gt;It was 5AM. Alarm on my phone woke me up from already shallow sleep. You can’t really sleep when you know something big has to come. And so it came - The day D was here and the Italian Dolomites were waiting for us.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 31 Oct 2019 20:28:53 GMT</lastBuildDate><item><title><![CDATA[How Should One Cut His Forest In Order to Last Him Forever]]></title><description><![CDATA[This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He…]]></description><link>https://martinschnurer.net/how-should-one-cut-his-forest-in-order-to-last-him-forever/</link><guid isPermaLink="false">https://martinschnurer.net/how-should-one-cut-his-forest-in-order-to-last-him-forever/</guid><pubDate>Tue, 29 Oct 2019 22:38:00 GMT</pubDate><content:encoded>&lt;p&gt;This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time “Lumber-Jack”.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/52b6c/man-in-forest.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 119.07671418873049%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAYABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECBAP/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAcV7dsuRIYgWgr//xAAaEAADAQADAAAAAAAAAAAAAAABAhEAEyJB/9oACAEBAAEFAlGnYSKucLQl3nIXG//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABsQAAICAwEAAAAAAAAAAAAAAAABEBEhIjFR/9oACAEBAAY/AkeiFYtanK5H/8QAHBAAAgMAAwEAAAAAAAAAAAAAAREAITFBYXGh/9oACAEBAAE/IVa52GpFmR8gWk1DAnk9xAAIX7AXgeLAhV+kbGQKn//aAAwDAQACAAMAAAAQG8gA/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARMf/aAAgBAwEBPxCIjF//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/EJRUDq//xAAdEAEAAwACAwEAAAAAAAAAAAABABEhMUFRYXGx/9oACAEBAAE/EOYqhPSEmKXVvpzNZss2kNYCusaF/mR6YDDl8b8vEBUXWZ8IFSwO24OCYRGACnW7Wz//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;man in forest&quot;
+        title=&quot;man in forest&quot;
+        src=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/2d017/man-in-forest.jpg&quot;
+        srcset=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/40f63/man-in-forest.jpg 225w,
+/static/566fe5fa4b5e1c5557d155be706e49de/df2c7/man-in-forest.jpg 450w,
+/static/566fe5fa4b5e1c5557d155be706e49de/2d017/man-in-forest.jpg 900w,
+/static/566fe5fa4b5e1c5557d155be706e49de/bbff7/man-in-forest.jpg 1350w,
+/static/566fe5fa4b5e1c5557d155be706e49de/98235/man-in-forest.jpg 1800w,
+/static/566fe5fa4b5e1c5557d155be706e49de/52b6c/man-in-forest.jpg 2946w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;small&gt;Photo by Jamie Street on Unsplash&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;This is how his cabin looks like. Winter are pretty cold here and to keep cabin warm, Jack needs to heat the cabin with a wood. Jack appreciate the nature around him and because the forest where he lives isn’t that big, he decided to buy a wood from another seller who cut wood from another, much bigger forest.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b1a403d132dd3266c7a733825f18443b/9696a/cabin-in-forest.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.67464687574814%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGQAAAQUAAAAAAAAAAAAAAAAAAAECAwQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAGpNnrgDCv/xAAaEAACAwEBAAAAAAAAAAAAAAABAwACEhEj/9oACAEBAAEFAhwSr9McPSrCJvh1P//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAABEBEhMf/aAAgBAQAGPwKxZg45H//EABsQAQACAgMAAAAAAAAAAAAAAAEAESExUZGh/9oACAEBAAE/IbNolPEVqCoTVcVAInuLt33P/9oADAMBAAIAAwAAABAP3//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAEDAQE/EIf/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QDI0L/8QAGxABAAICAwAAAAAAAAAAAAAAAQARIUExUWH/2gAIAQEAAT8QvAvF0FvuIiaEaIdxHQFiZYVypqEQA0IibnlH/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cabin in forest&quot;
+        title=&quot;cabin in forest&quot;
+        src=&quot;/static/b1a403d132dd3266c7a733825f18443b/2d017/cabin-in-forest.jpg&quot;
+        srcset=&quot;/static/b1a403d132dd3266c7a733825f18443b/40f63/cabin-in-forest.jpg 225w,
+/static/b1a403d132dd3266c7a733825f18443b/df2c7/cabin-in-forest.jpg 450w,
+/static/b1a403d132dd3266c7a733825f18443b/2d017/cabin-in-forest.jpg 900w,
+/static/b1a403d132dd3266c7a733825f18443b/bbff7/cabin-in-forest.jpg 1350w,
+/static/b1a403d132dd3266c7a733825f18443b/98235/cabin-in-forest.jpg 1800w,
+/static/b1a403d132dd3266c7a733825f18443b/9696a/cabin-in-forest.jpg 4177w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;small style=&quot;text-align: center;&quot;&gt;Photo by Ryan Stone on Unsplash&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;The main reason why Jack doesn’t want to cut his own forest is that he thinks he would cut it sooner than it’d grow back again. Despite his wise reasoning, he is also curious, how many trees it would be required to plant in order to grow forest big enough, that he could possibly cut trees in his own forest, while at the same time not decreasing its size (because trees would grow faster than he cuts them).&lt;/p&gt;
+&lt;p&gt;On average, every forest grows &lt;strong&gt;7%&lt;/strong&gt; a year. One year it can grows by &lt;em&gt;20%&lt;/em&gt;, another &lt;em&gt;10%&lt;/em&gt; and as the effect of a dry and hot summer 20-30% of the forest can easily be burned so it’ll have &lt;em&gt;-30%&lt;/em&gt; trees as it had last year. So if a forest has 100 trees one year, it’d have 107 trees the next year (on average). The more trees is in a forest, the more trees being grown every year.&lt;/p&gt;
+&lt;p&gt;Example of amazon forest: 400 billion trees -&gt; 28 billion trees grow next year (7% of 400 billion)&lt;br /&gt;
+Example of small forest: 1000 trees -&gt; 70 grow next year (7% of 1000)&lt;/p&gt;
+&lt;p&gt;This is only mathematical explanation so don’t focus on other factors such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if trees have space to grow&lt;/li&gt;
+&lt;li&gt;new grown trees&lt;/li&gt;
+&lt;li&gt;species of trees&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What bother us is overall volume of a forest and we will assume forest as continuos number. Number of trees doesn’t bother us.&lt;/p&gt;
+&lt;h2&gt;Example of running out of trees&lt;/h2&gt;
+&lt;p&gt;Let’s run the numbers:
+Forest where Jack lives has 100 trees and needs 10 every year to keep his cabin warm. Annual growth rate of the forest is 7% and he cuts 10 trees every year.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/94f39d2327841bf671af367fb197e462/1000-7-10-v2.svg&quot; alt=&quot;statistics from first example&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Forest is slowly decreasing its size because it is unable to grow more trees than there is being cut.
+10 trees are 10% of the forest, 7% are grown - then the difference is negative -3%. The forest starts to decrease its size much more rapidly because 10 trees are being much more of the forest share. For example first year it is 10%, next year 10 trees out of 97 is 10.31%, the next year 10 (out of 93.79) will be 10.66% of the forest and so on and so on - The forest is getting smaller.
+Jack would cut the last tree in about 19 years. Then, there will be nothing left.&lt;/p&gt;
+&lt;h2&gt;Example of perfect equilibrium&lt;/h2&gt;
+&lt;p&gt;Jack need to cut trees at the same rate as they’re growing. His cut rate can’t exceed growth rate. So if for example annual growth is 7% - then he can’t cut more than 7% of his forest. When his cabin needs 10 trees to keep it warm, then he needs to have the forest at least the size of 143 trees. With a forest of 143 trees and growth rate 7%, he can cut exactly as many trees as he want - 10. Because 10 is what he needs and also 10 trees will grow every year - so the number of trees in a forest remains the same. &lt;/p&gt;
+&lt;u&gt;
+&lt;p&gt;&lt;strong&gt;Jack is happy now. His forest yields exactly the volume of wood he needs.&lt;/strong&gt;&lt;/p&gt;
+&lt;/u&gt;
+&lt;p&gt;&lt;img src=&quot;/0ff40097b71a08beaea10a87e24d4278/143-7-10.svg&quot; alt=&quot;statistics for equlibrium example&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Bad things happen&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4d28444f1483149ba472791a704efb8f/ffbed/fire-in-forest.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.266666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHIrhoKUKE//8QAGhAAAwADAQAAAAAAAAAAAAAAAAECERIhMf/aAAgBAQABBQKekwXjaCmx+//EABcRAQADAAAAAAAAAAAAAAAAAAABAhH/2gAIAQMBAT8BizX/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAQIR/9oACAECAQE/AZqx/8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAQEAAwAAAAAAAAAAAAAAAQAhEDFR/9oACAEBAAE/IT6kXbbt2Jy7wf/aAAwDAQACAAMAAAAQ5w//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EDOpO3b/xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAECAQE/EEeDGTL/xAAZEAEBAQEBAQAAAAAAAAAAAAABEQAhMWH/2gAIAQEAAT8Q9gJppQ+6hg4zvMox7cBLhmqu/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;forest fire&quot;
+        title=&quot;forest fire&quot;
+        src=&quot;/static/4d28444f1483149ba472791a704efb8f/2d017/fire-in-forest.jpg&quot;
+        srcset=&quot;/static/4d28444f1483149ba472791a704efb8f/40f63/fire-in-forest.jpg 225w,
+/static/4d28444f1483149ba472791a704efb8f/df2c7/fire-in-forest.jpg 450w,
+/static/4d28444f1483149ba472791a704efb8f/2d017/fire-in-forest.jpg 900w,
+/static/4d28444f1483149ba472791a704efb8f/bbff7/fire-in-forest.jpg 1350w,
+/static/4d28444f1483149ba472791a704efb8f/98235/fire-in-forest.jpg 1800w,
+/static/4d28444f1483149ba472791a704efb8f/ffbed/fire-in-forest.jpg 6000w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+Photo by Matt Howard on Unsplash&lt;/p&gt;
+&lt;p&gt;One hot summer bad thing happened - a fire started to burn forest and when firefighters came - fire destroyed 30% of the forest! Let’s asume 143 trees before fire and after fire, the number of trees was exactly 100.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/89aa0d58dd30cbfeb59e08314c5aeb35/fire-143-7-10.svg&quot; alt=&quot;statistics for fire example&quot;&gt;&lt;/p&gt;
+&lt;p&gt;After fire destroyed 30% of the forest - every year forest was able to only produce 7 trees, but Jack needs 10 every year. It is exactly first example where forest wasn’t able to grow faster than it was cut. Jack will eventualy run out of wood.&lt;/p&gt;
+&lt;h3&gt;Could Jack do better?&lt;/h3&gt;
+&lt;p&gt;If he let grows a forest faster than he cuts it, then a lot more trees start to grow. He needs to make a more space for eventual mistake. What if he had a forest with 200 trees:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/5f9d9684c95fb462d5151183cbf2b87e/fire-200-7-10.svg&quot; alt=&quot;start with 200 trees with fire statistics&quot;&gt;&lt;/p&gt;
+&lt;p&gt;200 trees is kinda one-time insurance against a horrible situation. After the fire we got to the equilibrium state again. We wouldn’t do well after a second fire - so let’s look at the growth after fire with 400 starting trees:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/b7782161b57e06692acaacb612758ae4/fire-400-7-10.svg&quot; alt=&quot;start with 400 trees with fire statistics&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Now it looks much better. Both, the forest and our lumberJack seem to have a bright future now.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Why I’m telling this story to you&lt;/h2&gt;
+&lt;p&gt;Imagine you have some average annual expenses (wood to your cabin). You want to grow wealth so big - big enough to cover all your annual expenses. Is it possible? Can we took something from the forest example? What principles are same and what different? To be honest, I don’t know if some forest have 7% growth rate - but I know some financial instruments have on average 7% growth. Often it has 10 to 20% growth every year, but when the crisis hits - it can drop 30% down. &lt;/p&gt;
+&lt;p&gt;If you haven’t inherit any wealth, you are basically starting without forest. Our lumber Jack was already in a cabin in a forest with some trees at the beginning. &lt;/p&gt;
+&lt;u&gt;
+&lt;p&gt;&lt;strong&gt;You have no forest - no wealth to grow&lt;/strong&gt;.&lt;/p&gt;
+&lt;/u&gt;
+&lt;p&gt;All you have are seeds of trees (your income). And you can seed them every month, every year and let the forest grows. And you can cut &lt;strong&gt;NO&lt;/strong&gt; trees. Notice that Jack in our example didn’t even plant trees by himself but instead, waited for forest to grows on its own.&lt;/p&gt;
+&lt;p&gt;Let’s say we seeds 150 trees every year for 5 years. Then we start to cut 10 trees every year. There will be 2 big fires decreasing our forest by 30% (in 4-th year and 13-th year).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/7566b6bb71e8f366a8a733042a69c4d3/0-7-10-2-fires.svg&quot; alt=&quot;start from zero trees&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, we grew our own forest and it has sustained 2 fires (2x 30% decrease forest).&lt;/p&gt;
+&lt;h1&gt;From nature to the real world&lt;/h1&gt;
+&lt;p&gt;You probably have heard about investing in stocks. Index fund is a collection of individual stocks. It is automatically diversified collection/portfolio and if one stock lose its value, other stocks will continue to grow and keep value of a whole basket up.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 750px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAADrklEQVQ4yw2SWUzbBQDG/4uJWdRkJsZEH3zwxePJGDcWj6jbw2RZQCc4ucqY2wrCNgKU0jo6SjnKMc629EA6oNxQKLblHHfYYAcgyJiAIKyzYwHsGDBgMz/78Mv38uV7+OUT8tLOUWdO595dBwszQ/R3lONanmXv+TY7uxvs7Xp4tun25iqe5Qns1RlI5SKa9Zkw5WT9ejmmogxUKXIOf/whgiEviq62Mjzri8xNewc7a1heus+L/7bY21tnd2eNvW03y7MjjF2vot6iJlURSbVGRZvJizGVa7osMq5ICAs4gpCuCMNhM+BammB6rJsbg3Z6nRaerC/gds+w9dTF1K0O9AnB5F4MprGiiPioH1HEhWHRJKHNjKFYFU1mUgSSmFMIqUox2VkyzFolM9Oj2CuuMlmbj61YytJsP09XZ3HWaGhIDGU0+wJWQyZpiWE0lGWxcKeF+lI1JqOaq9lSjnz+EYIqRUz0hTCMhclMjg9SJhUxW5GNXuxHW3U+L549pK+9hVatmmqVhHpbn7erZLC9kn9uWlGd/Q6R/6d0OM0EnjyOkJ1+kVCRPwZNBh2/1VB8xpdpjYKGuFNof4lk2NFEo0mL1VxCek4p8jwHmdpmJiZGGPxVRV3CDwQefAuL3J9vjx9FaDEkkxAdjMOowpAey9H33mQ0NYKYLz/A7/D73KnUcre7k3J9CfVNdrq6e1Bk6Gl19iANP0ZhpC8j1mJyJX7o8mUIw21V9NbqWBh1UpkSS7jPO3RnRWCWhXL+k3d5PDnK2qMHdHd2kXhZjbmuC2VBI1qNicoCGU2Fcma6LJiHbMzN2RB6ytKxlKj53VbHxrGTLBw8xHxwIKvin9g49DWbebnANr0Dt/nsm9Mkic9Tn6tGJlfT01pNf18fdrudmppqcpQpCDebdZTq0uiXnWYiQUKvpZ5xL8M2B5NxclYUZ9jdeoTVPsgXvhHoY4MoV10mJjKRWrOBznwJxZpChm5Poi02IezsbVKlv4IpxIe/fU/w4EQIru/DWQoRsxIQxKxKhGdxnOyiCgJEEipkYuIvyVF6PU4P2HGoY1BXWvlzbp6pP+4hPHQv4Wy3UpUYxPiB1/AIr7Cx7wDbL73ByutvM5Mq4v6tPqKlBSQmazFKozgb672VsZFRswqd+RpNY3/hci3iWXMj7O5u4vnXzZBOzsBXPswLL7O8bz9zgsCNV/czUxBDS0MTYT+nEh0RiTEpjtOXcsnJKkEZH0uoREtl7wSPPU+8rp/zP4Bg2bkK9r8MAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;meme&quot;
+        title=&quot;meme&quot;
+        src=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png&quot;
+        srcset=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/064a4/meme.png 225w,
+/static/4cd0da925fbfafb758a096e2ad50b21c/44727/meme.png 450w,
+/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png 750w&quot;
+        sizes=&quot;(max-width: 750px) 100vw, 750px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;S&amp;#x26;P500&lt;/strong&gt; index is probably the most popular one. It contains 500 most successful american companies. A chart of value over time of S&amp;#x26;P500 looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/9870e/sap500.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.71742543171114%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABFUlEQVQoz6VS7WrDMAzM+7/P/u4FBvsx2sHGKFtJIG2TOLFdfztXySElMMZgExyWIuksnVPlnDHP87+QcoKaJJyxqLz3MMaA7S9kmcDWe4U3UaOKMYJJfyNcLc954y/fVTB4+HzCa3fkCQOstT8Srk0+hTtZpBVDisVvdIfH+gXvosHV08opUTKEb5NsTQWL5/MHdv0XatWVc0/YDUccZItEF1m60EW/rOycuzdzUhMBw1CB8BqHqS1TCafQGlHqOitR9ydMYoRUEoMQRboqhohApN11Qit7NOKCsxZo9VDOyzQgxYScMouGSBKVAcjnVx3HsUBrDU+bVutvw/q4zYuvZilmWYokFHOeJ1ki4qX+dUOuuQFLEXGTFqLT4wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;s&amp;amp;p500 index&quot;
+        title=&quot;s&amp;amp;p500 index&quot;
+        src=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/fea0e/sap500.png&quot;
+        srcset=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/064a4/sap500.png 225w,
+/static/a47757323d9e6703d6f15e89de41a0c5/44727/sap500.png 450w,
+/static/a47757323d9e6703d6f15e89de41a0c5/fea0e/sap500.png 900w,
+/static/a47757323d9e6703d6f15e89de41a0c5/9870e/sap500.png 1274w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is like growing a forest. You invest every month reasonable amount of money into funds (planting trees). Index &lt;em&gt;S&amp;#x26;P500&lt;/em&gt; grows on average 7% a year. Sometimes it drops like in the year 2000 and 2008 because of financial downturn. But as you can see, from the long-term view, it grows.&lt;/p&gt;
+&lt;p&gt;The advantage of index fund is that you don’t have to do magic calculations of which stocks to buy right now. You just buy index and you should be fine.&lt;/p&gt;
+&lt;p&gt;Investing in stocks isn’t for everyone. You need to understand that you eventually can face a real psychological game here. When a crisis hits the market, your investments are in a red numbers and it’s not easy to look on money drowning even more - so you sell your holdings because of fear. Then you realize, that price hit the bottom and price goes up again. A few months later price is going still up. So you buy, because you don’t want to lose potential money - but this is what everybody thinks of and other buys too, price goes higher and higher and then - bubble burst and price goes down again. Obvious vicious cycles here.&lt;/p&gt;
+&lt;p&gt;There is actually research, that it is almost impossible to time the market and nobody really knows whether market is going to go up or down. &lt;strong&gt;The golden rule of longterm investing is buy and hold&lt;/strong&gt;. There actually is a game about trying to time the market - give it a try and you will realize that it’s harder than you think - &lt;a href=&quot;https://engaging-data.com/market-timing-game/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;timing market game&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Time in the market beats timing the market&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Fear and Greed is neverending story written by mass of people - because everyone wants to make money and nobody wants to lose money at the same time. Best investors buy undervalued stocks when everybody fears and sell, and best investors sell when everybody buys because of greed.&lt;/p&gt;
+&lt;!-- ![chart of how market moves throught time](./how-market-moves.png) --&gt;
+&lt;p&gt;When TV news starts to bombard us about new financial trends or financial crisis, it often looks somehow like this:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/aacd8/financial-crisis.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.292817679558%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAARABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMBAgT/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAABhHxVnXIOJjaC/8QAHBABAAIBBQAAAAAAAAAAAAAAAQITAAMQIzFB/9oACAEBAAEFAiXJrThY154JNrdjHv8A/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BI//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/AVWE/8QAHBAAAgICAwAAAAAAAAAAAAAAASEAEQIxECBx/9oACAEBAAY/ArGQr2MWprhKbHT/xAAdEAACAQQDAAAAAAAAAAAAAAAAAREhMUFhUZHx/9oACAEBAAE/IZ4GijcYmilsZ3ToZDBBRXNz2R2ZmXz/2gAMAwEAAgADAAAAELQwff/EABkRAQACAwAAAAAAAAAAAAAAAAEAERAhMf/aAAgBAwEBPxABUdtx7j//xAAZEQEAAgMAAAAAAAAAAAAAAAABAEEQETH/2gAIAQIBAT8QEd3BS5xj/8QAHhABAAIABwEAAAAAAAAAAAAAAQAhETFBUZGh8PH/2gAIAQEAAT8QNEQIj4gIKAJqupiRATIOHZBAqUveYyKVNdHMpPfidKZfd52J/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;financial crisis in media&quot;
+        title=&quot;financial crisis in media&quot;
+        src=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/2d017/financial-crisis.jpg&quot;
+        srcset=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/40f63/financial-crisis.jpg 225w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/df2c7/financial-crisis.jpg 450w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/2d017/financial-crisis.jpg 900w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/aacd8/financial-crisis.jpg 1086w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Every time you hear that you should sell your stocks and keep it in cash or buy a gold or other ludicrous assets - be careful and don’t listen to anyone, but make your own research before you do something stupid.&lt;/p&gt;
+&lt;p&gt;Market can have all sorts of fluctuations and you shouldn’t pay a lot of attention to it. You’re interested in a long-term view. Let’s see ho market looks from zoom-in perspective.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/98f882a95d4ea9805f34eb0623e09115/1351f/market-zoom-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 101.53321976149914%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAACEElEQVQ4y42Ui27kIAxF8/8fuqumM3kRCOTl5ThjyqSquiOheMC+XPvaNMdxyLZtwnffd13/u3ee59v5uq7SmGPZ3NZvwdhyiuzb/jsgziklDWJ99B8y+lG2dVNwnFj9PEhYgoLaHkBmG05jDLhhSYt0rpchA3KoN++H+BikHVsZ5lHO4yyXWyZmK0O7hQ2YhRxsXwN8Tk8Nsi8s74CGU1K2wJiiLDEznTrdw+kxPjTokc8tvR9TtlsocD/3ktYkaUtq86MMQ64fPxeczNFfae/bz6JgKCvXlZthhT2HWXqXAY8M6J2CkzIXG0NscGKMVw1ZxoQ0YQA4TjClDLTNvMwyhakIYy1EzJsoip6DCDb6fvG5Zg9Vva4XPrRT6Yx4EeESraGpRH0mPxXVCIYlwLZHbyIcgdYZ/G+HT+2KMilQNkHqMePW+9Tgp/9zDOJBArApE+K8sZthA/26BepJMT8AWABSUxNJW85EuRgO3xiaYMbwyLY1PqqPYVQxie/I0EbPBLk3rIHVNmNo3fB0z3KGBuM85Rrul6J9VlPrUvVXLVC9xxTBdPBDGUXSB6Oh22HIIXY9o/XzVQuFL+xCCm89+af7e6VMkamLTsDrKbOvTkK1hw/s2qH9mpTXW/CZ26dhAlCYVEvnV4/o/cXej6/H9f6iA9pAWZv1NY8hBHWmBYyB914D7nv41Y+tc07+AfUJHnCTy/UfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;market max zoom - what people think&quot;
+        title=&quot;market max zoom - what people think&quot;
+        src=&quot;/static/98f882a95d4ea9805f34eb0623e09115/fea0e/market-zoom-1.png&quot;
+        srcset=&quot;/static/98f882a95d4ea9805f34eb0623e09115/064a4/market-zoom-1.png 225w,
+/static/98f882a95d4ea9805f34eb0623e09115/44727/market-zoom-1.png 450w,
+/static/98f882a95d4ea9805f34eb0623e09115/fea0e/market-zoom-1.png 900w,
+/static/98f882a95d4ea9805f34eb0623e09115/1351f/market-zoom-1.png 1174w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This was just temprary small down direction (correction) and market continues to grow upwards.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/9c15e/market-zoom-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 121.04208416833669%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABYlAAAWJQFJUiTwAAACcUlEQVQ4y41ViXLrIAzM/39jJ3l9deL7wgYbXyqrRBSncVtmCLIMyq5WwidrLRlj6Ha70TzPhGdM2NM0sY11HEf2YcWzvINvnmZK65R9J/wsy0JN09xfPgLBJ8+wxbfMy319+LZ1IzMOlLU5+zggDtV1/TKgvAeadV2p6Rsa7chTAn4UEfthn7BxGAZKkmRHU+yQnp0svWf/6V/2TtfyStuyUT/0VKqSkXvKGFprTw8r0Igtq50tpU1GkQuWO4p61NS5gLVDJ/sZIRKdpum3ZIeiMBM7cPKBDAHPyYWu1Y3avmVhGKEggCiS7FcI18XlTzektCLayKGqKa5jiqqI8wnKOMOUYSilDlVGMD1o+igfh0VtN4FahPOUj+pQbATM6oyDMv3J+ncIIvafRQHFUlVkrPFpCfd5JqD8W9kIwrzJPcJn8UJWvrCrqjrM4TRPlLlyCQs93Cd/4HMoosjm54DIGQKiE2CHAXH2W0Cpw6NOgZJJlTB1ablDypx0iNLrXc1hSPKTJvX1FwqGuW2bt70o2FSWJQeK64QFQCcIIr5JhP4T+jCHjFCavigK3oyb4y1+45ZC4VZdRa1Wu1snpBzWoVcZsI021JmOKtdSoFe7NkNQIDajuXfG+tWKP9YhRCnygnrTU9EWRC6FQIbmP6cX/qPJTv7m9tfZkyi+U4Cw73suDWUU5w5pQP4QbF6+SuRPCFnJLOFLE9TEx4fnZSfGqxzuRAEFKHiOLpyr3eHHJYBOkY/Ur6IAJkZcxnwQAymQ9acpI/Sdsixjhc/RmVSnqG1a7mtcafhwtW1LXddRnufsw4o2hQ/dBR9qGGUH+xPgYlDuVwdwDwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;market max zoom - reality&quot;
+        title=&quot;market max zoom - reality&quot;
+        src=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/fea0e/market-zoom-2.png&quot;
+        srcset=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/064a4/market-zoom-2.png 225w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/44727/market-zoom-2.png 450w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/fea0e/market-zoom-2.png 900w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/9c15e/market-zoom-2.png 998w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;When in reality - cycle is always part of the bigger long-term cycle.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/92c30/market-zoom-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 71.29750982961993%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABX0lEQVQ4y51S2Y6DMAzM//9itfSiUFrCHY6QapZxlYqy2a60D1Z8xGOPbaW1Rl3XmOcZ1tqXTNP0Zn+KudnBDAaH2wGqbVtQ/gs421ns0/0kr+q6DpQQ4Nq3jXub3ZVtibzOxaeapvnY4WQnkVCMOaR6XLrz+T8oM5lVKfStdQ88TiOccxjHcQE7oh/7ZzxE+eEeqE29zOSMfbbHOT/jXt/lM2NehnFYlnBE2VUC7rt/o8xOdKPxdY2QFlcUbYGszCRxl+6EWlpeEeex2PxL8PWShDI7ZJVqqcZkUlt3w0Ld0AnYRV+Q6ERmR//2AhRvkKCsws58Nc6Huheex2uei+7PZSsyQ2MM4qUyq76Wszkbv7C/blT1pkeSp9Dtcx4E8UBe34rcn3PBmCrKAlGyh19O6N3qHNP69XpVVVBREiHTN9jJou97ob9+vT4Mw5sd+sOiKr7FIO0Qrd+ofxrHNzJRP06khOtDAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;market max zoom - reality&quot;
+        title=&quot;market max zoom - reality&quot;
+        src=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/fea0e/market-zoom-3.png&quot;
+        srcset=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/064a4/market-zoom-3.png 225w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/44727/market-zoom-3.png 450w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/fea0e/market-zoom-3.png 900w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/8013a/market-zoom-3.png 1350w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/92c30/market-zoom-3.png 1526w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This cycle could be also part of some bigger cycle but you got the point.&lt;/p&gt;
+&lt;p&gt;You don’t believe me? I screenshotted random part of the S&amp;#x26;P500 historical price chart and take a look at that.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6f37937de8b35f81c4bad87a5d726966/7f76c/sap500-cycles.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.91525423728814%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB7qkGgT//xAAWEAADAAAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUClH//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEQITFh/9oACAEBAAE/IWPsGL1P/9oADAMBAAIAAwAAABDQH//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/EKf/xAAdEAACAQQDAAAAAAAAAAAAAAABEQAQIUFRgbHR/9oACAEBAAE/EAGEnuJkV9wOyweZ7Ttn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;s&amp;amp;p 500 cycles&quot;
+        title=&quot;s&amp;amp;p 500 cycles&quot;
+        src=&quot;/static/6f37937de8b35f81c4bad87a5d726966/2d017/sap500-cycles.jpg&quot;
+        srcset=&quot;/static/6f37937de8b35f81c4bad87a5d726966/40f63/sap500-cycles.jpg 225w,
+/static/6f37937de8b35f81c4bad87a5d726966/df2c7/sap500-cycles.jpg 450w,
+/static/6f37937de8b35f81c4bad87a5d726966/2d017/sap500-cycles.jpg 900w,
+/static/6f37937de8b35f81c4bad87a5d726966/bbff7/sap500-cycles.jpg 1350w,
+/static/6f37937de8b35f81c4bad87a5d726966/98235/sap500-cycles.jpg 1800w,
+/static/6f37937de8b35f81c4bad87a5d726966/7f76c/sap500-cycles.jpg 2124w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In case you didn’t noticed I highlighted cycles for you:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/7f76c/sap500-highlighted-cycles-v2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.91525423728814%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAHdUorGJ//EABYQAAMAAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQKUf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABYQAAMAAAAAAAAAAAAAAAAAAAAgMf/aAAgBAQAGPwIq/wD/xAAaEAACAgMAAAAAAAAAAAAAAAAAERAhMVFh/9oACAEBAAE/IWPgrc4n/9oADAMBAAIAAwAAABBbH//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB0QAAIBBAMAAAAAAAAAAAAAAAERABAhMUFRsdH/2gAIAQEAAT8QXQs+RLsgvqAGyQJeXPads//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;s&amp;amp;p500 highlighted cycles&quot;
+        title=&quot;s&amp;amp;p500 highlighted cycles&quot;
+        src=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/2d017/sap500-highlighted-cycles-v2.jpg&quot;
+        srcset=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/40f63/sap500-highlighted-cycles-v2.jpg 225w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/df2c7/sap500-highlighted-cycles-v2.jpg 450w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/2d017/sap500-highlighted-cycles-v2.jpg 900w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/bbff7/sap500-highlighted-cycles-v2.jpg 1350w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/98235/sap500-highlighted-cycles-v2.jpg 1800w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/7f76c/sap500-highlighted-cycles-v2.jpg 2124w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I’m not going to waste time explaining why there are cycles. There are cycles in the economy - this is the fact. What is important here is that overall growth of the market is positive. It’s something like always growing sinusoid. We shouldn’t be too much focused on cycles or trends. Instead, we should focus on plan, steadiness and long-term - investing frequently and for longer period of time.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;But what if crisis eats all my investments?&lt;/h2&gt;
+&lt;p&gt;Rolling returns, instead of year by year returns, showing returns over the specific time period. As we can see on the image below, if money is invested for at least 15 years, worst returns are positive - which is good message for a long term investors.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/73c1489e4d811d6f2ce85697a5a324ab/rolling-sap500-returns.svg&quot; alt=&quot;rolling returns of s&amp;#x26;p500&quot;&gt;&lt;/p&gt;
+&lt;p&gt;As we learned, investments in stocks should be hold for at least 15 years to be sure the investment is profitable. However, not anyone has 15 years to wait for return on investment. The younger you are, the better time to invest. Someone too old shouldn’t hold too much share in stocks. When crisis hit, you lose more and there is also a chance you won’t live when your investment return breaks even. &lt;/p&gt;
+&lt;p&gt;Treasury bonds are much safer investment than stocks, but also less profitable.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You should hold percentual share of bonds equal to your age.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So when you are 70 years old, you should hold 70% in bonds and so on. The rule doesn’t need to be applied exactly by age. If one is conservative, he can hold higher percentual share of bonds and vice versa.&lt;/p&gt;
+&lt;p&gt;Stocks are more volatile than bonds, but from long-term view, stocks are more profitable than bonds. More risk brings more profit over longer time period.&lt;/p&gt;
+&lt;p&gt;Take a look at this figure:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/fc4a25f46f204bfbbd536474e3d8cca1/risk-return-figure.svg&quot; alt=&quot;risk return figure&quot;&gt;&lt;/p&gt;
+&lt;p&gt;When being riskier, you have bigger profits on average. When risk is small, your profits are small - but loses are also small. When age rises, risking stops being profitable anymore.&lt;/p&gt;
+&lt;p&gt;At the beginning I told you a story about Jack. He is now fully independent from buying local wood but he can cut his own trees forever! This is also true for finance and wealth - if you have accumulated wealth big enough it’s highly possible that you won’t run out of money, ever. Read more on &lt;a href=&quot;/so-when-is-actually-the-time-to-retire&quot;&gt;when is the time to retire&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;How to invest&lt;/h2&gt;
+&lt;p&gt;You need a broker to invest. Broker is connection between you and the market. As an european, I didn’t have many brokers to choose from. I tried a few but wasn’t pretty much satisfied with a platform and fees. So I ended up in &lt;a href=&quot;https://degiro.com&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Degiro&lt;/a&gt; and I couldn’t make a better decision. The lowest fees in Europe and very intuitive platform. They also offer investing in a list of indexes once a month for free!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The best time to plant a tree was 20 years ago. The second best time is now. – Chinese Proverb&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Start to grow your forest today!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My first Road Trip and what would I Change the Next Time]]></title><description><![CDATA[It was 5AM. Alarm on my phone woke me up from already shallow sleep. You can’t really sleep when you know something big has to come. And so…]]></description><link>https://martinschnurer.net/what-was-the-first-road-trip-like-and-what-would-i-change-next-time/</link><guid isPermaLink="false">https://martinschnurer.net/what-was-the-first-road-trip-like-and-what-would-i-change-next-time/</guid><pubDate>Mon, 30 Sep 2019 18:26:00 GMT</pubDate><content:encoded>&lt;p&gt;It was 5AM. Alarm on my phone woke me up from already shallow sleep. You can’t really sleep when you know something big has to come. And so it came - The day D was here and the Italian Dolomites were waiting for us.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
@@ -729,16 +1147,16 @@ I’m glad this is the right time to look at the Rust. This is the reference for
 
 &lt;span class=&quot;token comment&quot;&gt;// vectors&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; num_vec&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Vec&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;i32&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;vec!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// vec! is macro for creating Vec&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;conditions&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;conditions&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;2. Conditions&lt;/h1&gt;
-&lt;a name=&quot;simple_condition&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;simple_condition&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;2.1 Simple condition&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; age &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Okay, now you can drink alcohol&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Sorry, alcohol is for people older than 18...&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;ternary_condition&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;ternary_condition&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;2.2 Ternary condition&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; condition &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; variable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; condition &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -748,33 +1166,33 @@ I’m glad this is the right time to look at the Rust. This is the reference for
    &lt;span class=&quot;token comment&quot;&gt;// 0 is assigned to variable if condition is false&lt;/span&gt;
    &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;loops&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;loops&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;3. Loops&lt;/h1&gt;
-&lt;a name=&quot;while&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;while&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;3.1 While&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;{}!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; number&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
    number &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;forever&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;forever&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;3.2 Forever&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;forever!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;array_iterating&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;array_iterating&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;3.3 Array iterating&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; element &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;iter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;the value is: {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;variables&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;variables&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;4. Variables&lt;/h1&gt;
-&lt;a name=&quot;declaration&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;declaration&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;4.1 Declaration&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// type - immutable integer variable&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; y&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i8&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// mutable integer variable - signed mutable variable&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;change_primitive_value&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;change_primitive_value&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;4.2 Change primitive value&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// all variables without &quot;mut&quot; are immutable by default&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;// if variables are declared with &quot;mut&quot; identifier, you can mutate&lt;/span&gt;
@@ -785,9 +1203,9 @@ year &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=
 &lt;span class=&quot;token comment&quot;&gt;// code below can&apos;t be mutated&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// ERROR !!!!&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;function_definition&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;function_definition&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;5. Function definition&lt;/h1&gt;
-&lt;a name=&quot;static_classic_function&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;static_classic_function&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;5.1 Static (classic) function&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum_two_numbers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; i32 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -800,7 +1218,7 @@ immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span c
 &lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;sum_two_numbers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; b&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; i32&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;-&gt;&lt;/span&gt; i32 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    a &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; b
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;lambda_function&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;lambda_function&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;5.2 Lambda function&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; increment &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -809,7 +1227,7 @@ immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span c
    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;increment 5 + 5 is {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;increment_by&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
    &lt;span class=&quot;token comment&quot;&gt;// OUTPUT: increment 5 + 5 is 10&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;enums&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;enums&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;6. Enums&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;enum&lt;/span&gt; Color &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    Transparent&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -830,9 +1248,9 @@ immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span c
    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
    &lt;span class=&quot;token comment&quot;&gt;// We must cover all enum cases, because compiler gonna have problem with that.&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;struct&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;struct&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;7. Struct&lt;/h1&gt;
-&lt;a name=&quot;struct_defintion_and_usage&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;struct_defintion_and_usage&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;7.1 Struct definition and usage&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    first_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -858,7 +1276,7 @@ immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span c
    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
    &lt;span class=&quot;token comment&quot;&gt;//OUTPUT: I am Martin Schnurer, I am 23 years old and I live at Some address&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;methods&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;methods&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;7.2 Methods&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
    first_name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; String&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -885,11 +1303,11 @@ immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span c
    me&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;find_girlfriend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Monica&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;to_string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
    &lt;span class=&quot;token comment&quot;&gt;// OUTPUT: Hi I am Martin Schnurer and I am looking for a girl with name Monica&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;ownership_and_borrowing&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;ownership_and_borrowing&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;8. Ownership and Borrowing&lt;/h1&gt;
-&lt;a name=&quot;ownership&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;ownership&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;8.1 Ownership&lt;/h3&gt;
-&lt;a name=&quot;move_ownership&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;move_ownership&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;8.1.1 Move ownership&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
@@ -911,7 +1329,7 @@ immutable &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span c
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;After the ownership (variable) is moved into another scope, you can’t use this variable in the scope. See above how
 we tried to use &lt;em&gt;john&lt;/em&gt; variable passing into &lt;em&gt;is_adult&lt;/em&gt; function - this will not compile, because we moved ownership of john to the &lt;em&gt;write_age&lt;/em&gt; function scope and after &lt;em&gt;write_age&lt;/em&gt; is done (out of scope), the content of the &lt;em&gt;john&lt;/em&gt; variable is deleted.&lt;/p&gt;
-&lt;a name=&quot;returning_ownership_back_to_the_scope&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;returning_ownership_back_to_the_scope&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;8.1.2 Returning ownership back to the scope&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
@@ -932,9 +1350,9 @@ we tried to use &lt;em&gt;john&lt;/em&gt; variable passing into &lt;em&gt;is_adu
    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john_is_adult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK&lt;/span&gt;
    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;john is adult = {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; john_is_adult&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;borrowing&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;borrowing&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;8.2 Borrowing&lt;/h3&gt;
-&lt;a name=&quot;immutable_borrow&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;immutable_borrow&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;8.2.1 Immutable borrow&lt;/h4&gt;
 &lt;p&gt;Passing and returning ownerships is not always best decision to do - code overhead, &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;rust&quot;&gt;&lt;pre class=&quot;language-rust&quot;&gt;&lt;code class=&quot;language-rust&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; u16 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
@@ -954,7 +1372,7 @@ we tried to use &lt;em&gt;john&lt;/em&gt; variable passing into &lt;em&gt;is_adu
    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; john_is_adult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;is_adult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// OK, passing reference&lt;/span&gt;
    &lt;span class=&quot;token function&quot;&gt;println!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;john is adult = {}&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; john_is_adult&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;mutable_borrow&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;mutable_borrow&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;8.2.2 Mutable borrow&lt;/h4&gt;
 &lt;p&gt;When we want to pass a reference to another scope and we want also alter this passed variable - then we need
 to pass this with keyword &lt;strong&gt;&amp;#x26;mut&lt;/strong&gt; - mutable reference. &lt;/p&gt;
@@ -968,13 +1386,13 @@ to pass this with keyword &lt;strong&gt;&amp;#x26;mut&lt;/strong&gt; - mutable r
    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; john &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Person&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// we need to mark john as mutable as the function will mutate our passed variable&lt;/span&gt;
    &lt;span class=&quot;token function&quot;&gt;increment_age&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;mut&lt;/span&gt; john&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// instead of &amp;amp;john we pass &amp;amp;mut john&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;a name=&quot;borrowing_rules&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;borrowing_rules&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;8.3 Borrowing rules&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;In the given scope, you can borrow as much immutable borrows as you want. (To observe source value)&lt;/li&gt;
 &lt;li&gt;If you create one mutable borrow, you can’t create immutable borrows in that scope. (Only one variable can change source value)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;a name=&quot;feelings_and_conclusion&quot; /&gt;
+&lt;p&gt;&lt;a name=&quot;feelings_and_conclusion&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Feelings and conclusion&lt;/h1&gt;
 &lt;p&gt;The one reason rust convinced me to look deeper at it was the claim that we can write rust in completely &lt;u&gt;safe&lt;/u&gt; manner without garbage collection - completely dependant on the out of a scope garbage collection. I haven’t written anything serious in rust - but I had the feeling that the compiler was a real dictator here didn’t allow me easily do whatever I want - but when it does, I had a good feeling about compiled code and large amount of executions of the code was bug free and has run as expected - without panicking. &lt;/p&gt;
 &lt;p&gt;On the other side, I had serious problem to get used to traits and lifetimes. I didn’t referenced lifetimes above, because I assume them to be more difficult to learn and as I wanted to let this reference as simple as possible - I didn’t describing them here (but it doesn’t mean I won’t describe them in another post later).&lt;/p&gt;
@@ -1199,7 +1617,7 @@ function &lt;code class=&quot;language-text&quot;&gt;this.compute&lt;/code&gt; w
 &lt;h1&gt;Solution to the problem&lt;/h1&gt;
 &lt;p&gt;Have you heard about &lt;em&gt;reselect&lt;/em&gt; package? I had this npm package in my mind, heard about it but never used it on the frequently basis. Never had to.&lt;/p&gt;
 &lt;p&gt;You can find functions as &lt;em&gt;createSelector&lt;/em&gt;, &lt;em&gt;defaultMemoize&lt;/em&gt;,&lt;em&gt;createSelectorCreator&lt;/em&gt; and &lt;em&gt;createStructureCreator&lt;/em&gt;.
-For more information see &lt;a href=&quot;https://github.com/reduxjs/reselect&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+For more information see &lt;a href=&quot;https://github.com/reduxjs/reselect&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;DefaultMemoize solves this problem. I will explain you how.
 Here you can see the definition of the &lt;em&gt;defaultMemoize&lt;/em&gt; function.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;defaultMemoize&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;func&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; equalityCheck &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; defaultEqualityCheck&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1349,8 +1767,8 @@ two columns, &lt;em&gt;B&lt;/em&gt; to the end - which is value, and &lt;em&gt;D
 If you have never heard about SQL, please google it.
 Basically it is query language to get, update or delete some data. In this case, however we are going to select (get) data. &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: Google Sheet QUERY doesn’t have “FROM” clause.&lt;/p&gt;
-&lt;p&gt;For more information see &lt;a href=&quot;https://support.google.com/docs/answer/3093343?hl=en&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;To see syntax of Google Sheet Query Language see &lt;a href=&quot;https://developers.google.com/chart/interactive/docs/querylanguage&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For more information see &lt;a href=&quot;https://support.google.com/docs/answer/3093343?hl=en&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To see syntax of Google Sheet Query Language see &lt;a href=&quot;https://developers.google.com/chart/interactive/docs/querylanguage&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;this&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;=QUERY(
    data,
    query,
@@ -1364,7 +1782,7 @@ Basically it is query language to get, update or delete some data. In this case,
 &lt;p&gt;If you are programmer, from now you probably know how to continue further. If you are normal person, you have probably no clue what I am talking about. You can ask, why I am explaining things about query function. Well, that’s because we need to transform the data a little bit. Let’s say we want to know how much money you spent over last months, or how money items (transaction) have you done through past months. Now you can’t just select some columns, create chart and you done - you are not done (like in the section described above), because you don’t have right data to create this type of charts.&lt;/p&gt;
 &lt;p&gt;&lt;a name=&quot;aggregation&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Aggregation&lt;/h2&gt;
-&lt;p&gt;Imagine aggregation as throwing items to the buckets. Every bucket has a label (or name) and it’s inner value. When you make aggregation, you also &lt;strong&gt;&lt;em&gt;grouping&lt;/em&gt;&lt;/strong&gt; your data with some function. The most popular aggregation functions are &lt;em&gt;SUM&lt;/em&gt;, &lt;em&gt;COUNT&lt;/em&gt;, &lt;em&gt;AVG&lt;/em&gt;, &lt;em&gt;MAX&lt;/em&gt;, &lt;em&gt;MIN&lt;/em&gt;. When you throw an item to the bucket, the aggregation function is used on the item in the context of bucket where the item was assigned/thrown. Name of the function should actually tell you what it is supposed to do. If not, look at the reference &lt;a href=&quot;https://developers.google.com/chart/interactive/docs/querylanguage#aggregation-functions&quot;&gt;here&lt;/a&gt;. Then, you iterate over your specified data and search for &lt;strong&gt;specific value&lt;/strong&gt;. If this value is the naming of your bucket, throw this iterated row into the bucket. In real-world example, the &lt;strong&gt;specific value&lt;/strong&gt; is &lt;code class=&quot;language-text&quot;&gt;SELECT name GROUP BY specific_value&lt;/code&gt;. Now if you find next row with the same value you throw it to the same bucket again. Okay, now you finished iterating over the rows and you have bunch of buckets with a rows in it. &lt;/p&gt;
+&lt;p&gt;Imagine aggregation as throwing items to the buckets. Every bucket has a label (or name) and it’s inner value. When you make aggregation, you also &lt;strong&gt;&lt;em&gt;grouping&lt;/em&gt;&lt;/strong&gt; your data with some function. The most popular aggregation functions are &lt;em&gt;SUM&lt;/em&gt;, &lt;em&gt;COUNT&lt;/em&gt;, &lt;em&gt;AVG&lt;/em&gt;, &lt;em&gt;MAX&lt;/em&gt;, &lt;em&gt;MIN&lt;/em&gt;. When you throw an item to the bucket, the aggregation function is used on the item in the context of bucket where the item was assigned/thrown. Name of the function should actually tell you what it is supposed to do. If not, look at the reference &lt;a href=&quot;https://developers.google.com/chart/interactive/docs/querylanguage#aggregation-functions&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;here&lt;/a&gt;. Then, you iterate over your specified data and search for &lt;strong&gt;specific value&lt;/strong&gt;. If this value is the naming of your bucket, throw this iterated row into the bucket. In real-world example, the &lt;strong&gt;specific value&lt;/strong&gt; is &lt;code class=&quot;language-text&quot;&gt;SELECT name GROUP BY specific_value&lt;/code&gt;. Now if you find next row with the same value you throw it to the same bucket again. Okay, now you finished iterating over the rows and you have bunch of buckets with a rows in it. &lt;/p&gt;
 &lt;p&gt;Let’s say you have a car shop. You sell several brands of cars (Toyota, BMW, …). You’ve got records of your sold cars - time, car brand, and the price you have sold the car. Now you want to know the total count of every sold brand.&lt;/p&gt;
 &lt;p&gt;Like so:
 Toyota - 15 cars, BMW - 8 cars, …&lt;/p&gt;
@@ -1414,7 +1832,7 @@ Toyota - 15 cars, BMW - 8 cars, …&lt;/p&gt;
 Warning: This bucket mechanism I am describing here function as a small help for you to better imagine what is going on.
 RDBMS systems don&apos;t do that like this, they do a lot of optimizations and make things as they iterate over the rows and so on.
 &lt;/div&gt;
-&lt;p&gt;If you still have problems with understanding aggregation, see this &lt;a href=&quot;https://www.tutorialspoint.com/sql/sql-group-by.htm&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you still have problems with understanding aggregation, see this &lt;a href=&quot;https://www.tutorialspoint.com/sql/sql-group-by.htm&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;You need another column&lt;/h1&gt;
 &lt;p&gt;I told you we are going to calculate our expenses over the past months so I suppose you imagine the result table (from which we create our final chart) somehow like this:&lt;/p&gt;
 &lt;table&gt;
@@ -1550,7 +1968,7 @@ exist and who won’t use what I would create.&lt;/p&gt;
 with Google Forms and Google Sheet. I have set up a new form, added form questions
 necessary for tracking expense such as value, category, tags, description. You can even request
 to upload photo (for example your receipt from shopping).&lt;/p&gt;
-&lt;p&gt;Go to &lt;a href=&quot;https://docs.google.com/forms&quot;&gt;https://docs.google.com/forms&lt;/a&gt;.
+&lt;p&gt;Go to &lt;a href=&quot;https://docs.google.com/forms&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;https://docs.google.com/forms&lt;/a&gt;.
 &lt;em&gt;If you are paranoid about google tracking you and your data, I have bad
 news for you - this way of tracking expenses is not suitable for you :(&lt;/em&gt;
 If you don’t have an account on google/gmail - sign up, and then go to the link

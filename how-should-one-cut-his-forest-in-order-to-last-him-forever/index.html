@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;width:100%;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:5px;margin-left:15px;}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}h1,h2,h3,h4,h5{font-family:Roboto,sans-serif;font-weight:300;margin-top:1.75rem;break-words:break-all;color:#3d3d3d;}a.gatsby-resp-image-link{box-shadow:none;}.text-center{text-align:center;}</style><meta name="application-name" content="gatsby-starter-blog"/><meta name="generator" content="Gatsby 2.17.2"/><style type="text/css">.gatsby-resp-image-image{width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;color:transparent;}</style><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-127960781-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><link rel="alternate" type="application/rss+xml" href="/rss.xml"/><link rel="shortcut icon" href="/icons/icon-48x48.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=7c42e6e90626ea20fc716d6d3ddeab57"/><title data-react-helmet="true">How Should One Cut His Forest In Order to Last Him Forever | Blog</title><meta data-react-helmet="true" name="description" content="This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time…"/><meta data-react-helmet="true" property="og:title" content="How Should One Cut His Forest In Order to Last Him Forever"/><meta data-react-helmet="true" property="og:description" content="This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time…"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Martin Schnürer"/><meta data-react-helmet="true" name="twitter:title" content="How Should One Cut His Forest In Order to Last Him Forever"/><meta data-react-helmet="true" name="twitter:description" content="This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time…"/><link rel="shortcut icon" href="/icons-df2517047b31779b6dc2798a803afcd4/favicon.ico"/><link rel="icon" type="image/png" sizes="16x16" href="/icons-df2517047b31779b6dc2798a803afcd4/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="32x32" href="/icons-df2517047b31779b6dc2798a803afcd4/favicon-32x32.png"/><link rel="manifest" href="/icons-df2517047b31779b6dc2798a803afcd4/manifest.json"/><meta name="mobile-web-app-capable" content="yes"/><meta name="theme-color" content="#fff"/><style data-href="/styles.50c9a942f4ad4be753f9.css">@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-191cc9f50f3b76b9617cb383f19acb7d.woff2) format("woff2"),url(/static/montserrat-latin-100-370318464551d5f25b0f0a78f374faac.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-bdeaeb79db315697bd173a55b097dc18.woff2) format("woff2"),url(/static/montserrat-latin-100italic-ecf7d49386e8f265878e735db34a7c4b.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-85d5ef9db7f2dc6979172a4a3b2c57cb.woff2) format("woff2"),url(/static/montserrat-latin-200-1fc98e126a3d152549240e6244d7e669.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-49095760a498d024fe1a85a078850df9.woff2) format("woff2"),url(/static/montserrat-latin-200italic-fe46cf8b9462c820457d3bf537e4057f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-7c3daf12b706645b5d3710f863a4da04.woff2) format("woff2"),url(/static/montserrat-latin-300-8dc95fab9cf98d02ca8d76e97d3dff60.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-f20b178ca2024a5eac8e42e6649db86c.woff2) format("woff2"),url(/static/montserrat-latin-300italic-3fe16939288856e8e828fa2661bf2354.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-bc3aa95dca08f5fee5291e34959c27bc.woff2) format("woff2"),url(/static/montserrat-latin-400-8102c4838f9e3d08dad644290a9cb701.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-5cad650422a7184467af5a4d17b264c4.woff2) format("woff2"),url(/static/montserrat-latin-400italic-d191f22af3bb50902b99ac577f81a322.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-92d16e458625f4d2c8940f6bdca0ff09.woff2) format("woff2"),url(/static/montserrat-latin-500-8b763220218ffc11c57c84ddb80e7b26.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-47bfcca6b69d6a9acca7a8bff17193e2.woff2) format("woff2"),url(/static/montserrat-latin-500italic-72c01f753c3940c0b9cb6bf2389caddf.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-6fb1b5623e528e27c18658fecf5ee0ee.woff2) format("woff2"),url(/static/montserrat-latin-600-7c839d15a6f54e7025ba8c0c4b333e8f.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-60789af1c9338ed1a9546722ec54b4f7.woff2) format("woff2"),url(/static/montserrat-latin-600italic-f3d4de8d0afb19e777c79032ce828e3d.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-39d93cf678c740f9f6b2b1cfde34bee3.woff2) format("woff2"),url(/static/montserrat-latin-700-80f10bd382f0df1cd650fec59f3c9394.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-ba136d97b14e82284dd595e257f11c47.woff2) format("woff2"),url(/static/montserrat-latin-700italic-8c98142b425630821139c24bd1698700.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-b7018be9ed6cd94da8b6675b3a468c3b.woff2) format("woff2"),url(/static/montserrat-latin-800-9a9befcf50d64f9d2d19d8b1d1984add.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-540ffdd223d1a9ad3d4e678e1a23372e.woff2) format("woff2"),url(/static/montserrat-latin-800italic-897086f99f4e1f45e6b1e9368527d0bc.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-display:swap;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-58cd789700850375b834e8b6776002eb.woff2) format("woff2"),url(/static/montserrat-latin-900-26d42c9428780e545a540bbb50c84bce.woff) format("woff")}@font-face{font-family:Montserrat;font-style:italic;font-display:swap;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-451157bc8861fe54f523b3669a3def71.woff2) format("woff2"),url(/static/montserrat-latin-900italic-a8ec4957e1c24f5793305763ad9845b3.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-b1158cfcd4aacb9d8fb61625e37af46a.woff2) format("woff2"),url(/static/merriweather-latin-300-cc7de05e166e90320d7d896e0f72a19d.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-8fe52a48089d6ebe46db0b8e7cc66263.woff2) format("woff2"),url(/static/merriweather-latin-300italic-e1331f5397c2a673f9d3765138debdb5.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-8276fdb72ae8f4714d4e6eba704cc39f.woff2) format("woff2"),url(/static/merriweather-latin-400-69f09800f4f6479d06e44eba837df872.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-3a9be9ea9f7aa4af6de7307df21d9fc0.woff2) format("woff2"),url(/static/merriweather-latin-400italic-d76079ed7541a433a54f79316de086e9.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-fa534be7ffa380e39a7f6e03bf9a5e03.woff2) format("woff2"),url(/static/merriweather-latin-700-ba56ea84b8084b7ff9677f50d3cd81bd.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-1ef5edaaa20ae53ea50399884c5e48c6.woff2) format("woff2"),url(/static/merriweather-latin-700italic-534bc9e7ce93c73d73426e46acd78092.woff) format("woff")}@font-face{font-family:Merriweather;font-style:normal;font-display:swap;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-7528fb70e8a4a82c7305e72ff43ac25f.woff2) format("woff2"),url(/static/merriweather-latin-900-3799b6e2f5ed3fcccf9d7a708d7419fa.woff) format("woff")}@font-face{font-family:Merriweather;font-style:italic;font-display:swap;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-e1b4d2aaa78e12ad84aaf8a56321e4c2.woff2) format("woff2"),url(/static/merriweather-latin-900italic-2ae22f731b3424e8dbb4b37f7ca6e708.woff) format("woff")}span.line-numbers-rows{top:1em!important}strong{font-weight:800}a,a:active,a:visited{color:#2b27a9;font-weight:400;text-decoration:none;box-shadow:none}a:active:hover,a:hover,a:visited:hover{text-decoration:underline}a>*{color:initial}input,textarea{border:1px solid #ccc}.width-small{max-width:200px}.width-medium{max-width:400px}.center-image{margin:0 auto}.topbottom_margined{margin-top:15px;margin-bottom:15px}.margin-left{margin-left:15px}.margin-right{margin-right:15px}.error{background-color:rgba(231,14,3,.58);color:#fff}.error,.warning{font-weight:400;border-radius:15px;padding:15px;margin-top:10px;margin-bottom:10px}.warning{background-color:rgba(231,229,44,.58);color:#000}@media only screen and (max-width:500px){h1{font-size:26px}h2{font-size:24px}h3{font-size:22px}h4{font-size:20px}h5{font-size:18px}}.gatsby-highlight{display:grid}.text-center{text-align:center}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}code[class*=language-],pre[class*=language-]{color:#ccc;background:none;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}.category-module--post--1_J_v{margin-bottom:20px}.category-module--post--1_J_v .category-module--title--D3c_z{margin:0}.blog-post-module--discuss_box--3LeP1{padding-top:50px}.blog-post-module--blog_post--1yDfC{padding-top:20px}.blog-post-module--blog_post--1yDfC a{font-weight:400;padding-left:2px;color:#2e9fff}.blog-post-module--bottomNavigation--35j4l{display:flex;justify-content:space-between}@media only screen and (max-width:450px){.blog-post-module--bottomNavigation--35j4l{flex-direction:column}.blog-post-module--bottomNavigation--35j4l>div{width:100%}.blog-post-module--bottomNavigation--35j4l>div.blog-post-module--navigationRight--3abij{margin-top:15px;text-align:right}.blog-post-module--bottomNavigation--35j4l>div.blog-post-module--navigationRight--3abij a{text-decoration:underline}}:root{--xs_s:768px;--s_m:992px;--m_lg:1200px}.styles-module--container--3NSU9{display:grid;grid-template-columns:1fr 1fr;grid-gap:16px}.styles-module--container--3NSU9>div{background-color:#f5f5f5;border-radius:5px;padding:10px 20px}.styles-module--childrenWithShadow--B69Nm>div{box-shadow:0 2px 10px 1px rgba(0,0,0,.2)}.styles-module--gridC2--6RCWw{display:grid;grid-template-columns:1fr 1fr}.styles-module--textarea--3BmiB{width:100%;height:250px}.styles-module--fullWidth--q3HEj{grid-column:span 2}.styles-module--halfWidth--1yrg3{grid-column:span 1}.styles-module--wordHistogram--2hE6_{grid-column:1/span 1}.styles-module--charsHistogram--2XfgD{grid-column:2/span 1}.styles-module--charsHistogram--2XfgD table td:first-child{text-align:center}.styles-module--charsHistogram--2XfgD table td:last-child{text-align:left;width:30%}@media screen and (max-width:992px){.styles-module--charsHistogram--2XfgD,.styles-module--wordHistogram--2hE6_{grid-column:span 2}}.index-module--fw--2UWAE{width:100%;text-decoration:none;box-shadow:none}.index-module--calculator_grid--2IIH2{padding-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));grid-gap:20px;overflow:visible;padding-bottom:200px}.index-module--calculator_item--fK1jL{height:100%;border:1px solid #eee;padding:15px;border-radius:5px;box-shadow:0 3px 5px 0 rgba(0,0,0,.1);cursor:pointer;-webkit-transition:box-shadow .3s ease-in-out,-webkit-transform .3s ease-in-out;transition:box-shadow .3s ease-in-out,-webkit-transform .3s ease-in-out;transition:box-shadow .3s ease-in-out,transform .3s ease-in-out;transition:box-shadow .3s ease-in-out,transform .3s ease-in-out,-webkit-transform .3s ease-in-out}.index-module--calculator_item--fK1jL h3{text-align:center}.index-module--calculator_item--fK1jL:hover{box-shadow:0 5px 10px 0 rgba(0,0,0,.17);-webkit-transform:translateY(-4px);transform:translateY(-4px)}.index-module--calculator_item--fK1jL a{text-decoration:none}.index-module--input_panel--1EfOy{display:grid;grid-template-columns:1fr;grid-gap:10px}.index-module--input_div--25ArR{display:grid;grid-template-columns:1fr 1fr;padding:5px 0;border-bottom:1px solid #eee}.index-module--input_div--25ArR input{width:100px;align-self:center}.input-module--input--wgZ1q{border:1px solid #e9e9e9;border-radius:4px;height:36px;-webkit-transition:border .3s ease-in-out;transition:border .3s ease-in-out;padding-left:9px}.input-module--input--wgZ1q:active,.input-module--input--wgZ1q:focus{outline:none;border:1px solid #4480e0}@media only screen and (max-width:400px){.input-module--input--wgZ1q{width:120px}}.money_prediction-module--input_grid--3ch3J{display:grid;grid-auto-flow:column;grid-template-columns:2fr 1fr;align-items:center;margin-bottom:10px}@media only screen and (max-width:768px){.money_prediction-module--input_grid--3ch3J{grid-template-columns:3fr 1fr;font-size:13px}}.money_prediction-module--mobile_hide--2rkF0{display:block}@media only screen and (max-width:768px){.money_prediction-module--mobile_hide--2rkF0{display:none}}.money_prediction-module--labelAdditional--czliq{margin-bottom:10px}.money_prediction-module--labelAdditional--czliq .money_prediction-module--note--2CNAZ{font-size:12px;color:grey}.money_prediction-module--table-td--18PDM{display:flex;flex-direction:column;justify-content:center;align-items:center}.money_prediction-module--retirementRow--2jcGF{display:flex;justify-content:space-around;align-items:center}.money_prediction-module--retirementRow--2jcGF>div:first-child,.money_prediction-module--retirementRow--2jcGF>div:last-child{width:50%}.money_prediction-module--retirementRow--2jcGF>div:last-child input{width:100%}.Button-module--button--R8ZjR{border:1px solid #5643ca;background-color:#5643ca;color:#fff;border-radius:4px;cursor:pointer;outline:none}.Button-module--button--R8ZjR:active{border:1px solid #7d6bee;background-color:#7d6bee}.Button-module--button--R8ZjR.Button-module--ghost--EuPxw{background-color:#fff;color:#5643ca}.Button-module--button--R8ZjR.Button-module--ghost--EuPxw:active{background-color:rgba(86,67,202,.07)}.ExpenseInput-module--expected_expense--2yilh{display:flex;justify-content:space-between;margin-bottom:10px;align-items:center}@media only screen and (max-width:768px){.ExpenseInput-module--expected_expense--2yilh input{width:80px}}.ExpenseInput-module--expected_expense--2yilh .ExpenseInput-module--rangerPanel--1be20{display:flex;flex-direction:column;align-items:center}.ExpenseInput-module--expected_expense--2yilh input{margin-left:15px;margin-right:5px}.ExpenseInput-module--expected_expense--2yilh .ExpenseInput-module--clear_span--5p0GT{width:25px;height:25px;display:grid;align-items:center;justify-items:center;border:1px solid transparent;border-radius:50%;cursor:pointer;-webkit-transition:border .25s ease-in-out;transition:border .25s ease-in-out}.ExpenseInput-module--expected_expense--2yilh .ExpenseInput-module--clear_span--5p0GT:hover{border:1px solid #ddd}.cv-module--timeline--27oEE .cv-module--timeline-item--P_3Zq{padding-right:5px;padding-bottom:5px}.cv-module--timeline--27oEE .cv-module--timeline-item--P_3Zq .cv-module--title-with-dot--2LC1E{display:flex;align-items:center;margin-left:-5px;margin-bottom:5px}.cv-module--timeline--27oEE .cv-module--timeline-item--P_3Zq .cv-module--title-with-dot--2LC1E .cv-module--circle--vjLpL{width:10px;height:10px;margin-right:15px;border-radius:50%;background-color:#444}.cv-module--timeline--27oEE .cv-module--timeline-item--P_3Zq .cv-module--inside--Gi8Vy{font-size:.85rem;border-left:1px solid #ccc;padding-left:25px}.cv-module--margin-right--VJioV{margin-right:15px}.cv-module--margin-bottom--3quLY{margin-bottom:15px}.cv-module--filter-panel--5_323{display:flex;flex-wrap:wrap;margin-bottom:20px}.cv-module--filter-item--3KWhi{margin-right:15px;cursor:pointer}.cv-module--itemEnter--m42L8{opacity:0;background-color:rgba(0,255,13,.459)}.cv-module--itemEnterActive--2IVyq{opacity:1;-webkit-transition:opacity .5s ease-in-out,background-color .5s ease-in-out;transition:opacity .5s ease-in-out,background-color .5s ease-in-out;background-color:transparent}.cv-module--itemExit--2vdCO{opacity:1}.cv-module--itemExitActive--xMzl-{opacity:0;-webkit-transition:opacity .5s ease-in;transition:opacity .5s ease-in}.bio-module--bio_container--zgVeZ{display:grid}.bio-module--bio_image_style--2PYjG{margin-bottom:0;min-width:75px;margin-top:-37.5px;border-radius:100%}.bio-module--horizontal_center--1Jndd{display:flex;justify-content:center}.bio-module--name--3kQRP{text-align:center;font-size:28px;font-weight:300;color:#595959}.bio-module--bio_description--TmM-G{text-align:center;color:#545454;font-size:15px}@media only screen and (max-width:500px){.bio-module--bio_image_style--2PYjG{margin-top:20px}}.index-module--post--1Jw-8{padding:5px 20px;box-shadow:0 2px 12px 1px rgba(0,0,0,.09);margin-bottom:30px}.index-module--post--1Jw-8 .index-module--metaInfo--1E6vU{display:flex;align-items:center}.index-module--post--1Jw-8 .index-module--metaInfo--1E6vU>small:first-child{margin-right:15px}.index-module--post--1Jw-8 .index-module--metaInfo--1E6vU>div{display:flex;align-items:center}.index-module--post--1Jw-8 .index-module--metaInfo--1E6vU>div small{margin-left:2px}.portfolio-module--green--3Vfzd{color:#1e911e}.portfolio-module--red--11Hby{color:#7e0000}.portfolio-module--portfolioList--1QVsR .portfolio-module--item--33ahO{display:flex}.portfolio-module--portfolioList--1QVsR .portfolio-module--item--33ahO>div{width:100px}.portfolio-module--portfolioList--1QVsR .portfolio-module--item--33ahO>div:first-child{flex-grow:2}.portfolio-module--portfolioList--1QVsR .portfolio-module--item--33ahO>div:nth-child(2){flex-grow:1}.portfolio-module--portfolioList--1QVsR .portfolio-module--item--33ahO>div:nth-child(3){flex-grow:2;word-wrap:unset}.portfolio-module--portfolioList--1QVsR .portfolio-module--item--33ahO>div:nth-child(4){flex-grow:3;text-align:right}.portfolio-module--progressbar--3lWC4{width:100%;background-color:#fff;border-radius:15px;box-sizing:border-box;height:10px;position:relative;border:1px solid #ccc}.portfolio-module--progressbar--3lWC4 .portfolio-module--progress--2m6xe{position:absolute;left:0;background-color:#14ad14;height:8px;border-radius:15px}</style><link rel="apple-touch-icon" sizes="57x57" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-57x57.png"/><link rel="apple-touch-icon" sizes="60x60" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-60x60.png"/><link rel="apple-touch-icon" sizes="72x72" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-72x72.png"/><link rel="apple-touch-icon" sizes="76x76" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-76x76.png"/><link rel="apple-touch-icon" sizes="114x114" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-114x114.png"/><link rel="apple-touch-icon" sizes="120x120" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-120x120.png"/><link rel="apple-touch-icon" sizes="144x144" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-144x144.png"/><link rel="apple-touch-icon" sizes="152x152" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-152x152.png"/><link rel="apple-touch-icon" sizes="167x167" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-167x167.png"/><link rel="apple-touch-icon" sizes="180x180" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-180x180.png"/><link rel="apple-touch-icon" sizes="1024x1024" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-icon-1024x1024.png"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/><meta name="apple-mobile-web-app-title" content="gatsby-starter-blog"/><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-320x460.png"/><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-640x920.png"/><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-640x1096.png"/><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-750x1294.png"/><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-1182x2208.png"/><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-1242x2148.png"/><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-748x1024.png"/><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-768x1004.png"/><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-1496x2048.png"/><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="/icons-df2517047b31779b6dc2798a803afcd4/apple-touch-startup-image-1536x2008.png"/><style data-href="/commons.7e8a741e2420272c1c82.css">@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,600,800);:root{--xs_s:768px;--s_m:992px;--m_lg:1200px}.layout-module--root_panel--3D6dX{background-image:-webkit-gradient(linear,left top,left bottom,from(#29276c),color-stop(#5e568f),color-stop(#908ab2),color-stop(#c4c0d6),to(#fafafa));background-image:linear-gradient(180deg,#29276c,#5e568f,#908ab2,#c4c0d6,#fafafa);font-family:Roboto,sans-serif;font-weight:400;min-height:100vh;padding-left:0;padding-right:0}@media only screen and (min-width:768px){.layout-module--root_panel--3D6dX{padding-left:70px;padding-right:70px}}@media only screen and (min-width:1200px){.layout-module--root_panel--3D6dX{padding-left:150px;padding-right:150px}}@media only screen and (min-width:1400px){.layout-module--root_panel--3D6dX{padding-left:200px;padding-right:200px}}@media only screen and (min-width:1800px){.layout-module--root_panel--3D6dX{padding-left:400px;padding-right:400px}}.layout-module--grid_menu--1Glte{z-index:999;display:grid;grid-template-columns:1fr 1fr;width:100%;justify-content:center}@media only screen and (max-width:768px){.layout-module--grid_menu--1Glte{padding-left:25px;padding-right:25px}}@media only screen and (max-width:400px){.layout-module--grid_menu--1Glte{grid-template-columns:1fr}}.layout-module--menu--VEQ1k{display:flex;height:60px;color:#f8f8f8}.layout-module--menu--VEQ1k img{width:26px;margin-bottom:0}.layout-module--menu--VEQ1k h5{margin-bottom:0}.layout-module--menu--VEQ1k a,.layout-module--menu--VEQ1k div{color:#f8f8f8;border:none;box-shadow:none;font-size:18px}.layout-module--menu--VEQ1k .layout-module--menu_item--2grla{text-decoration:none;border-radius:6px;padding:5px 20px;-webkit-transition:background-color .3s ease-in-out;transition:background-color .3s ease-in-out}.layout-module--menu--VEQ1k .layout-module--menu_item--2grla:active{text-decoration:none}.layout-module--menu--VEQ1k .layout-module--menu_item--2grla.layout-module--active--bgzt6,.layout-module--menu--VEQ1k .layout-module--menu_item--2grla:hover{background-color:hsla(0,0%,100%,.2)}.layout-module--menu--VEQ1k.layout-module--right_menu--1ROiD{justify-content:flex-end;align-items:center}.layout-module--menu--VEQ1k.layout-module--right_menu--1ROiD .layout-module--menu_item--2grla:not(:last-child){margin-right:5px}@media only screen and (max-width:400px){.layout-module--menu--VEQ1k.layout-module--right_menu--1ROiD{justify-content:flex-start}}.layout-module--menu--VEQ1k.layout-module--left_menu--1V-xA .layout-module--menu_item--2grla{margin-right:3px;align-self:center}.MenuCategories-module--categories--1DcW1{cursor:pointer;position:relative;color:#000}.MenuCategories-module--categories--1DcW1 a,.MenuCategories-module--categories--1DcW1 div{color:#000}.MenuCategories-module--categories--1DcW1 a{width:100%}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD{z-index:5;position:absolute;top:100%;min-height:50px;width:200px;color:#000;background-color:#fff;padding:5px 0;box-shadow:0 5px 8px 1px rgba(0,0,0,.1)}@media only screen and (max-width:600px){.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD{left:-80px}}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD:after{content:"";position:absolute;top:-12px;left:5px;border:6px solid transparent;border-bottom-color:#fff}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--itemWrapper--1RJeR{position:relative}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--item--di3zt{display:flex;padding:2px 8px;cursor:pointer}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--item--di3zt .MenuCategories-module--label--20AU1{flex-grow:2}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--item--di3zt:hover{background-color:#edebff}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--subcategoryPanel--2rsep{display:none;box-shadow:0 5px 8px 1px rgba(0,0,0,.1);z-index:6;position:absolute;width:150px;left:calc(100% - 1px);border-left:1px solid #eee;top:calc(100% - 36px);background-color:#fff}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--subcategoryPanel--2rsep.MenuCategories-module--open--_CV6o{display:block}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--subcategoryPanel--2rsep .MenuCategories-module--item--di3zt{padding:1px 10px}.MenuCategories-module--categories--1DcW1 .MenuCategories-module--dropdown--39qWD .MenuCategories-module--subcategoryPanel--2rsep .MenuCategories-module--item--di3zt:hover{background-color:#d9d5ff}.MenuCategories-module--menu_item--2RU1h{padding:5px 20px;-webkit-transition:background-color .3s ease-in-out;transition:background-color .3s ease-in-out;border-radius:6px;margin-right:3px;align-self:center}.MenuCategories-module--menu_item--2RU1h:hover{background-color:hsla(0,0%,100%,.2)}.MenuCategories-module--menu_item--2RU1h .MenuCategories-module--active--xkhey{text-decoration:underline}.cardbox-module--body_content--QoZ2d{display:flex;justify-content:center;flex-flow:column}.cardbox-module--inside_content--2Kv0x{background-color:#fafafa;padding:0 20px 20px;overflow-x:visible}@media only screen and (min-width:768px){.cardbox-module--inside_content--2Kv0x{padding:0 70px 20px}}@media only screen and (min-width:1000px){.cardbox-module--inside_content--2Kv0x{padding:0 120px 20px}}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/app-e73220863683e38a06a8.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-jsx-4ecb8c0c02cf0c60cd5c.js"/><link as="script" rel="preload" href="/styles-b196d4c91e91458273c6.js"/><link as="script" rel="preload" href="/commons-f8523e850ab49fb6a623.js"/><link as="script" rel="preload" href="/webpack-runtime-6b445f2b6af8ff10ea10.js"/><link as="fetch" rel="preload" href="/page-data/how-should-one-cut-his-forest-in-order-to-last-him-forever/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div class="layout-module--root_panel--3D6dX" styles="[object Object]"><div class="layout-module--grid_menu--1Glte"><div class="layout-module--menu--VEQ1k layout-module--left_menu--1V-xA"><a class="layout-module--menu_item--2grla" href="/">Blog</a><a class="layout-module--menu_item--2grla" href="/calculators">Tools</a><div class="MenuCategories-module--menu_item--2RU1h MenuCategories-module--categories--1DcW1"><span>Categories</span></div></div><div class="layout-module--menu--VEQ1k layout-module--right_menu--1ROiD"><a class="layout-module--menu_item--2grla" href="/portfolio">Portfolio</a><a class="layout-module--menu_item--2grla" href="/cv">CV</a></div></div><div class="cardbox-module--body_content--QoZ2d"><div class="cardbox-module--inside_content--2Kv0x"><div class="blog-post-module--blog_post--1yDfC"><h1>How Should One Cut His Forest In Order to Last Him Forever</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem;margin-top:-0.875rem">October 29, 2019</p><div><p>This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time “Lumber-Jack”.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/566fe5fa4b5e1c5557d155be706e49de/52b6c/man-in-forest.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 119.07671418873049%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAYABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECBAP/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAcV7dsuRIYgWgr//xAAaEAADAQADAAAAAAAAAAAAAAABAhEAEyJB/9oACAEBAAEFAlGnYSKucLQl3nIXG//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABsQAAICAwEAAAAAAAAAAAAAAAABEBEhIjFR/9oACAEBAAY/AkeiFYtanK5H/8QAHBAAAgMAAwEAAAAAAAAAAAAAAREAITFBYXGh/9oACAEBAAE/IVa52GpFmR8gWk1DAnk9xAAIX7AXgeLAhV+kbGQKn//aAAwDAQACAAMAAAAQG8gA/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARMf/aAAgBAwEBPxCIjF//xAAXEQADAQAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/EJRUDq//xAAdEAEAAwACAwEAAAAAAAAAAAABABEhMUFRYXGx/9oACAEBAAE/EOYqhPSEmKXVvpzNZss2kNYCusaF/mR6YDDl8b8vEBUXWZ8IFSwO24OCYRGACnW7Wz//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="man in forest"
+        title="man in forest"
+        src="/static/566fe5fa4b5e1c5557d155be706e49de/2d017/man-in-forest.jpg"
+        srcset="/static/566fe5fa4b5e1c5557d155be706e49de/40f63/man-in-forest.jpg 225w,
+/static/566fe5fa4b5e1c5557d155be706e49de/df2c7/man-in-forest.jpg 450w,
+/static/566fe5fa4b5e1c5557d155be706e49de/2d017/man-in-forest.jpg 900w,
+/static/566fe5fa4b5e1c5557d155be706e49de/bbff7/man-in-forest.jpg 1350w,
+/static/566fe5fa4b5e1c5557d155be706e49de/98235/man-in-forest.jpg 1800w,
+/static/566fe5fa4b5e1c5557d155be706e49de/52b6c/man-in-forest.jpg 2946w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span>
+<small>Photo by Jamie Street on Unsplash</small></p>
+<p>This is how his cabin looks like. Winter are pretty cold here and to keep cabin warm, Jack needs to heat the cabin with a wood. Jack appreciate the nature around him and because the forest where he lives isn’t that big, he decided to buy a wood from another seller who cut wood from another, much bigger forest.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b1a403d132dd3266c7a733825f18443b/9696a/cabin-in-forest.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.67464687574814%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGQAAAQUAAAAAAAAAAAAAAAAAAAECAwQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAGpNnrgDCv/xAAaEAACAwEBAAAAAAAAAAAAAAABAwACEhEj/9oACAEBAAEFAhwSr9McPSrCJvh1P//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAABEBEhMf/aAAgBAQAGPwKxZg45H//EABsQAQACAgMAAAAAAAAAAAAAAAEAESExUZGh/9oACAEBAAE/IbNolPEVqCoTVcVAInuLt33P/9oADAMBAAIAAwAAABAP3//EABURAQEAAAAAAAAAAAAAAAAAABAh/9oACAEDAQE/EIf/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QDI0L/8QAGxABAAICAwAAAAAAAAAAAAAAAQARIUExUWH/2gAIAQEAAT8QvAvF0FvuIiaEaIdxHQFiZYVypqEQA0IibnlH/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cabin in forest"
+        title="cabin in forest"
+        src="/static/b1a403d132dd3266c7a733825f18443b/2d017/cabin-in-forest.jpg"
+        srcset="/static/b1a403d132dd3266c7a733825f18443b/40f63/cabin-in-forest.jpg 225w,
+/static/b1a403d132dd3266c7a733825f18443b/df2c7/cabin-in-forest.jpg 450w,
+/static/b1a403d132dd3266c7a733825f18443b/2d017/cabin-in-forest.jpg 900w,
+/static/b1a403d132dd3266c7a733825f18443b/bbff7/cabin-in-forest.jpg 1350w,
+/static/b1a403d132dd3266c7a733825f18443b/98235/cabin-in-forest.jpg 1800w,
+/static/b1a403d132dd3266c7a733825f18443b/9696a/cabin-in-forest.jpg 4177w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span>
+<small style="text-align: center;">Photo by Ryan Stone on Unsplash</small></p>
+<p>The main reason why Jack doesn’t want to cut his own forest is that he thinks he would cut it sooner than it’d grow back again. Despite his wise reasoning, he is also curious, how many trees it would be required to plant in order to grow forest big enough, that he could possibly cut trees in his own forest, while at the same time not decreasing its size (because trees would grow faster than he cuts them).</p>
+<p>On average, every forest grows <strong>7%</strong> a year. One year it can grows by <em>20%</em>, another <em>10%</em> and as the effect of a dry and hot summer 20-30% of the forest can easily be burned so it’ll have <em>-30%</em> trees as it had last year. So if a forest has 100 trees one year, it’d have 107 trees the next year (on average). The more trees is in a forest, the more trees being grown every year.</p>
+<p>Example of amazon forest: 400 billion trees -> 28 billion trees grow next year (7% of 400 billion)<br />
+Example of small forest: 1000 trees -> 70 grow next year (7% of 1000)</p>
+<p>This is only mathematical explanation so don’t focus on other factors such as:</p>
+<ul>
+<li>if trees have space to grow</li>
+<li>new grown trees</li>
+<li>species of trees</li>
+</ul>
+<p>What bother us is overall volume of a forest and we will assume forest as continuos number. Number of trees doesn’t bother us.</p>
+<h2>Example of running out of trees</h2>
+<p>Let’s run the numbers:
+Forest where Jack lives has 100 trees and needs 10 every year to keep his cabin warm. Annual growth rate of the forest is 7% and he cuts 10 trees every year.</p>
+<p><img src="/94f39d2327841bf671af367fb197e462/1000-7-10-v2.svg" alt="statistics from first example"></p>
+<p>Forest is slowly decreasing its size because it is unable to grow more trees than there is being cut.
+10 trees are 10% of the forest, 7% are grown - then the difference is negative -3%. The forest starts to decrease its size much more rapidly because 10 trees are being much more of the forest share. For example first year it is 10%, next year 10 trees out of 97 is 10.31%, the next year 10 (out of 93.79) will be 10.66% of the forest and so on and so on - The forest is getting smaller.
+Jack would cut the last tree in about 19 years. Then, there will be nothing left.</p>
+<h2>Example of perfect equilibrium</h2>
+<p>Jack need to cut trees at the same rate as they’re growing. His cut rate can’t exceed growth rate. So if for example annual growth is 7% - then he can’t cut more than 7% of his forest. When his cabin needs 10 trees to keep it warm, then he needs to have the forest at least the size of 143 trees. With a forest of 143 trees and growth rate 7%, he can cut exactly as many trees as he want - 10. Because 10 is what he needs and also 10 trees will grow every year - so the number of trees in a forest remains the same. </p>
+<u>
+<p><strong>Jack is happy now. His forest yields exactly the volume of wood he needs.</strong></p>
+</u>
+<p><img src="/0ff40097b71a08beaea10a87e24d4278/143-7-10.svg" alt="statistics for equlibrium example"></p>
+<h2>Bad things happen</h2>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4d28444f1483149ba472791a704efb8f/ffbed/fire-in-forest.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.266666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHIrhoKUKE//8QAGhAAAwADAQAAAAAAAAAAAAAAAAECERIhMf/aAAgBAQABBQKekwXjaCmx+//EABcRAQADAAAAAAAAAAAAAAAAAAABAhH/2gAIAQMBAT8BizX/xAAXEQEAAwAAAAAAAAAAAAAAAAAAAQIR/9oACAECAQE/AZqx/8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRABAQEAAwAAAAAAAAAAAAAAAQAhEDFR/9oACAEBAAE/IT6kXbbt2Jy7wf/aAAwDAQACAAMAAAAQ5w//xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAEDAQE/EDOpO3b/xAAXEQEBAQEAAAAAAAAAAAAAAAABABEh/9oACAECAQE/EEeDGTL/xAAZEAEBAQEBAQAAAAAAAAAAAAABEQAhMWH/2gAIAQEAAT8Q9gJppQ+6hg4zvMox7cBLhmqu/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="forest fire"
+        title="forest fire"
+        src="/static/4d28444f1483149ba472791a704efb8f/2d017/fire-in-forest.jpg"
+        srcset="/static/4d28444f1483149ba472791a704efb8f/40f63/fire-in-forest.jpg 225w,
+/static/4d28444f1483149ba472791a704efb8f/df2c7/fire-in-forest.jpg 450w,
+/static/4d28444f1483149ba472791a704efb8f/2d017/fire-in-forest.jpg 900w,
+/static/4d28444f1483149ba472791a704efb8f/bbff7/fire-in-forest.jpg 1350w,
+/static/4d28444f1483149ba472791a704efb8f/98235/fire-in-forest.jpg 1800w,
+/static/4d28444f1483149ba472791a704efb8f/ffbed/fire-in-forest.jpg 6000w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span>
+Photo by Matt Howard on Unsplash</p>
+<p>One hot summer bad thing happened - a fire started to burn forest and when firefighters came - fire destroyed 30% of the forest! Let’s asume 143 trees before fire and after fire, the number of trees was exactly 100.</p>
+<p><img src="/89aa0d58dd30cbfeb59e08314c5aeb35/fire-143-7-10.svg" alt="statistics for fire example"></p>
+<p>After fire destroyed 30% of the forest - every year forest was able to only produce 7 trees, but Jack needs 10 every year. It is exactly first example where forest wasn’t able to grow faster than it was cut. Jack will eventualy run out of wood.</p>
+<h3>Could Jack do better?</h3>
+<p>If he let grows a forest faster than he cuts it, then a lot more trees start to grow. He needs to make a more space for eventual mistake. What if he had a forest with 200 trees:</p>
+<p><img src="/5f9d9684c95fb462d5151183cbf2b87e/fire-200-7-10.svg" alt="start with 200 trees with fire statistics"></p>
+<p>200 trees is kinda one-time insurance against a horrible situation. After the fire we got to the equilibrium state again. We wouldn’t do well after a second fire - so let’s look at the growth after fire with 400 starting trees:</p>
+<p><img src="/b7782161b57e06692acaacb612758ae4/fire-400-7-10.svg" alt="start with 400 trees with fire statistics"></p>
+<p>Now it looks much better. Both, the forest and our lumberJack seem to have a bright future now.</p>
+<hr>
+<h2>Why I’m telling this story to you</h2>
+<p>Imagine you have some average annual expenses (wood to your cabin). You want to grow wealth so big - big enough to cover all your annual expenses. Is it possible? Can we took something from the forest example? What principles are same and what different? To be honest, I don’t know if some forest have 7% growth rate - but I know some financial instruments have on average 7% growth. Often it has 10 to 20% growth every year, but when the crisis hits - it can drop 30% down. </p>
+<p>If you haven’t inherit any wealth, you are basically starting without forest. Our lumber Jack was already in a cabin in a forest with some trees at the beginning. </p>
+<u>
+<p><strong>You have no forest - no wealth to grow</strong>.</p>
+</u>
+<p>All you have are seeds of trees (your income). And you can seed them every month, every year and let the forest grows. And you can cut <strong>NO</strong> trees. Notice that Jack in our example didn’t even plant trees by himself but instead, waited for forest to grows on its own.</p>
+<p>Let’s say we seeds 150 trees every year for 5 years. Then we start to cut 10 trees every year. There will be 2 big fires decreasing our forest by 30% (in 4-th year and 13-th year).</p>
+<p><img src="/7566b6bb71e8f366a8a733042a69c4d3/0-7-10-2-fires.svg" alt="start from zero trees"></p>
+<p>As you can see, we grew our own forest and it has sustained 2 fires (2x 30% decrease forest).</p>
+<h1>From nature to the real world</h1>
+<p>You probably have heard about investing in stocks. Index fund is a collection of individual stocks. It is automatically diversified collection/portfolio and if one stock lose its value, other stocks will continue to grow and keep value of a whole basket up.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 750px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsSAAALEgHS3X78AAADrklEQVQ4yw2SWUzbBQDG/4uJWdRkJsZEH3zwxePJGDcWj6jbw2RZQCc4ucqY2wrCNgKU0jo6SjnKMc629EA6oNxQKLblHHfYYAcgyJiAIKyzYwHsGDBgMz/78Mv38uV7+OUT8tLOUWdO595dBwszQ/R3lONanmXv+TY7uxvs7Xp4tun25iqe5Qns1RlI5SKa9Zkw5WT9ejmmogxUKXIOf/whgiEviq62Mjzri8xNewc7a1heus+L/7bY21tnd2eNvW03y7MjjF2vot6iJlURSbVGRZvJizGVa7osMq5ICAs4gpCuCMNhM+BammB6rJsbg3Z6nRaerC/gds+w9dTF1K0O9AnB5F4MprGiiPioH1HEhWHRJKHNjKFYFU1mUgSSmFMIqUox2VkyzFolM9Oj2CuuMlmbj61YytJsP09XZ3HWaGhIDGU0+wJWQyZpiWE0lGWxcKeF+lI1JqOaq9lSjnz+EYIqRUz0hTCMhclMjg9SJhUxW5GNXuxHW3U+L549pK+9hVatmmqVhHpbn7erZLC9kn9uWlGd/Q6R/6d0OM0EnjyOkJ1+kVCRPwZNBh2/1VB8xpdpjYKGuFNof4lk2NFEo0mL1VxCek4p8jwHmdpmJiZGGPxVRV3CDwQefAuL3J9vjx9FaDEkkxAdjMOowpAey9H33mQ0NYKYLz/A7/D73KnUcre7k3J9CfVNdrq6e1Bk6Gl19iANP0ZhpC8j1mJyJX7o8mUIw21V9NbqWBh1UpkSS7jPO3RnRWCWhXL+k3d5PDnK2qMHdHd2kXhZjbmuC2VBI1qNicoCGU2Fcma6LJiHbMzN2RB6ytKxlKj53VbHxrGTLBw8xHxwIKvin9g49DWbebnANr0Dt/nsm9Mkic9Tn6tGJlfT01pNf18fdrudmppqcpQpCDebdZTq0uiXnWYiQUKvpZ5xL8M2B5NxclYUZ9jdeoTVPsgXvhHoY4MoV10mJjKRWrOBznwJxZpChm5Poi02IezsbVKlv4IpxIe/fU/w4EQIru/DWQoRsxIQxKxKhGdxnOyiCgJEEipkYuIvyVF6PU4P2HGoY1BXWvlzbp6pP+4hPHQv4Wy3UpUYxPiB1/AIr7Cx7wDbL73ByutvM5Mq4v6tPqKlBSQmazFKozgb672VsZFRswqd+RpNY3/hci3iWXMj7O5u4vnXzZBOzsBXPswLL7O8bz9zgsCNV/czUxBDS0MTYT+nEh0RiTEpjtOXcsnJKkEZH0uoREtl7wSPPU+8rp/zP4Bg2bkK9r8MAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="meme"
+        title="meme"
+        src="/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png"
+        srcset="/static/4cd0da925fbfafb758a096e2ad50b21c/064a4/meme.png 225w,
+/static/4cd0da925fbfafb758a096e2ad50b21c/44727/meme.png 450w,
+/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png 750w"
+        sizes="(max-width: 750px) 100vw, 750px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><strong>S&#x26;P500</strong> index is probably the most popular one. It contains 500 most successful american companies. A chart of value over time of S&#x26;P500 looks like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a47757323d9e6703d6f15e89de41a0c5/9870e/sap500.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 39.71742543171114%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABFUlEQVQoz6VS7WrDMAzM+7/P/u4FBvsx2sHGKFtJIG2TOLFdfztXySElMMZgExyWIuksnVPlnDHP87+QcoKaJJyxqLz3MMaA7S9kmcDWe4U3UaOKMYJJfyNcLc954y/fVTB4+HzCa3fkCQOstT8Srk0+hTtZpBVDisVvdIfH+gXvosHV08opUTKEb5NsTQWL5/MHdv0XatWVc0/YDUccZItEF1m60EW/rOycuzdzUhMBw1CB8BqHqS1TCafQGlHqOitR9ydMYoRUEoMQRboqhohApN11Qit7NOKCsxZo9VDOyzQgxYScMouGSBKVAcjnVx3HsUBrDU+bVutvw/q4zYuvZilmWYokFHOeJ1ki4qX+dUOuuQFLEXGTFqLT4wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="s&amp;p500 index"
+        title="s&amp;p500 index"
+        src="/static/a47757323d9e6703d6f15e89de41a0c5/fea0e/sap500.png"
+        srcset="/static/a47757323d9e6703d6f15e89de41a0c5/064a4/sap500.png 225w,
+/static/a47757323d9e6703d6f15e89de41a0c5/44727/sap500.png 450w,
+/static/a47757323d9e6703d6f15e89de41a0c5/fea0e/sap500.png 900w,
+/static/a47757323d9e6703d6f15e89de41a0c5/9870e/sap500.png 1274w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This is like growing a forest. You invest every month reasonable amount of money into funds (planting trees). Index <em>S&#x26;P500</em> grows on average 7% a year. Sometimes it drops like in the year 2000 and 2008 because of financial downturn. But as you can see, from the long-term view, it grows.</p>
+<p>The advantage of index fund is that you don’t have to do magic calculations of which stocks to buy right now. You just buy index and you should be fine.</p>
+<p>Investing in stocks isn’t for everyone. You need to understand that you eventually can face a real psychological game here. When a crisis hits the market, your investments are in a red numbers and it’s not easy to look on money drowning even more - so you sell your holdings because of fear. Then you realize, that price hit the bottom and price goes up again. A few months later price is going still up. So you buy, because you don’t want to lose potential money - but this is what everybody thinks of and other buys too, price goes higher and higher and then - bubble burst and price goes down again. Obvious vicious cycles here.</p>
+<p>There is actually research, that it is almost impossible to time the market and nobody really knows whether market is going to go up or down. <strong>The golden rule of longterm investing is buy and hold</strong>. There actually is a game about trying to time the market - give it a try and you will realize that it’s harder than you think - <a href="https://engaging-data.com/market-timing-game/" target="_blank" rel="nofollow">timing market game</a></p>
+<blockquote>
+<p><strong>Time in the market beats timing the market</strong></p>
+</blockquote>
+<p>Fear and Greed is neverending story written by mass of people - because everyone wants to make money and nobody wants to lose money at the same time. Best investors buy undervalued stocks when everybody fears and sell, and best investors sell when everybody buys because of greed.</p>
+<!-- ![chart of how market moves throught time](./how-market-moves.png) -->
+<p>When TV news starts to bombard us about new financial trends or financial crisis, it often looks somehow like this:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ce3cf046830ffdc1a6f1147287a00b66/aacd8/financial-crisis.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 87.292817679558%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAARABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMBAgT/xAAVAQEBAAAAAAAAAAAAAAAAAAABAP/aAAwDAQACEAMQAAABhHxVnXIOJjaC/8QAHBABAAIBBQAAAAAAAAAAAAAAAQITAAMQIzFB/9oACAEBAAEFAiXJrThY154JNrdjHv8A/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BI//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/AVWE/8QAHBAAAgICAwAAAAAAAAAAAAAAASEAEQIxECBx/9oACAEBAAY/ArGQr2MWprhKbHT/xAAdEAACAQQDAAAAAAAAAAAAAAAAAREhMUFhUZHx/9oACAEBAAE/IZ4GijcYmilsZ3ToZDBBRXNz2R2ZmXz/2gAMAwEAAgADAAAAELQwff/EABkRAQACAwAAAAAAAAAAAAAAAAEAERAhMf/aAAgBAwEBPxABUdtx7j//xAAZEQEAAgMAAAAAAAAAAAAAAAABAEEQETH/2gAIAQIBAT8QEd3BS5xj/8QAHhABAAIABwEAAAAAAAAAAAAAAQAhETFBUZGh8PH/2gAIAQEAAT8QNEQIj4gIKAJqupiRATIOHZBAqUveYyKVNdHMpPfidKZfd52J/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="financial crisis in media"
+        title="financial crisis in media"
+        src="/static/ce3cf046830ffdc1a6f1147287a00b66/2d017/financial-crisis.jpg"
+        srcset="/static/ce3cf046830ffdc1a6f1147287a00b66/40f63/financial-crisis.jpg 225w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/df2c7/financial-crisis.jpg 450w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/2d017/financial-crisis.jpg 900w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/aacd8/financial-crisis.jpg 1086w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Every time you hear that you should sell your stocks and keep it in cash or buy a gold or other ludicrous assets - be careful and don’t listen to anyone, but make your own research before you do something stupid.</p>
+<p>Market can have all sorts of fluctuations and you shouldn’t pay a lot of attention to it. You’re interested in a long-term view. Let’s see ho market looks from zoom-in perspective.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/98f882a95d4ea9805f34eb0623e09115/1351f/market-zoom-1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 101.53321976149914%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAACEElEQVQ4y42Ui27kIAxF8/8fuqumM3kRCOTl5ThjyqSquiOheMC+XPvaNMdxyLZtwnffd13/u3ee59v5uq7SmGPZ3NZvwdhyiuzb/jsgziklDWJ99B8y+lG2dVNwnFj9PEhYgoLaHkBmG05jDLhhSYt0rpchA3KoN++H+BikHVsZ5lHO4yyXWyZmK0O7hQ2YhRxsXwN8Tk8Nsi8s74CGU1K2wJiiLDEznTrdw+kxPjTokc8tvR9TtlsocD/3ktYkaUtq86MMQ64fPxeczNFfae/bz6JgKCvXlZthhT2HWXqXAY8M6J2CkzIXG0NscGKMVw1ZxoQ0YQA4TjClDLTNvMwyhakIYy1EzJsoip6DCDb6fvG5Zg9Vva4XPrRT6Yx4EeESraGpRH0mPxXVCIYlwLZHbyIcgdYZ/G+HT+2KMilQNkHqMePW+9Tgp/9zDOJBArApE+K8sZthA/26BepJMT8AWABSUxNJW85EuRgO3xiaYMbwyLY1PqqPYVQxie/I0EbPBLk3rIHVNmNo3fB0z3KGBuM85Rrul6J9VlPrUvVXLVC9xxTBdPBDGUXSB6Oh22HIIXY9o/XzVQuFL+xCCm89+af7e6VMkamLTsDrKbOvTkK1hw/s2qH9mpTXW/CZ26dhAlCYVEvnV4/o/cXej6/H9f6iA9pAWZv1NY8hBHWmBYyB914D7nv41Y+tc07+AfUJHnCTy/UfAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="market max zoom - what people think"
+        title="market max zoom - what people think"
+        src="/static/98f882a95d4ea9805f34eb0623e09115/fea0e/market-zoom-1.png"
+        srcset="/static/98f882a95d4ea9805f34eb0623e09115/064a4/market-zoom-1.png 225w,
+/static/98f882a95d4ea9805f34eb0623e09115/44727/market-zoom-1.png 450w,
+/static/98f882a95d4ea9805f34eb0623e09115/fea0e/market-zoom-1.png 900w,
+/static/98f882a95d4ea9805f34eb0623e09115/1351f/market-zoom-1.png 1174w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This was just temprary small down direction (correction) and market continues to grow upwards.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/972c32e7bd9a45e4995103e8ea05e8e7/9c15e/market-zoom-2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 121.04208416833669%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAACXBIWXMAABYlAAAWJQFJUiTwAAACcUlEQVQ4y41ViXLrIAzM/39jJ3l9deL7wgYbXyqrRBSncVtmCLIMyq5WwidrLRlj6Ha70TzPhGdM2NM0sY11HEf2YcWzvINvnmZK65R9J/wsy0JN09xfPgLBJ8+wxbfMy319+LZ1IzMOlLU5+zggDtV1/TKgvAeadV2p6Rsa7chTAn4UEfthn7BxGAZKkmRHU+yQnp0svWf/6V/2TtfyStuyUT/0VKqSkXvKGFprTw8r0Igtq50tpU1GkQuWO4p61NS5gLVDJ/sZIRKdpum3ZIeiMBM7cPKBDAHPyYWu1Y3avmVhGKEggCiS7FcI18XlTzektCLayKGqKa5jiqqI8wnKOMOUYSilDlVGMD1o+igfh0VtN4FahPOUj+pQbATM6oyDMv3J+ncIIvafRQHFUlVkrPFpCfd5JqD8W9kIwrzJPcJn8UJWvrCrqjrM4TRPlLlyCQs93Cd/4HMoosjm54DIGQKiE2CHAXH2W0Cpw6NOgZJJlTB1ablDypx0iNLrXc1hSPKTJvX1FwqGuW2bt70o2FSWJQeK64QFQCcIIr5JhP4T+jCHjFCavigK3oyb4y1+45ZC4VZdRa1Wu1snpBzWoVcZsI021JmOKtdSoFe7NkNQIDajuXfG+tWKP9YhRCnygnrTU9EWRC6FQIbmP6cX/qPJTv7m9tfZkyi+U4Cw73suDWUU5w5pQP4QbF6+SuRPCFnJLOFLE9TEx4fnZSfGqxzuRAEFKHiOLpyr3eHHJYBOkY/Ur6IAJkZcxnwQAymQ9acpI/Sdsixjhc/RmVSnqG1a7mtcafhwtW1LXddRnufsw4o2hQ/dBR9qGGUH+xPgYlDuVwdwDwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="market max zoom - reality"
+        title="market max zoom - reality"
+        src="/static/972c32e7bd9a45e4995103e8ea05e8e7/fea0e/market-zoom-2.png"
+        srcset="/static/972c32e7bd9a45e4995103e8ea05e8e7/064a4/market-zoom-2.png 225w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/44727/market-zoom-2.png 450w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/fea0e/market-zoom-2.png 900w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/9c15e/market-zoom-2.png 998w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>When in reality - cycle is always part of the bigger long-term cycle.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dd238f6a10dd0dd02fb80d66139bee24/92c30/market-zoom-3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 71.29750982961993%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABX0lEQVQ4y51S2Y6DMAzM//9itfSiUFrCHY6QapZxlYqy2a60D1Z8xGOPbaW1Rl3XmOcZ1tqXTNP0Zn+KudnBDAaH2wGqbVtQ/gs421ns0/0kr+q6DpQQ4Nq3jXub3ZVtibzOxaeapvnY4WQnkVCMOaR6XLrz+T8oM5lVKfStdQ88TiOccxjHcQE7oh/7ZzxE+eEeqE29zOSMfbbHOT/jXt/lM2NehnFYlnBE2VUC7rt/o8xOdKPxdY2QFlcUbYGszCRxl+6EWlpeEeex2PxL8PWShDI7ZJVqqcZkUlt3w0Ld0AnYRV+Q6ERmR//2AhRvkKCsws58Nc6Huheex2uei+7PZSsyQ2MM4qUyq76Wszkbv7C/blT1pkeSp9Dtcx4E8UBe34rcn3PBmCrKAlGyh19O6N3qHNP69XpVVVBREiHTN9jJou97ob9+vT4Mw5sd+sOiKr7FIO0Qrd+ofxrHNzJRP06khOtDAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="market max zoom - reality"
+        title="market max zoom - reality"
+        src="/static/dd238f6a10dd0dd02fb80d66139bee24/fea0e/market-zoom-3.png"
+        srcset="/static/dd238f6a10dd0dd02fb80d66139bee24/064a4/market-zoom-3.png 225w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/44727/market-zoom-3.png 450w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/fea0e/market-zoom-3.png 900w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/8013a/market-zoom-3.png 1350w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/92c30/market-zoom-3.png 1526w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>This cycle could be also part of some bigger cycle but you got the point.</p>
+<p>You don’t believe me? I screenshotted random part of the S&#x26;P500 historical price chart and take a look at that.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6f37937de8b35f81c4bad87a5d726966/7f76c/sap500-cycles.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.91525423728814%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB7qkGgT//xAAWEAADAAAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUClH//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAaEAACAgMAAAAAAAAAAAAAAAAAEQEQITFh/9oACAEBAAE/IWPsGL1P/9oADAMBAAIAAwAAABDQH//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/EKf/xAAdEAACAQQDAAAAAAAAAAAAAAABEQAQIUFRgbHR/9oACAEBAAE/EAGEnuJkV9wOyweZ7Ttn/9k='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="s&amp;p 500 cycles"
+        title="s&amp;p 500 cycles"
+        src="/static/6f37937de8b35f81c4bad87a5d726966/2d017/sap500-cycles.jpg"
+        srcset="/static/6f37937de8b35f81c4bad87a5d726966/40f63/sap500-cycles.jpg 225w,
+/static/6f37937de8b35f81c4bad87a5d726966/df2c7/sap500-cycles.jpg 450w,
+/static/6f37937de8b35f81c4bad87a5d726966/2d017/sap500-cycles.jpg 900w,
+/static/6f37937de8b35f81c4bad87a5d726966/bbff7/sap500-cycles.jpg 1350w,
+/static/6f37937de8b35f81c4bad87a5d726966/98235/sap500-cycles.jpg 1800w,
+/static/6f37937de8b35f81c4bad87a5d726966/7f76c/sap500-cycles.jpg 2124w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>In case you didn’t noticed I highlighted cycles for you:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dac77d14c60d1d8f0e2338eb72fb74d6/7f76c/sap500-highlighted-cycles-v2.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.91525423728814%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEA/9oADAMBAAIQAxAAAAHdUorGJ//EABYQAAMAAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQKUf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABYQAAMAAAAAAAAAAAAAAAAAAAAgMf/aAAgBAQAGPwIq/wD/xAAaEAACAgMAAAAAAAAAAAAAAAAAERAhMVFh/9oACAEBAAE/IWPgrc4n/9oADAMBAAIAAwAAABBbH//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB0QAAIBBAMAAAAAAAAAAAAAAAERABAhMUFRsdH/2gAIAQEAAT8QXQs+RLsgvqAGyQJeXPads//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="s&amp;p500 highlighted cycles"
+        title="s&amp;p500 highlighted cycles"
+        src="/static/dac77d14c60d1d8f0e2338eb72fb74d6/2d017/sap500-highlighted-cycles-v2.jpg"
+        srcset="/static/dac77d14c60d1d8f0e2338eb72fb74d6/40f63/sap500-highlighted-cycles-v2.jpg 225w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/df2c7/sap500-highlighted-cycles-v2.jpg 450w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/2d017/sap500-highlighted-cycles-v2.jpg 900w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/bbff7/sap500-highlighted-cycles-v2.jpg 1350w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/98235/sap500-highlighted-cycles-v2.jpg 1800w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/7f76c/sap500-highlighted-cycles-v2.jpg 2124w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>I’m not going to waste time explaining why there are cycles. There are cycles in the economy - this is the fact. What is important here is that overall growth of the market is positive. It’s something like always growing sinusoid. We shouldn’t be too much focused on cycles or trends. Instead, we should focus on plan, steadiness and long-term - investing frequently and for longer period of time.</p>
+<hr>
+<h2>But what if crisis eats all my investments?</h2>
+<p>Rolling returns, instead of year by year returns, showing returns over the specific time period. As we can see on the image below, if money is invested for at least 15 years, worst returns are positive - which is good message for a long term investors.</p>
+<p><img src="/73c1489e4d811d6f2ce85697a5a324ab/rolling-sap500-returns.svg" alt="rolling returns of s&#x26;p500"></p>
+<p>As we learned, investments in stocks should be hold for at least 15 years to be sure the investment is profitable. However, not anyone has 15 years to wait for return on investment. The younger you are, the better time to invest. Someone too old shouldn’t hold too much share in stocks. When crisis hit, you lose more and there is also a chance you won’t live when your investment return breaks even. </p>
+<p>Treasury bonds are much safer investment than stocks, but also less profitable.</p>
+<blockquote>
+<p>You should hold percentual share of bonds equal to your age.</p>
+</blockquote>
+<p>So when you are 70 years old, you should hold 70% in bonds and so on. The rule doesn’t need to be applied exactly by age. If one is conservative, he can hold higher percentual share of bonds and vice versa.</p>
+<p>Stocks are more volatile than bonds, but from long-term view, stocks are more profitable than bonds. More risk brings more profit over longer time period.</p>
+<p>Take a look at this figure:</p>
+<p><img src="/fc4a25f46f204bfbbd536474e3d8cca1/risk-return-figure.svg" alt="risk return figure"></p>
+<p>When being riskier, you have bigger profits on average. When risk is small, your profits are small - but loses are also small. When age rises, risking stops being profitable anymore.</p>
+<p>At the beginning I told you a story about Jack. He is now fully independent from buying local wood but he can cut his own trees forever! This is also true for finance and wealth - if you have accumulated wealth big enough it’s highly possible that you won’t run out of money, ever. Read more on <a href="/so-when-is-actually-the-time-to-retire">when is the time to retire</a>.</p>
+<h2>How to invest</h2>
+<p>You need a broker to invest. Broker is connection between you and the market. As an european, I didn’t have many brokers to choose from. I tried a few but wasn’t pretty much satisfied with a platform and fees. So I ended up in <a href="https://degiro.com" target="_blank" rel="nofollow">Degiro</a> and I couldn’t make a better decision. The lowest fees in Europe and very intuitive platform. They also offer investing in a list of indexes once a month for free!</p>
+<blockquote>
+<p>The best time to plant a tree was 20 years ago. The second best time is now. – Chinese Proverb</p>
+</blockquote>
+<p>Start to grow your forest today!</p></div><hr style="margin-bottom:1.75rem"/><div class="blog-post-module--bottomNavigation--35j4l"><div><a rel="prev" href="/what-was-the-first-road-trip-like-and-what-would-i-change-next-time/">← <!-- -->My first Road Trip and what would I Change the Next Time</a></div><div class="blog-post-module--navigationRight--3abij"></div></div></div></div></div><div class="cardbox-module--body_content--QoZ2d" style="margin-top:15px;margin-bottom:25px"><div class="cardbox-module--inside_content--2Kv0x"><div class="blog-post-module--discuss_box--3LeP1"><div id="disqus_thread"></div></div></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/how-should-one-cut-his-forest-in-order-to-last-him-forever/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-e73220863683e38a06a8.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-afb034a1e32022454121.js"],"component---src-templates-category-jsx":["/component---src-templates-category-jsx-158269171fc7076abc4a.js"],"component---src-templates-blog-post-jsx":["/component---src-templates-blog-post-jsx-4ecb8c0c02cf0c60cd5c.js"],"component---src-pages-404-jsx":["/component---src-pages-404-jsx-3c00411b66eff49ca414.js"],"component---src-pages-calculators-count-words-index-js":["/component---src-pages-calculators-count-words-index-js-e0215773c6d9834d83e4.js"],"component---src-pages-calculators-index-jsx":["/component---src-pages-calculators-index-jsx-1c0c35cd6c862634e250.js"],"component---src-pages-calculators-inflation-index-jsx":["/component---src-pages-calculators-inflation-index-jsx-aa17fefb4165abf15c29.js"],"component---src-pages-calculators-money-prediction-jsx":["/component---src-pages-calculators-money-prediction-jsx-211d00e292cf8ecb34e2.js"],"component---src-pages-calculators-realestatebus-index-js":["/component---src-pages-calculators-realestatebus-index-js-4023afe1c586e6fd83ea.js"],"component---src-pages-calculators-stocksinvest-index-jsx":["/component---src-pages-calculators-stocksinvest-index-jsx-25a585b0f76856c6f695.js"],"component---src-pages-categories-jsx":["/component---src-pages-categories-jsx-c8e4dc48353413d4c072.js"],"component---src-pages-cv-jsx":["/component---src-pages-cv-jsx-cfb4d82f164f7438a9ba.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-87df0be366d622ed483d.js"],"component---src-pages-portfolio-jsx":["/component---src-pages-portfolio-jsx-a32bdcdf4521ad9c3a0d.js"]};/*]]>*/</script><script src="/webpack-runtime-6b445f2b6af8ff10ea10.js" async=""></script><script src="/commons-f8523e850ab49fb6a623.js" async=""></script><script src="/styles-b196d4c91e91458273c6.js" async=""></script><script src="/component---src-templates-blog-post-jsx-4ecb8c0c02cf0c60cd5c.js" async=""></script><script src="/app-e73220863683e38a06a8.js" async=""></script></body></html>
