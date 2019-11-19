@@ -1,11 +1,937 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 04 Nov 2019 21:28:44 GMT</lastBuildDate><item><title><![CDATA[How Should One Cut His Forest In Order to Last Him Forever]]></title><description><![CDATA[This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He…]]></description><link>https://martinschnurer.net/how-should-one-cut-his-forest-in-order-to-last-him-forever/</link><guid isPermaLink="false">https://martinschnurer.net/how-should-one-cut-his-forest-in-order-to-last-him-forever/</guid><pubDate>Tue, 29 Oct 2019 22:38:00 GMT</pubDate><content:encoded>&lt;p&gt;This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time “Lumber-Jack”.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Martin Schnürer]]></title><description><![CDATA[.]]></description><link>https://martinschnurer.net</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Nov 2019 00:35:50 GMT</lastBuildDate><item><title><![CDATA[Implementing Newsletter Subscription for your Gatsby Website]]></title><description><![CDATA[TLDR; You can implement your own email subscription service (almost) for free. In this post, I’m going to implement one and tell you more…]]></description><link>https://martinschnurer.net/newsletter-subscribe-endpoint-for-your-gatsby-site/</link><guid isPermaLink="false">https://martinschnurer.net/newsletter-subscribe-endpoint-for-your-gatsby-site/</guid><pubDate>Tue, 05 Nov 2019 12:38:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;&lt;em&gt;TLDR; You can implement your own email subscription service (almost) for free. In this post, I’m going to implement one and tell you more about AWS (Amazon Web Services). For more details, keep reading.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Welcome to this post. Do you want your own newsletter subscription for your page? You are in the right place. Not only this post gives you a tutorial for implementing a subscription, it gives you also a small introduction to a few AWS services - API Gateway, Lambda and DynamoDB.&lt;/p&gt;
+&lt;h2&gt;WHY DO YOU NEED TO GATHER EMAILS FROM YOUR CUSTOMERS?&lt;/h2&gt;
+&lt;p&gt;According to &lt;a href=&quot;https://www.emarsys.com/app/uploads/2018/01/eTail-Emarsys-WBR-SMB-Report.pdf&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Emarsys study&lt;/a&gt;, businesses under $100M revenue claim &lt;em&gt;Email marketing&lt;/em&gt; to be the top method of gaining a customer retention and acquisition. When it comes to retention and acquisition, 80% businesses relies on email marketing. Other top methods are: &lt;em&gt;Organic search&lt;/em&gt;, &lt;em&gt;Paid Search&lt;/em&gt; and &lt;em&gt;Social media&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 576px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/91ea43495360767d87e2018e3f85e6fd/b560a/meme-email-v2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 75.17361111111111%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwAE/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdJIQtnpf//EABkQAAMAAwAAAAAAAAAAAAAAAAABAgMhMv/aAAgBAQABBQIt7WOLGc0pTP/EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/ASf/xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPwFn/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAERMUFhwf/aAAgBAQAGPwI2T0l0LMltH//EABsQAQACAwEBAAAAAAAAAAAAAAEAESExQVFx/9oACAEBAAE/IVDaF4ilDjwhHT2FSp8VLbLmrPZaaDWGf//aAAwDAQACAAMAAAAQAx//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAgEBPxBT/8QAHhAAAgICAgMAAAAAAAAAAAAAAREAMSFBUYFhkaH/2gAIAQEAAT8QV5gj2eIYUmAsNoYiDoAIJlDr1EQKAtB5cZxKmdR6gnOlQ4B81wfk/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;meme email di caprio throwing emails out of a window&quot;
+        title=&quot;meme email di caprio throwing emails out of a window&quot;
+        src=&quot;/static/91ea43495360767d87e2018e3f85e6fd/b560a/meme-email-v2.jpg&quot;
+        srcset=&quot;/static/91ea43495360767d87e2018e3f85e6fd/b51a4/meme-email-v2.jpg 225w,
+/static/91ea43495360767d87e2018e3f85e6fd/f749c/meme-email-v2.jpg 450w,
+/static/91ea43495360767d87e2018e3f85e6fd/b560a/meme-email-v2.jpg 576w&quot;
+        sizes=&quot;(max-width: 576px) 100vw, 576px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Whether you are business or not, email marketing seems to take a huge portion of a pie. Why would you omit something, that has the greatest potential to attract people to your site? In the end, people who are interested in your content most likely doesn’t bookmark your site and if so - bookmark doesn’t notify you about new juicy content you produce. You want your audience to know when a new content comes out. &lt;/p&gt;
+&lt;p&gt;Email marketing is so good because people who subscribed like your content and want to see more in the future. So the chance they will get on your site again through email is high - because they liked your content in the past, so they may in the future - this is what they hoped when they were typing that email in the subscribe form. So don’t mess it up.&lt;/p&gt;
+&lt;h2&gt;EXISTING SOLUTIONS&lt;/h2&gt;
+&lt;p&gt;Just google it. You may find many platforms providing services such as email lists, designing emails, analytics, A/B testing and a lot more. However, one down side is the price that you pay for the serice. At some providers, I was shocked how much money they asked for the service. In most cases, you are paying more when you have more subscribed emails. The others, as I saw, limited you by the number of sent emails - which is also not satisfying option.&lt;/p&gt;
+&lt;p&gt;However, as I saw the numbers, I really didn’t understand how can they charge so much for so few subscribers.
+The most popular one, &lt;strong&gt;MailChimp&lt;/strong&gt;, with its monkey logo, offers a free plan up to 2000 subscribers. The higher plan allows up to 50 thousands emails subscribed and it costs $10 a month. &lt;/p&gt;
+&lt;p&gt;Actually, the MailChimp has the most reasonable and for me cheapest plans among the other services I was searching around.&lt;/p&gt;
+&lt;h2&gt;WHEN YOU DON’T WANT TO PAY THE PRICE&lt;/h2&gt;
+&lt;p&gt;For a lot of people it is a viable option.  When they don’t know how to code and all they want is to store emails and gettings work done with them - it is absolutely fine and for example $10 a month is very reasonable price to pay for.&lt;/p&gt;
+&lt;p&gt;But… I’m coder and I don’t like the third party solution. Why? Because the service is limiting me with number of subscriptions. What if I wanted have a simple list of emails and no other services like A/B testing and analytics? I understand that other services are valuable too and can be useful - but not for everyone. The most valuable thing for the owner of a website is, when he acquire a visitor’s email.&lt;/p&gt;
+&lt;p&gt;In the example I will show you, how I can store up to 100k emails and pay exactly &lt;strong&gt;zero&lt;/strong&gt; dollars.&lt;/p&gt;
+&lt;h2&gt;INTRODUCTION TO SERVERLESS (AWS Lambda and DynamoDB)&lt;/h2&gt;
+&lt;p&gt;If we want to implement our solution, we need some provider to run and execute our code somewhere. As the title could tell you, I’m going to pick AWS (Amazon Web Services) and show you how to do it. &lt;/p&gt;
+&lt;p&gt;We could run a virtual machine EC2 in amazon and run all things needed to execute our code and so on. This is often not a viable option, because you pay for the time the unit is running. So if it is running all day all night, well, you pay for that time too. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What is Serverless?&lt;/strong&gt; Serverless is the kind of opposite from the EC2. Because when you don’t need it, it will not run. And you pay only for the time and execution times. Plus, you don’t need to bother with machine or servers, or some crashes in your virtual unit and so on. So the big advantage here is to focus on code and on business logic. &lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/52b6c/man-in-forest.jpg&quot;
+    href=&quot;/static/a4289bc44591bb588b20717218350183/65c70/aws-lambda.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEAv/EABUBAQEAAAAAAAAAAAAAAAAAAAID/9oADAMBAAIQAxAAAAFa4bJqM2I//8QAGxABAQACAwEAAAAAAAAAAAAAAQIDEQAEEyP/2gAIAQEAAQUC6p8mZLzabx0kwevE0//EABURAQEAAAAAAAAAAAAAAAAAAAEA/9oACAEDAQE/ASW//8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEhAv/aAAgBAgEBPwHUoj//xAAaEAACAgMAAAAAAAAAAAAAAAAAASExESJR/9oACAEBAAY/AosTZrweHRLoZ//EABsQAQADAQADAAAAAAAAAAAAAAEAEUExUXGx/9oACAEBAAE/IXtd9NgudvsIGlYMiwh9R1amJUvDP//aAAwDAQACAAMAAAAQhy//xAAYEQEBAAMAAAAAAAAAAAAAAAABABEhMf/aAAgBAwEBPxDdAO2Rb//EABcRAQEBAQAAAAAAAAAAAAAAAAEAIRH/2gAIAQIBAT8QXCnLAX//xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMVGxYf/aAAgBAQABPxAQgbgGXy+V7C/OwN3jT9hcCixoXI0nF4eo3UEVv2FhWwtJ/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;half life aws lambda&quot;
+        title=&quot;half life aws lambda&quot;
+        src=&quot;/static/a4289bc44591bb588b20717218350183/86881/aws-lambda.jpg&quot;
+        srcset=&quot;/static/a4289bc44591bb588b20717218350183/b51a4/aws-lambda.jpg 225w,
+/static/a4289bc44591bb588b20717218350183/f749c/aws-lambda.jpg 450w,
+/static/a4289bc44591bb588b20717218350183/86881/aws-lambda.jpg 900w,
+/static/a4289bc44591bb588b20717218350183/65c70/aws-lambda.jpg 1200w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;tiny&gt;Well this is image from the game Half Life, but the logos of Lambda are same&lt;/tine&gt;&lt;/p&gt;
+&lt;p&gt;One of the serverless services at the AWS is Lambda. Lambda is a function. When a trigger occurs, the lambda will be executed. Triggers can be for example request from API Gateway (Service which allows you to send requests to AWS), message queues or time trigger (triggered frequently), changed data in databases (such as DynamoDB) or changed files in S3 (data storage) and others. This function, when invoked, will execute, do the job and will send some data back or do some other things - then its life ends. &lt;/p&gt;
+&lt;p&gt;So if the function was invoked 0 times, you pay nothing. You’d expect that you’re going to pay something for a few executions - but no, you still pay nothing for a few thousands executions. If you are new to AWS - you have first year so called “Free Tier” that allows you to have a lot more free limits than Non free tiers. With &lt;em&gt;Free Tier&lt;/em&gt; you have 1M lambda requests. Then, it depends from the execution time and memory which your lambda needed for an execution. Rule of a thumb is that if you have less than one million requests, you’re not going to pay much.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DynamoDB&lt;/strong&gt; - DynamoDB is a serverless NoSQL key-value database which allows you to store endless amount of data. It is scalable and fast. And as well as lambda, you pay only for what you use. In this case, you pay for the amount of requests to the DynamoDB and the amount of stored data. I’m not going to write about other factors like data input and output (between zones) and other factors because they are not very relevant to us for now. &lt;/p&gt;
+&lt;p&gt;I’m going to tell you what the mentioned keywords above actually means:
+&lt;strong&gt;NoSQL&lt;/strong&gt; - This is the modern keyword for horizontally scalable database systems primarily not using SQL as their query mechanism. NoSQL and SQL is like Jing and Yang. They pretty much complement each other. SQL is not as scalable as NoSQL. SQL is not flexible as NoSQL. On the other side, flexibility is not always desired (for example at bank institutions). SQL language allows you to query almost anything. It is probably the most powerful query language that exists. You can aggregate, join, count, make advanced stats and so on. NoSQL databases are limited at querying but as I mentioned, they are good at different things.&lt;/p&gt;
+&lt;p&gt;Key-Value: This is just sub-part of NoSQL world (there are many other database systems row-oriented, column-oriented and so on). Key-Value means, that you can query your data by key. Key -&gt; Value. You can’t query directly data as in SQL for example.&lt;/p&gt;
+&lt;p&gt;Example: GET user with id 1234. GET(1234) =&gt; { User: … }… But as it is, you can’t query all users (or if you could, it’d be very inefficient). Whether in SQL, you can do it like this &lt;code class=&quot;language-text&quot;&gt;SELECT * FROM users;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;API Gateway&lt;/strong&gt; - The next service which allows you to have REST endpoints and query them from anywhere. It gives you open url and you can request to this endpoint. The service alone is pretty useless, because it only
+useful when combined with other service. It redirects your requests to these services. You can define endpoints here, manage and transform requests and responses, mock responses and so many other things I’m not going to describe here. What you need to know is, that it provides you endpoint, which you can invoke in your browser - some https://… endpoint. &lt;/p&gt;
+&lt;h2&gt;ARCHITECTURE&lt;/h2&gt;
+&lt;p&gt;I tried to make the architecture as simple as possible. First the user opens your site, then he eventually fill the form and send it to the url endpoint in &lt;strong&gt;API Gateway&lt;/strong&gt; service. The request will go through &lt;strong&gt;Lambda&lt;/strong&gt; where we can do some logic such as control if email is valid, check if email already exists in database, send various responses and so on. At the end of the request path, DynamoDB holds all our user data.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/df06889deed7afc2ae5457d3f3cbb046/af6ea/arch-1-v2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 44.33797909407666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAgABBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHuLGhlL//EABYQAQEBAAAAAAAAAAAAAAAAAAEQIf/aAAgBAQABBQKGBf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABgQAAIDAAAAAAAAAAAAAAAAAAEQACFR/9oACAEBAAY/Aja2F//EABwQAQABBAMAAAAAAAAAAAAAAAEAEBEhYTFxkf/aAAgBAQABPyEzYJz5LbgwK7M5dq//2gAMAwEAAgADAAAAEOcP/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QGf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABoQAQEAAgMAAAAAAAAAAAAAAAERACEgMVH/2gAIAQEAAT8Q0MCqjvIhtY4JK+nfDP/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;architecture of the solution&quot;
+        title=&quot;architecture of the solution&quot;
+        src=&quot;/static/df06889deed7afc2ae5457d3f3cbb046/86881/arch-1-v2.jpg&quot;
+        srcset=&quot;/static/df06889deed7afc2ae5457d3f3cbb046/b51a4/arch-1-v2.jpg 225w,
+/static/df06889deed7afc2ae5457d3f3cbb046/f749c/arch-1-v2.jpg 450w,
+/static/df06889deed7afc2ae5457d3f3cbb046/86881/arch-1-v2.jpg 900w,
+/static/df06889deed7afc2ae5457d3f3cbb046/af6ea/arch-1-v2.jpg 1148w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;HANDS ON&lt;/h2&gt;
+&lt;p&gt;Sign in to the &lt;a href=&quot;https://aws.amazon.com/console/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;AWS console&lt;/a&gt;. If you don’t have an account, then create one. I should warn you that the registration also requires to establish a valid payment method - you need to provide information about your credit card. Eventual payments will be billed monthly. &lt;strong&gt;You are not going to be charged for anything yet&lt;/strong&gt;, because you have no services and no users using your service.&lt;/p&gt;
+&lt;p&gt;After you have successfuly logged in, you can see search bar. If you can’t see it, on the top of the page you should see section “Services”. Then you can search for Lambda service.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2a0a0ff94388a5450d134aa526f71d00/142b7/Frame%208.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.52971137521222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBBAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHZiwCDh//EABgQAQADAQAAAAAAAAAAAAAAAAEAEBIR/9oACAEBAAEFAsMwwOF//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAIRIDEyM//aAAgBAQAGPwLdjo5maf/EABsQAQACAgMAAAAAAAAAAAAAAAEAEWHRICHh/9oACAEBAAE/IVFa8dal/hqNUrJ4f//aAAwDAQACAAMAAAAQgw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAEAAgEFAAAAAAAAAAAAAAABABEgIVFhgZH/2gAIAQEAAT8QPwLUDU4g1FHcjLc2bfAw/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 8&quot;
+        title=&quot;Frame 8&quot;
+        src=&quot;/static/2a0a0ff94388a5450d134aa526f71d00/86881/Frame%208.jpg&quot;
+        srcset=&quot;/static/2a0a0ff94388a5450d134aa526f71d00/b51a4/Frame%208.jpg 225w,
+/static/2a0a0ff94388a5450d134aa526f71d00/f749c/Frame%208.jpg 450w,
+/static/2a0a0ff94388a5450d134aa526f71d00/86881/Frame%208.jpg 900w,
+/static/2a0a0ff94388a5450d134aa526f71d00/142b7/Frame%208.jpg 1178w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Cool, now create a function.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4ca464d924ac524375213903c360eabe/142b7/Frame%209.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 42.52971137521222%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB21RJUf/EABgQAAIDAAAAAAAAAAAAAAAAAAASAREg/9oACAEBAAEFAlFKnH//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAACAwEAAAAAAAAAAAAAAAAAAQIgMjH/2gAIAQEABj8C0zUjrp//xAAZEAEAAgMAAAAAAAAAAAAAAAABABEgMeH/2gAIAQEAAT8hVcb9iBbbD//aAAwDAQACAAMAAAAQgw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAdEAEAAQMFAAAAAAAAAAAAAAABIQARMSCRodHw/9oACAEBAAE/EHpAu4EjiofBtRySmVOtH//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 9&quot;
+        title=&quot;Frame 9&quot;
+        src=&quot;/static/4ca464d924ac524375213903c360eabe/86881/Frame%209.jpg&quot;
+        srcset=&quot;/static/4ca464d924ac524375213903c360eabe/b51a4/Frame%209.jpg 225w,
+/static/4ca464d924ac524375213903c360eabe/f749c/Frame%209.jpg 450w,
+/static/4ca464d924ac524375213903c360eabe/86881/Frame%209.jpg 900w,
+/static/4ca464d924ac524375213903c360eabe/142b7/Frame%209.jpg 1178w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;We want to write a new function from scratch, we called it something like &lt;em&gt;my-function-123&lt;/em&gt; and we will write our server function in nodejs version 10. Click on the Create and wait for the function to be created.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ac6a562df707863421df69b8bf70993a/fbd6f/Frame%2010.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 53.644501278772374%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAdqbgD//xAAZEAADAAMAAAAAAAAAAAAAAAAAARIQITH/2gAIAQEAAQUCklC1lc//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAAAIOH/2gAIAQEABj8CKv8A/8QAGhAAAgIDAAAAAAAAAAAAAAAAAREAkSAxcf/aAAgBAQABPyFC92Z2tBRDA//aAAwDAQACAAMAAAAQMM//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAdEAACAgIDAQAAAAAAAAAAAAAAARExIfBBUXGx/9oACAEBAAE/EE80vnbJVGz0SySJ5bf0hIdFT7P/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 10&quot;
+        title=&quot;Frame 10&quot;
+        src=&quot;/static/ac6a562df707863421df69b8bf70993a/86881/Frame%2010.jpg&quot;
+        srcset=&quot;/static/ac6a562df707863421df69b8bf70993a/b51a4/Frame%2010.jpg 225w,
+/static/ac6a562df707863421df69b8bf70993a/f749c/Frame%2010.jpg 450w,
+/static/ac6a562df707863421df69b8bf70993a/86881/Frame%2010.jpg 900w,
+/static/ac6a562df707863421df69b8bf70993a/dc699/Frame%2010.jpg 1350w,
+/static/ac6a562df707863421df69b8bf70993a/fbd6f/Frame%2010.jpg 1564w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Congratulation. You have created your first lambda function. As I mentioned above, lambda function is invoked by a trigger. In this case, we want to trigger our function with API request.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fe5a2384ae62f629f7f2177a8fecab24/d11ec/Frame%2011.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.856763925729446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAIBAwX/xAAUAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHai0BRxf/EABgQAQADAQAAAAAAAAAAAAAAAAEAAhIg/9oACAEBAAEFAskwQqHH/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGBAAAgMAAAAAAAAAAAAAAAAAACBBkeH/2gAIAQEABj8C0m1//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAExkSBB8P/aAAgBAQABPyGabHJhBu3h/9oADAMBAAIAAwAAABB8D//EABYRAAMAAAAAAAAAAAAAAAAAAAEQEf/aAAgBAwEBPxCBf//EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAgEBPxCYj//EAB4QAAICAAcAAAAAAAAAAAAAAAERACEQMUFRweHw/9oACAEBAAE/EHkr3l2RhRTxvCADU7NzFgJ//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 11&quot;
+        title=&quot;Frame 11&quot;
+        src=&quot;/static/fe5a2384ae62f629f7f2177a8fecab24/86881/Frame%2011.jpg&quot;
+        srcset=&quot;/static/fe5a2384ae62f629f7f2177a8fecab24/b51a4/Frame%2011.jpg 225w,
+/static/fe5a2384ae62f629f7f2177a8fecab24/f749c/Frame%2011.jpg 450w,
+/static/fe5a2384ae62f629f7f2177a8fecab24/86881/Frame%2011.jpg 900w,
+/static/fe5a2384ae62f629f7f2177a8fecab24/dc699/Frame%2011.jpg 1350w,
+/static/fe5a2384ae62f629f7f2177a8fecab24/d11ec/Frame%2011.jpg 1508w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Choose API Gateway from the list of options.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5d02f8e0c52dd001ad8264f89fec3ec9/d11ec/Frame%2012.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.856763925729446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd1tkFh//8QAFhAAAwAAAAAAAAAAAAAAAAAAASAx/9oACAEBAAEFAjV//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAFxAAAwEAAAAAAAAAAAAAAAAAACAxIf/aAAgBAQABPyGFNX//2gAMAwEAAgADAAAAECAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxAAAgIDAQAAAAAAAAAAAAAAAREAkSAxUWH/2gAIAQEAAT8QIqFNRcG4z6MP/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 12&quot;
+        title=&quot;Frame 12&quot;
+        src=&quot;/static/5d02f8e0c52dd001ad8264f89fec3ec9/86881/Frame%2012.jpg&quot;
+        srcset=&quot;/static/5d02f8e0c52dd001ad8264f89fec3ec9/b51a4/Frame%2012.jpg 225w,
+/static/5d02f8e0c52dd001ad8264f89fec3ec9/f749c/Frame%2012.jpg 450w,
+/static/5d02f8e0c52dd001ad8264f89fec3ec9/86881/Frame%2012.jpg 900w,
+/static/5d02f8e0c52dd001ad8264f89fec3ec9/dc699/Frame%2012.jpg 1350w,
+/static/5d02f8e0c52dd001ad8264f89fec3ec9/d11ec/Frame%2012.jpg 1508w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;You can use an existing API to invoke a lambda. In this case, we want to &lt;em&gt;Create a new API&lt;/em&gt; with &lt;em&gt;Open&lt;/em&gt; security option.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c3c6628eaaee297e98194ed9aff9b2a0/d11ec/Frame%2013.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.856763925729446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd4clDD/xAAVEAEBAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQJr/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAFhABAQEAAAAAAAAAAAAAAAAAARAA/9oACAEBAAE/Iacz/9oADAMBAAIAAwAAABATD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAAICAwEAAAAAAAAAAAAAAAERACEQMUGh/9oACAEBAAE/EDKCKuWt+40gBCu4/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 13&quot;
+        title=&quot;Frame 13&quot;
+        src=&quot;/static/c3c6628eaaee297e98194ed9aff9b2a0/86881/Frame%2013.jpg&quot;
+        srcset=&quot;/static/c3c6628eaaee297e98194ed9aff9b2a0/b51a4/Frame%2013.jpg 225w,
+/static/c3c6628eaaee297e98194ed9aff9b2a0/f749c/Frame%2013.jpg 450w,
+/static/c3c6628eaaee297e98194ed9aff9b2a0/86881/Frame%2013.jpg 900w,
+/static/c3c6628eaaee297e98194ed9aff9b2a0/dc699/Frame%2013.jpg 1350w,
+/static/c3c6628eaaee297e98194ed9aff9b2a0/d11ec/Frame%2013.jpg 1508w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Excellent. Now you have API endpoint as shown on the image and you can test the url if it works.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c23135618ca4da0096cea429381e5ebb/d11ec/Frame%2014.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.856763925729446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3bQB/8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQABBQJf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAFhAAAwAAAAAAAAAAAAAAAAAAASBB/9oACAEBAAE/IaW//9oADAMBAAIAAwAAABCjz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABwQAAICAgMAAAAAAAAAAAAAAAABETEhkRBBUf/aAAgBAQABPxDNj2d5nYqIVwiF5x//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 14&quot;
+        title=&quot;Frame 14&quot;
+        src=&quot;/static/c23135618ca4da0096cea429381e5ebb/86881/Frame%2014.jpg&quot;
+        srcset=&quot;/static/c23135618ca4da0096cea429381e5ebb/b51a4/Frame%2014.jpg 225w,
+/static/c23135618ca4da0096cea429381e5ebb/f749c/Frame%2014.jpg 450w,
+/static/c23135618ca4da0096cea429381e5ebb/86881/Frame%2014.jpg 900w,
+/static/c23135618ca4da0096cea429381e5ebb/dc699/Frame%2014.jpg 1350w,
+/static/c23135618ca4da0096cea429381e5ebb/d11ec/Frame%2014.jpg 1508w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;You clicked on the link. The GET request came through API Gateway, then it was redirected to Lambda and finally, lambda returned response back to API gateway, which sends a response back to user. In this case, we obtained a message “Hello from Lambda” which is some default dummy implementation shipping with a scratch lambda solution. &lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a495fbb8f99edf1439445f872acff358/d11ec/Frame%2015.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.856763925729446%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIDBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe40ELH/xAAYEAADAQEAAAAAAAAAAAAAAAAAAREgIf/aAAgBAQABBQKMjO4//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAACAyMf/aAAgBAQAGPwKijU//xAAcEAABAwUAAAAAAAAAAAAAAAAAAREgITGR8PH/2gAIAQEAAT8hr3YNSDcIf//aAAwDAQACAAMAAAAQQw//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxCH/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHRAAAQMFAQAAAAAAAAAAAAAAAQARISAxQWGBkf/aAAgBAQABPxABIxHDIW95QFd/FH//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Frame 15&quot;
+        title=&quot;Frame 15&quot;
+        src=&quot;/static/a495fbb8f99edf1439445f872acff358/86881/Frame%2015.jpg&quot;
+        srcset=&quot;/static/a495fbb8f99edf1439445f872acff358/b51a4/Frame%2015.jpg 225w,
+/static/a495fbb8f99edf1439445f872acff358/f749c/Frame%2015.jpg 450w,
+/static/a495fbb8f99edf1439445f872acff358/86881/Frame%2015.jpg 900w,
+/static/a495fbb8f99edf1439445f872acff358/dc699/Frame%2015.jpg 1350w,
+/static/a495fbb8f99edf1439445f872acff358/d11ec/Frame%2015.jpg 1508w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Lambda + DynamoDB&lt;/h2&gt;
+&lt;p&gt;Now the more advanced part. You need to write some code to your Lambda. How can you do that? Basically, you have 3 options here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;write code right in the aws editor (used for very small scripts)&lt;/li&gt;
+&lt;li&gt;upload zip file&lt;/li&gt;
+&lt;li&gt;upload zip file from S3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Two last options are used when your code is bigger and includes other dependencies, like &lt;em&gt;node_modules&lt;/em&gt; for example.&lt;/p&gt;
+&lt;p&gt;I’m going to do this the second way - by uploading a zip file through terminal command &lt;em&gt;aws-cli&lt;/em&gt;. Yes, you can work and communicate with aws console through &lt;em&gt;aws-cli&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;To continue, you will need aws-cli. Install with pip3:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ pip3 &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; awscli --upgrade --user&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you don’t have python, or it doesn’t work that way for you, please read &lt;a href=&quot;https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;full documentation&lt;/a&gt; on how to install &lt;em&gt;aws-cli&lt;/em&gt; properly.&lt;/p&gt;
+&lt;p&gt;You successfuly installed aws-cli. Now, in order to establish connection between aws-cli and your aws account, you need to create a pair of keys - access and secret key in you web aws-console. To see how to fully configure your aws-cli, see &lt;a href=&quot;https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Quickly Configuring the AWS CLI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;All you need is to go to Account Credentials, generate two keys - access and secret key, then configure aws-cli with these keys, for Example:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ aws configure
+AWS Access Key ID &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;None&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;None&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;None&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: us-west-2
+Default output &lt;span class=&quot;token function&quot;&gt;format&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;None&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: json&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I am not going more into details, you can do it. I believe in you.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Next step:&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;Create new directory with name &lt;code class=&quot;language-text&quot;&gt;my-function-123&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Initialize npm directory in it and install aws-sdk npm package:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# get into your project directory&lt;/span&gt;
+$ &lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; my-function-123
+
+&lt;span class=&quot;token comment&quot;&gt;# initialize project&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; init
+
+&lt;span class=&quot;token comment&quot;&gt;# install aws-sdk for interacting with aws services inside your node application&lt;/span&gt;
+$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; --save aws-sdk&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Cool, now you should have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;configured aws-cli in your terminal&lt;/li&gt;
+&lt;li&gt;created your npm project directory&lt;/li&gt;
+&lt;li&gt;installed aws-sdk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;CREATE DYNAMODB TABLE&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Search for DynamoDB service in your aws console.&lt;/li&gt;
+&lt;li&gt;Now you see one blue button “Create Table”. Click on that&lt;/li&gt;
+&lt;li&gt;Set your table name to whatever name you want. For example “my-table”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8f878eb91f974c5aa8f60eca984e7e51/fc8d7/Frame%2016.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe7UNA//xAAVEAEBAAAAAAAAAAAAAAAAAAAQAf/aAAgBAQABBQJr/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGBAAAwEBAAAAAAAAAAAAAAAAAAExEIH/2gAIAQEAAT8hdp3IFn//2gAMAwEAAgADAAAAELPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBABAAICAwEAAAAAAAAAAAAAAQAhETEQUXGR/9oACAEBAAE/ECNbdZgXtj2ABWoLzfGX7x//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/8f878eb91f974c5aa8f60eca984e7e51/86881/Frame%2016.jpg&quot;
+        srcset=&quot;/static/8f878eb91f974c5aa8f60eca984e7e51/b51a4/Frame%2016.jpg 225w,
+/static/8f878eb91f974c5aa8f60eca984e7e51/f749c/Frame%2016.jpg 450w,
+/static/8f878eb91f974c5aa8f60eca984e7e51/86881/Frame%2016.jpg 900w,
+/static/8f878eb91f974c5aa8f60eca984e7e51/dc699/Frame%2016.jpg 1350w,
+/static/8f878eb91f974c5aa8f60eca984e7e51/fc8d7/Frame%2016.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Check option with Sort key, it could be handy to have one.&lt;/li&gt;
+&lt;li&gt;Set primary key name to “PK” and secondary key name to “SK”.&lt;/li&gt;
+&lt;li&gt;(OPTIONAL): If you want, uncheck default settings and set capacity units for your needs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Read/Write capacity units are units determining how many write or read requests can your database handle. Then you pay exactly for these units. 1 Read Capacity Unit, for example, means that your table can handle one eventually consistent read request per second. 1 Consistent read requires 2 capacity units. With these factors in mind, you should know how many units do you need for running your tables. Also note, that amazon is doing autoscaling for you, it means, that it automatically rises capacity units when your traffic rises (throughout a day) and lowers when there is no traffic (for example at night).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;PK - is the partitioning key. You’re going to use this key to access your data.
+SK - is the secondary key (or sort key). It can keep other secondary keys under one partitioning key.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;It is very important to diversify PK as much as possible&lt;/strong&gt;. This is more relevant at high traffic websites where access to a database is very frequent. If you would access one PK (one partition) very frequently, it could lead to some problems, I’m not going to further describing these problems because subscribing to newsletter doesn’t seem to me like high traffic problem (user subscribes and doesn’t interacting with our endpoint).&lt;/p&gt;
+&lt;p&gt;So far we have got:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Created API Gateway&lt;/li&gt;
+&lt;li&gt;Established Lambda function (without code)&lt;/li&gt;
+&lt;li&gt;Created DynamoDB Table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One more thing we need to do between lambda and dynamoDB is to allow access of lambda to read and write to the dynamoDB. Go to your function on aws console and you can see execution role section:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to console lambda page and scroll down and find execution role section and click on the link shown on the image.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2e53d2c845ffe69da5d99cc9843e0e66/fc8d7/Frame%2018.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe7UNA//xAAVEAEBAAAAAAAAAAAAAAAAAAABIP/aAAgBAQABBQJr/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGBAAAwEBAAAAAAAAAAAAAAAAAAEQMYH/2gAIAQEAAT8h1p2OI//aAAwDAQACAAMAAAAQkw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAEAAgIDAAAAAAAAAAAAAAABADERgSFBkf/aAAgBAQABPxBYFN4mR6ewqEXkGAFAalJ//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/2e53d2c845ffe69da5d99cc9843e0e66/86881/Frame%2018.jpg&quot;
+        srcset=&quot;/static/2e53d2c845ffe69da5d99cc9843e0e66/b51a4/Frame%2018.jpg 225w,
+/static/2e53d2c845ffe69da5d99cc9843e0e66/f749c/Frame%2018.jpg 450w,
+/static/2e53d2c845ffe69da5d99cc9843e0e66/86881/Frame%2018.jpg 900w,
+/static/2e53d2c845ffe69da5d99cc9843e0e66/dc699/Frame%2018.jpg 1350w,
+/static/2e53d2c845ffe69da5d99cc9843e0e66/fc8d7/Frame%2018.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Click on execution role link&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cec30a683dbd589f10fe43fa8fb31efe/fc8d7/Frame%2019.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3lAH/8QAFRABAQAAAAAAAAAAAAAAAAAAASD/2gAIAQEAAQUCa//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAAMBAQAAAAAAAAAAAAAAAAABERBR/9oACAEBAAE/IWk6XGqRZ//aAAwDAQACAAMAAAAQQ8//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAEAAwACAwAAAAAAAAAAAAABABExECFBUZH/2gAIAQEAAT8QNC6WHuFtUhnTcDRco8Hzj//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/cec30a683dbd589f10fe43fa8fb31efe/86881/Frame%2019.jpg&quot;
+        srcset=&quot;/static/cec30a683dbd589f10fe43fa8fb31efe/b51a4/Frame%2019.jpg 225w,
+/static/cec30a683dbd589f10fe43fa8fb31efe/f749c/Frame%2019.jpg 450w,
+/static/cec30a683dbd589f10fe43fa8fb31efe/86881/Frame%2019.jpg 900w,
+/static/cec30a683dbd589f10fe43fa8fb31efe/dc699/Frame%2019.jpg 1350w,
+/static/cec30a683dbd589f10fe43fa8fb31efe/fc8d7/Frame%2019.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Click on Edit policy&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/331b40ee97b0aff002557504d6a29019/fc8d7/Frame%2020.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3psAf//EABYQAAMAAAAAAAAAAAAAAAAAAAARIP/aAAgBAQABBQIc/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAADAQEAAAAAAAAAAAAAAAAAARAR8P/aAAgBAQABPyFi5opk/9oADAMBAAIAAwAAABBgz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABoQAQACAwEAAAAAAAAAAAAAAAEAERAhMVH/2gAIAQEAAT8Q0Vt0cuWdYYljcQ8lE4Y//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/331b40ee97b0aff002557504d6a29019/86881/Frame%2020.jpg&quot;
+        srcset=&quot;/static/331b40ee97b0aff002557504d6a29019/b51a4/Frame%2020.jpg 225w,
+/static/331b40ee97b0aff002557504d6a29019/f749c/Frame%2020.jpg 450w,
+/static/331b40ee97b0aff002557504d6a29019/86881/Frame%2020.jpg 900w,
+/static/331b40ee97b0aff002557504d6a29019/dc699/Frame%2020.jpg 1350w,
+/static/331b40ee97b0aff002557504d6a29019/fc8d7/Frame%2020.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;Click on Add additional permissions &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9b52dba69d7beee9d9ff2bc70e33c5c0/fc8d7/Frame%2021.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe81CKP/xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEAAQUCQj//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAADAAMAAAAAAAAAAAAAAAAAAREgIWH/2gAIAQEAAT8hdpvo1WH/2gAMAwEAAgADAAAAEBPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAAICAwAAAAAAAAAAAAAAAQARIDFRYaH/2gAIAQEAAT8QQoCnVReHiALvD//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/9b52dba69d7beee9d9ff2bc70e33c5c0/86881/Frame%2021.jpg&quot;
+        srcset=&quot;/static/9b52dba69d7beee9d9ff2bc70e33c5c0/b51a4/Frame%2021.jpg 225w,
+/static/9b52dba69d7beee9d9ff2bc70e33c5c0/f749c/Frame%2021.jpg 450w,
+/static/9b52dba69d7beee9d9ff2bc70e33c5c0/86881/Frame%2021.jpg 900w,
+/static/9b52dba69d7beee9d9ff2bc70e33c5c0/dc699/Frame%2021.jpg 1350w,
+/static/9b52dba69d7beee9d9ff2bc70e33c5c0/fc8d7/Frame%2021.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;Allow all + &lt;strong&gt;click on Resources and also allow all&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/018e5b6c719e5b86911d86346069e2c0/fc8d7/Frame%2022.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3lhQf//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEAAQUCX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAAMBAQAAAAAAAAAAAAAAAAAQEQGB/9oACAEBAAE/IdOqUi//2gAMAwEAAgADAAAAENPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGhABAAMBAQEAAAAAAAAAAAAAAQARMXGRUf/aAAgBAQABPxC4WLy4Fn12GRGr9gTL9hk//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/018e5b6c719e5b86911d86346069e2c0/86881/Frame%2022.jpg&quot;
+        srcset=&quot;/static/018e5b6c719e5b86911d86346069e2c0/b51a4/Frame%2022.jpg 225w,
+/static/018e5b6c719e5b86911d86346069e2c0/f749c/Frame%2022.jpg 450w,
+/static/018e5b6c719e5b86911d86346069e2c0/86881/Frame%2022.jpg 900w,
+/static/018e5b6c719e5b86911d86346069e2c0/dc699/Frame%2022.jpg 1350w,
+/static/018e5b6c719e5b86911d86346069e2c0/fc8d7/Frame%2022.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;Save changes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a088a5f51d9e653fb0ea3839e2493fd7/fc8d7/Frame%2023.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe9NCKP/xAAWEAADAAAAAAAAAAAAAAAAAAAAICH/2gAIAQEAAQUCKv8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGhABAAEFAAAAAAAAAAAAAAAAARAAETFBYf/aAAgBAQABPyFvqB2QDFf/2gAMAwEAAgADAAAAELMP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxABAAIDAQEAAAAAAAAAAAAAAQARITFhEJH/2gAIAQEAAT8QOH1mbGd9iQ0vnoqCrbn/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/a088a5f51d9e653fb0ea3839e2493fd7/86881/Frame%2023.jpg&quot;
+        srcset=&quot;/static/a088a5f51d9e653fb0ea3839e2493fd7/b51a4/Frame%2023.jpg 225w,
+/static/a088a5f51d9e653fb0ea3839e2493fd7/f749c/Frame%2023.jpg 450w,
+/static/a088a5f51d9e653fb0ea3839e2493fd7/86881/Frame%2023.jpg 900w,
+/static/a088a5f51d9e653fb0ea3839e2493fd7/dc699/Frame%2023.jpg 1350w,
+/static/a088a5f51d9e653fb0ea3839e2493fd7/fc8d7/Frame%2023.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now we need to write some logic to the lambda function.
+Locally in your created npm directory, create &lt;code class=&quot;language-text&quot;&gt;index.js&lt;/code&gt; file.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Load the AWS SDK for Node.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;AWS&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;aws-sdk&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Set the region &lt;/span&gt;
+&lt;span class=&quot;token constant&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; region&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;eu-central-1&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Create the DynamoDB service object&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; ddb &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AWS&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DynamoDB&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; emailRegex &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;/^(([^&amp;lt;&gt;()\[\]\\.,;:\s@&quot;]+(\.[^&amp;lt;&gt;()\[\]\\.,;:\s@&quot;]+)*)|(&quot;.+&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;handler&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; body &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; event&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; email &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;body&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; 
+  
+  &lt;span class=&quot;token comment&quot;&gt;// if email is missing, return error message&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;email &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      statusCode&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Email not provided&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      headers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&quot;Content-type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token comment&quot;&gt;// check if email is correct&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;emailRegex&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;email&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      statusCode&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Not valid email&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      headers&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token string&quot;&gt;&quot;Content-type&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;application/json&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token comment&quot;&gt;// Call DynamoDB to create the table&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; dbPromise &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;resolve&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; reject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    ddb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;putItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      TableName&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;my-table-123&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      Item&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;PK&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;emails-0&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token constant&quot;&gt;SK&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; email &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;err&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token function&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token comment&quot;&gt;// resolve promise to dynamoDB&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; dbPromise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      statusCode&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        email&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        message&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Email successfuly saved&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      statusCode&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        message&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Something went wrong&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  handler&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This lambda code:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;checks if email is in BODY&lt;/li&gt;
+&lt;li&gt;checks if email is body (with help of regex)&lt;/li&gt;
+&lt;li&gt;saves email in PK &lt;code class=&quot;language-text&quot;&gt;emails-0&lt;/code&gt; with (optional) name - if it is presented in a body&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I gave the partition the name &lt;code class=&quot;language-text&quot;&gt;emails-0&lt;/code&gt; and gradually we will save our emails as sort keys. Why &lt;code class=&quot;language-text&quot;&gt;emails-0&lt;/code&gt;? As I mentioned earlier, it is not always good idea to design the table for saving all data to one partition. If traffic will suddenly blow up, we can do for example create more than one partition and randomly throw emails into random partitions (for example one to 10) - then there is small chance that one partition will be “hot” or overloaded with requests. Another good idea is to partition by starting characters of an email: &lt;code class=&quot;language-text&quot;&gt;emails-{$CHAR}&lt;/code&gt; where $CHAR is between 0-9 to a-zA-Z.&lt;/p&gt;
+&lt;p&gt;Now, when we have our code done, we need to write a little script which sends our code to aws servers.&lt;/p&gt;
+&lt;p&gt;Create a new file with name &lt;code class=&quot;language-text&quot;&gt;upload_script.sh&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#! /bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# zip all build directory and node_modules&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# -r stands for recursive to all subdirectories&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# -1 stands for fast compression&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;zip&lt;/span&gt; -r -1 zipped.zip build&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# CHANGE my-function-123 to the name of your function&lt;/span&gt;
+aws lambda update-function-code --function-name my-function-123 --zip-file fileb://zipped.zip
+
+&lt;span class=&quot;token comment&quot;&gt;# Remove zip - this prevent to be zipped second time at the second execution and so on&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; zipped.zip&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Save it and set chmod to&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;chmod&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;777&lt;/span&gt; ./upload_script.sh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Final step is to run this script, the script will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;zip all files in the directory with node&lt;em&gt;modules and javascript files. And yes, you need also node&lt;/em&gt;modules.&lt;/li&gt;
+&lt;li&gt;aws command (from aws-cli) uploads the code to the cloud&lt;/li&gt;
+&lt;li&gt;remove zip file after upload is done.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s test it. Go to the API Gateway service and click on the &lt;em&gt;Test&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a4df88b0ce49bb131a150ee2b9d12d47/fc8d7/Frame%2024.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd6LAD//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAABBQAAAAAAAAAAAAAAAAAAASAxQXH/2gAIAQEAAT8hmxNb/9oADAMBAAIAAwAAABBzz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABkQAAIDAQAAAAAAAAAAAAAAAAERACExIP/aAAgBAQABPxAgtYXGVlqgzj//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/a4df88b0ce49bb131a150ee2b9d12d47/86881/Frame%2024.jpg&quot;
+        srcset=&quot;/static/a4df88b0ce49bb131a150ee2b9d12d47/b51a4/Frame%2024.jpg 225w,
+/static/a4df88b0ce49bb131a150ee2b9d12d47/f749c/Frame%2024.jpg 450w,
+/static/a4df88b0ce49bb131a150ee2b9d12d47/86881/Frame%2024.jpg 900w,
+/static/a4df88b0ce49bb131a150ee2b9d12d47/dc699/Frame%2024.jpg 1350w,
+/static/a4df88b0ce49bb131a150ee2b9d12d47/fc8d7/Frame%2024.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Set method to POST in order to have fill body with data.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a36607012ee20644cade038cc3deb4d7/fc8d7/Frame%2025.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAQACBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe8aBmP/xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEAAQUCgL//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAADAQEAAAAAAAAAAAAAAAAAARAxgf/aAAgBAQABPyFi7Hhif//aAAwDAQACAAMAAAAQww//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhEDFRceH/2gAIAQEAAT8QGiWdQGqIcv2ChN/UN4f/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/a36607012ee20644cade038cc3deb4d7/86881/Frame%2025.jpg&quot;
+        srcset=&quot;/static/a36607012ee20644cade038cc3deb4d7/b51a4/Frame%2025.jpg 225w,
+/static/a36607012ee20644cade038cc3deb4d7/f749c/Frame%2025.jpg 450w,
+/static/a36607012ee20644cade038cc3deb4d7/86881/Frame%2025.jpg 900w,
+/static/a36607012ee20644cade038cc3deb4d7/dc699/Frame%2025.jpg 1350w,
+/static/a36607012ee20644cade038cc3deb4d7/fc8d7/Frame%2025.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Fill body with json which contains attribute email with our test email.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/fc8d7/Frame%2026.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe9lSUD/xAAWEAEBAQAAAAAAAAAAAAAAAAABECD/2gAIAQEAAQUCcM//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEABj8CgL//xAAZEAACAwEAAAAAAAAAAAAAAAAQIQABMXH/2gAIAQEAAT8hxGVvof/aAAwDAQACAAMAAAAQ48//xAAVEQEBAAAAAAAAAAAAAAAAAAAREP/aAAgBAwEBPxBJ/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qh//EABoQAQEAAgMAAAAAAAAAAAAAAAERECEAkcH/2gAIAQEAAT8QK68Aa9ymFll6cf/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/86881/Frame%2026.jpg&quot;
+        srcset=&quot;/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/b51a4/Frame%2026.jpg 225w,
+/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/f749c/Frame%2026.jpg 450w,
+/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/86881/Frame%2026.jpg 900w,
+/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/dc699/Frame%2026.jpg 1350w,
+/static/e7bc7d03289a47c4f3b95f8c0e73b1cb/fc8d7/Frame%2026.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Finally, we see success!&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c8136dfdc004503d075b512cb7d5b867/fc8d7/Frame%2027.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHeV5JUBf/EABYQAQEBAAAAAAAAAAAAAAAAAAEQIP/aAAgBAQABBQJhj//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABcQAQEBAQAAAAAAAAAAAAAAAAEAMRD/2gAIAQEAAT8hxCWJx7//2gAMAwEAAgADAAAAEETP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGhABAQADAQEAAAAAAAAAAAAAAQAhMaERYf/aAAgBAQABPxDNfNwDJxtNzQHpGi//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/c8136dfdc004503d075b512cb7d5b867/86881/Frame%2027.jpg&quot;
+        srcset=&quot;/static/c8136dfdc004503d075b512cb7d5b867/b51a4/Frame%2027.jpg 225w,
+/static/c8136dfdc004503d075b512cb7d5b867/f749c/Frame%2027.jpg 450w,
+/static/c8136dfdc004503d075b512cb7d5b867/86881/Frame%2027.jpg 900w,
+/static/c8136dfdc004503d075b512cb7d5b867/dc699/Frame%2027.jpg 1350w,
+/static/c8136dfdc004503d075b512cb7d5b867/fc8d7/Frame%2027.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;We can check our dynamoDB database if the item is really there:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e61a8e7045c71670e0def5950711d2f0/fc8d7/Frame%2028.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.317809943360594%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQBAgMF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB7K70FDQP/8QAGhABAAIDAQAAAAAAAAAAAAAAAgASAxARFP/aAAgBAQABBQLK6H0GBXM5r//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAARAQIgMZH/2gAIAQEABj8CZq3Bxh//xAAcEAACAgIDAAAAAAAAAAAAAAAAEQExECFBYZH/2gAIAQEAAT8h5Ba1Au/QRwuXZYmP/9oADAMBAAIAAwAAABAzz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB0QAQACAQUBAAAAAAAAAAAAAAEAIREQMWFxofH/2gAIAQEAAT8QAEKth36mQh0p+UKApTBRpiFGcHun/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;search for amazon dynamodb service&quot;
+        title=&quot;search for amazon dynamodb service&quot;
+        src=&quot;/static/e61a8e7045c71670e0def5950711d2f0/86881/Frame%2028.jpg&quot;
+        srcset=&quot;/static/e61a8e7045c71670e0def5950711d2f0/b51a4/Frame%2028.jpg 225w,
+/static/e61a8e7045c71670e0def5950711d2f0/f749c/Frame%2028.jpg 450w,
+/static/e61a8e7045c71670e0def5950711d2f0/86881/Frame%2028.jpg 900w,
+/static/e61a8e7045c71670e0def5950711d2f0/dc699/Frame%2028.jpg 1350w,
+/static/e61a8e7045c71670e0def5950711d2f0/fc8d7/Frame%2028.jpg 1589w&quot;
+        sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;!-- ## WTF is CORS and why do I need it?
+
+CORS is abbreviation for Cross Origin Resource Sharing. When you enter a domain with name *xyz.com* and then, this site *xyz.com* wants for some reason to make a request to domain *abc.com*, then you can experience CORS. The site *xyz.com* is trying to request unknown domain abc.com. Both domains don&apos;t know anything about each other. In standard behaviour, when nothing is configured, browser refuse to show/accept result of the response to this domain.
+
+How to allow both sides to communicate properly? The server side needs to send special header with a response to a requester. We have different header flags to configure CORS policy:
+- **Access-Cotrol-Allow-Origin**: This means, which origins/domains are allowed for this type of response. So for example, if zzz.com is in header, only zzz.com can read a response. Flag `&apos;*&apos;` means, that anybody can access the response. When some unknown requestor from page ccc.com requests, and Access-Control-Allow-Origin is not presented in the response, or is presented but is not containing the page ccc.com, then request ends up with error and response will never be processed further. --&gt;
+&lt;h2&gt;Improvement&lt;/h2&gt;
+&lt;p&gt;In the next part I’m planning to make a basic form attached to this endpoint and test if it really works :). &lt;/p&gt;
+&lt;p&gt;If you see any error, bug or want to improve the post then please leave a comment below. I will read it and give you credits for that. Also, if you see any english grammar mistakes, please let me know as well - english is not my native language. Preparing such a long tutorial isn’t easy at all. I hope you enjoyed it. Thanks.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How Should One Cut His Forest In Order to Last Him Forever]]></title><description><![CDATA[This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He…]]></description><link>https://martinschnurer.net/how-should-one-cut-his-forest-in-order-to-last-him-forever/</link><guid isPermaLink="false">https://martinschnurer.net/how-should-one-cut-his-forest-in-order-to-last-him-forever/</guid><pubDate>Tue, 29 Oct 2019 22:38:00 GMT</pubDate><content:encoded>&lt;p&gt;This is Jack. Jack is a man living in a cabin inside a small forest. He knows how to cut trees and how to take care of his small cabin. He is kinda part-time “Lumber-Jack”.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 900px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/fd456/man-in-forest.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -18,13 +944,13 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;man in forest&quot;
         title=&quot;man in forest&quot;
-        src=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/2d017/man-in-forest.jpg&quot;
-        srcset=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/40f63/man-in-forest.jpg 225w,
-/static/566fe5fa4b5e1c5557d155be706e49de/df2c7/man-in-forest.jpg 450w,
-/static/566fe5fa4b5e1c5557d155be706e49de/2d017/man-in-forest.jpg 900w,
-/static/566fe5fa4b5e1c5557d155be706e49de/bbff7/man-in-forest.jpg 1350w,
-/static/566fe5fa4b5e1c5557d155be706e49de/98235/man-in-forest.jpg 1800w,
-/static/566fe5fa4b5e1c5557d155be706e49de/52b6c/man-in-forest.jpg 2946w&quot;
+        src=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/86881/man-in-forest.jpg&quot;
+        srcset=&quot;/static/566fe5fa4b5e1c5557d155be706e49de/b51a4/man-in-forest.jpg 225w,
+/static/566fe5fa4b5e1c5557d155be706e49de/f749c/man-in-forest.jpg 450w,
+/static/566fe5fa4b5e1c5557d155be706e49de/86881/man-in-forest.jpg 900w,
+/static/566fe5fa4b5e1c5557d155be706e49de/dc699/man-in-forest.jpg 1350w,
+/static/566fe5fa4b5e1c5557d155be706e49de/1d3a4/man-in-forest.jpg 1800w,
+/static/566fe5fa4b5e1c5557d155be706e49de/fd456/man-in-forest.jpg 2946w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -38,7 +964,7 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/b1a403d132dd3266c7a733825f18443b/9696a/cabin-in-forest.jpg&quot;
+    href=&quot;/static/b1a403d132dd3266c7a733825f18443b/38157/cabin-in-forest.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -51,13 +977,13 @@
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;cabin in forest&quot;
         title=&quot;cabin in forest&quot;
-        src=&quot;/static/b1a403d132dd3266c7a733825f18443b/2d017/cabin-in-forest.jpg&quot;
-        srcset=&quot;/static/b1a403d132dd3266c7a733825f18443b/40f63/cabin-in-forest.jpg 225w,
-/static/b1a403d132dd3266c7a733825f18443b/df2c7/cabin-in-forest.jpg 450w,
-/static/b1a403d132dd3266c7a733825f18443b/2d017/cabin-in-forest.jpg 900w,
-/static/b1a403d132dd3266c7a733825f18443b/bbff7/cabin-in-forest.jpg 1350w,
-/static/b1a403d132dd3266c7a733825f18443b/98235/cabin-in-forest.jpg 1800w,
-/static/b1a403d132dd3266c7a733825f18443b/9696a/cabin-in-forest.jpg 4177w&quot;
+        src=&quot;/static/b1a403d132dd3266c7a733825f18443b/86881/cabin-in-forest.jpg&quot;
+        srcset=&quot;/static/b1a403d132dd3266c7a733825f18443b/b51a4/cabin-in-forest.jpg 225w,
+/static/b1a403d132dd3266c7a733825f18443b/f749c/cabin-in-forest.jpg 450w,
+/static/b1a403d132dd3266c7a733825f18443b/86881/cabin-in-forest.jpg 900w,
+/static/b1a403d132dd3266c7a733825f18443b/dc699/cabin-in-forest.jpg 1350w,
+/static/b1a403d132dd3266c7a733825f18443b/1d3a4/cabin-in-forest.jpg 1800w,
+/static/b1a403d132dd3266c7a733825f18443b/38157/cabin-in-forest.jpg 4177w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -95,7 +1021,7 @@ Jack would cut the last tree in about 19 years. Then, there will be nothing left
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/4d28444f1483149ba472791a704efb8f/ffbed/fire-in-forest.jpg&quot;
+    href=&quot;/static/4d28444f1483149ba472791a704efb8f/0a255/fire-in-forest.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -108,13 +1034,13 @@ Jack would cut the last tree in about 19 years. Then, there will be nothing left
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;forest fire&quot;
         title=&quot;forest fire&quot;
-        src=&quot;/static/4d28444f1483149ba472791a704efb8f/2d017/fire-in-forest.jpg&quot;
-        srcset=&quot;/static/4d28444f1483149ba472791a704efb8f/40f63/fire-in-forest.jpg 225w,
-/static/4d28444f1483149ba472791a704efb8f/df2c7/fire-in-forest.jpg 450w,
-/static/4d28444f1483149ba472791a704efb8f/2d017/fire-in-forest.jpg 900w,
-/static/4d28444f1483149ba472791a704efb8f/bbff7/fire-in-forest.jpg 1350w,
-/static/4d28444f1483149ba472791a704efb8f/98235/fire-in-forest.jpg 1800w,
-/static/4d28444f1483149ba472791a704efb8f/ffbed/fire-in-forest.jpg 6000w&quot;
+        src=&quot;/static/4d28444f1483149ba472791a704efb8f/86881/fire-in-forest.jpg&quot;
+        srcset=&quot;/static/4d28444f1483149ba472791a704efb8f/b51a4/fire-in-forest.jpg 225w,
+/static/4d28444f1483149ba472791a704efb8f/f749c/fire-in-forest.jpg 450w,
+/static/4d28444f1483149ba472791a704efb8f/86881/fire-in-forest.jpg 900w,
+/static/4d28444f1483149ba472791a704efb8f/dc699/fire-in-forest.jpg 1350w,
+/static/4d28444f1483149ba472791a704efb8f/1d3a4/fire-in-forest.jpg 1800w,
+/static/4d28444f1483149ba472791a704efb8f/0a255/fire-in-forest.jpg 6000w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -149,7 +1075,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png&quot;
+    href=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/6e264/meme.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -162,10 +1088,10 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;meme&quot;
         title=&quot;meme&quot;
-        src=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png&quot;
-        srcset=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/064a4/meme.png 225w,
-/static/4cd0da925fbfafb758a096e2ad50b21c/44727/meme.png 450w,
-/static/4cd0da925fbfafb758a096e2ad50b21c/35c67/meme.png 750w&quot;
+        src=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/6e264/meme.png&quot;
+        srcset=&quot;/static/4cd0da925fbfafb758a096e2ad50b21c/0dcf6/meme.png 225w,
+/static/4cd0da925fbfafb758a096e2ad50b21c/054c0/meme.png 450w,
+/static/4cd0da925fbfafb758a096e2ad50b21c/6e264/meme.png 750w&quot;
         sizes=&quot;(max-width: 750px) 100vw, 750px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -178,7 +1104,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/9870e/sap500.png&quot;
+    href=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/4cceb/sap500.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -191,11 +1117,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;s&amp;amp;p500 index&quot;
         title=&quot;s&amp;amp;p500 index&quot;
-        src=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/fea0e/sap500.png&quot;
-        srcset=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/064a4/sap500.png 225w,
-/static/a47757323d9e6703d6f15e89de41a0c5/44727/sap500.png 450w,
-/static/a47757323d9e6703d6f15e89de41a0c5/fea0e/sap500.png 900w,
-/static/a47757323d9e6703d6f15e89de41a0c5/9870e/sap500.png 1274w&quot;
+        src=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/fa06e/sap500.png&quot;
+        srcset=&quot;/static/a47757323d9e6703d6f15e89de41a0c5/0dcf6/sap500.png 225w,
+/static/a47757323d9e6703d6f15e89de41a0c5/054c0/sap500.png 450w,
+/static/a47757323d9e6703d6f15e89de41a0c5/fa06e/sap500.png 900w,
+/static/a47757323d9e6703d6f15e89de41a0c5/4cceb/sap500.png 1274w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -217,7 +1143,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/aacd8/financial-crisis.jpg&quot;
+    href=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/4ff9f/financial-crisis.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -230,11 +1156,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;financial crisis in media&quot;
         title=&quot;financial crisis in media&quot;
-        src=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/2d017/financial-crisis.jpg&quot;
-        srcset=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/40f63/financial-crisis.jpg 225w,
-/static/ce3cf046830ffdc1a6f1147287a00b66/df2c7/financial-crisis.jpg 450w,
-/static/ce3cf046830ffdc1a6f1147287a00b66/2d017/financial-crisis.jpg 900w,
-/static/ce3cf046830ffdc1a6f1147287a00b66/aacd8/financial-crisis.jpg 1086w&quot;
+        src=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/86881/financial-crisis.jpg&quot;
+        srcset=&quot;/static/ce3cf046830ffdc1a6f1147287a00b66/b51a4/financial-crisis.jpg 225w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/f749c/financial-crisis.jpg 450w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/86881/financial-crisis.jpg 900w,
+/static/ce3cf046830ffdc1a6f1147287a00b66/4ff9f/financial-crisis.jpg 1086w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -248,7 +1174,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/98f882a95d4ea9805f34eb0623e09115/1351f/market-zoom-1.png&quot;
+    href=&quot;/static/98f882a95d4ea9805f34eb0623e09115/5bdf9/market-zoom-1.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -261,11 +1187,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;market max zoom - what people think&quot;
         title=&quot;market max zoom - what people think&quot;
-        src=&quot;/static/98f882a95d4ea9805f34eb0623e09115/fea0e/market-zoom-1.png&quot;
-        srcset=&quot;/static/98f882a95d4ea9805f34eb0623e09115/064a4/market-zoom-1.png 225w,
-/static/98f882a95d4ea9805f34eb0623e09115/44727/market-zoom-1.png 450w,
-/static/98f882a95d4ea9805f34eb0623e09115/fea0e/market-zoom-1.png 900w,
-/static/98f882a95d4ea9805f34eb0623e09115/1351f/market-zoom-1.png 1174w&quot;
+        src=&quot;/static/98f882a95d4ea9805f34eb0623e09115/fa06e/market-zoom-1.png&quot;
+        srcset=&quot;/static/98f882a95d4ea9805f34eb0623e09115/0dcf6/market-zoom-1.png 225w,
+/static/98f882a95d4ea9805f34eb0623e09115/054c0/market-zoom-1.png 450w,
+/static/98f882a95d4ea9805f34eb0623e09115/fa06e/market-zoom-1.png 900w,
+/static/98f882a95d4ea9805f34eb0623e09115/5bdf9/market-zoom-1.png 1174w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -278,7 +1204,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/9c15e/market-zoom-2.png&quot;
+    href=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/52a79/market-zoom-2.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -291,11 +1217,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;market max zoom - reality&quot;
         title=&quot;market max zoom - reality&quot;
-        src=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/fea0e/market-zoom-2.png&quot;
-        srcset=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/064a4/market-zoom-2.png 225w,
-/static/972c32e7bd9a45e4995103e8ea05e8e7/44727/market-zoom-2.png 450w,
-/static/972c32e7bd9a45e4995103e8ea05e8e7/fea0e/market-zoom-2.png 900w,
-/static/972c32e7bd9a45e4995103e8ea05e8e7/9c15e/market-zoom-2.png 998w&quot;
+        src=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/fa06e/market-zoom-2.png&quot;
+        srcset=&quot;/static/972c32e7bd9a45e4995103e8ea05e8e7/0dcf6/market-zoom-2.png 225w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/054c0/market-zoom-2.png 450w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/fa06e/market-zoom-2.png 900w,
+/static/972c32e7bd9a45e4995103e8ea05e8e7/52a79/market-zoom-2.png 998w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -308,7 +1234,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/92c30/market-zoom-3.png&quot;
+    href=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/d7c83/market-zoom-3.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -321,12 +1247,12 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;market max zoom - reality&quot;
         title=&quot;market max zoom - reality&quot;
-        src=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/fea0e/market-zoom-3.png&quot;
-        srcset=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/064a4/market-zoom-3.png 225w,
-/static/dd238f6a10dd0dd02fb80d66139bee24/44727/market-zoom-3.png 450w,
-/static/dd238f6a10dd0dd02fb80d66139bee24/fea0e/market-zoom-3.png 900w,
-/static/dd238f6a10dd0dd02fb80d66139bee24/8013a/market-zoom-3.png 1350w,
-/static/dd238f6a10dd0dd02fb80d66139bee24/92c30/market-zoom-3.png 1526w&quot;
+        src=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/fa06e/market-zoom-3.png&quot;
+        srcset=&quot;/static/dd238f6a10dd0dd02fb80d66139bee24/0dcf6/market-zoom-3.png 225w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/054c0/market-zoom-3.png 450w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/fa06e/market-zoom-3.png 900w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/7b015/market-zoom-3.png 1350w,
+/static/dd238f6a10dd0dd02fb80d66139bee24/d7c83/market-zoom-3.png 1526w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -340,7 +1266,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/6f37937de8b35f81c4bad87a5d726966/7f76c/sap500-cycles.jpg&quot;
+    href=&quot;/static/6f37937de8b35f81c4bad87a5d726966/d5cc9/sap500-cycles.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -353,13 +1279,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;s&amp;amp;p 500 cycles&quot;
         title=&quot;s&amp;amp;p 500 cycles&quot;
-        src=&quot;/static/6f37937de8b35f81c4bad87a5d726966/2d017/sap500-cycles.jpg&quot;
-        srcset=&quot;/static/6f37937de8b35f81c4bad87a5d726966/40f63/sap500-cycles.jpg 225w,
-/static/6f37937de8b35f81c4bad87a5d726966/df2c7/sap500-cycles.jpg 450w,
-/static/6f37937de8b35f81c4bad87a5d726966/2d017/sap500-cycles.jpg 900w,
-/static/6f37937de8b35f81c4bad87a5d726966/bbff7/sap500-cycles.jpg 1350w,
-/static/6f37937de8b35f81c4bad87a5d726966/98235/sap500-cycles.jpg 1800w,
-/static/6f37937de8b35f81c4bad87a5d726966/7f76c/sap500-cycles.jpg 2124w&quot;
+        src=&quot;/static/6f37937de8b35f81c4bad87a5d726966/86881/sap500-cycles.jpg&quot;
+        srcset=&quot;/static/6f37937de8b35f81c4bad87a5d726966/b51a4/sap500-cycles.jpg 225w,
+/static/6f37937de8b35f81c4bad87a5d726966/f749c/sap500-cycles.jpg 450w,
+/static/6f37937de8b35f81c4bad87a5d726966/86881/sap500-cycles.jpg 900w,
+/static/6f37937de8b35f81c4bad87a5d726966/dc699/sap500-cycles.jpg 1350w,
+/static/6f37937de8b35f81c4bad87a5d726966/1d3a4/sap500-cycles.jpg 1800w,
+/static/6f37937de8b35f81c4bad87a5d726966/d5cc9/sap500-cycles.jpg 2124w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -372,7 +1298,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/7f76c/sap500-highlighted-cycles-v2.jpg&quot;
+    href=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/d5cc9/sap500-highlighted-cycles-v2.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -385,13 +1311,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;s&amp;amp;p500 highlighted cycles&quot;
         title=&quot;s&amp;amp;p500 highlighted cycles&quot;
-        src=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/2d017/sap500-highlighted-cycles-v2.jpg&quot;
-        srcset=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/40f63/sap500-highlighted-cycles-v2.jpg 225w,
-/static/dac77d14c60d1d8f0e2338eb72fb74d6/df2c7/sap500-highlighted-cycles-v2.jpg 450w,
-/static/dac77d14c60d1d8f0e2338eb72fb74d6/2d017/sap500-highlighted-cycles-v2.jpg 900w,
-/static/dac77d14c60d1d8f0e2338eb72fb74d6/bbff7/sap500-highlighted-cycles-v2.jpg 1350w,
-/static/dac77d14c60d1d8f0e2338eb72fb74d6/98235/sap500-highlighted-cycles-v2.jpg 1800w,
-/static/dac77d14c60d1d8f0e2338eb72fb74d6/7f76c/sap500-highlighted-cycles-v2.jpg 2124w&quot;
+        src=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/86881/sap500-highlighted-cycles-v2.jpg&quot;
+        srcset=&quot;/static/dac77d14c60d1d8f0e2338eb72fb74d6/b51a4/sap500-highlighted-cycles-v2.jpg 225w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/f749c/sap500-highlighted-cycles-v2.jpg 450w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/86881/sap500-highlighted-cycles-v2.jpg 900w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/dc699/sap500-highlighted-cycles-v2.jpg 1350w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/1d3a4/sap500-highlighted-cycles-v2.jpg 1800w,
+/static/dac77d14c60d1d8f0e2338eb72fb74d6/d5cc9/sap500-highlighted-cycles-v2.jpg 2124w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -425,7 +1351,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e7fdc138a1fc2de8e27825524408c039/88a17/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg&quot;
+    href=&quot;/static/e7fdc138a1fc2de8e27825524408c039/0c8c9/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -438,13 +1364,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;italian dolomites&quot;
         title=&quot;italian dolomites&quot;
-        src=&quot;/static/e7fdc138a1fc2de8e27825524408c039/2d017/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg&quot;
-        srcset=&quot;/static/e7fdc138a1fc2de8e27825524408c039/40f63/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 225w,
-/static/e7fdc138a1fc2de8e27825524408c039/df2c7/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 450w,
-/static/e7fdc138a1fc2de8e27825524408c039/2d017/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 900w,
-/static/e7fdc138a1fc2de8e27825524408c039/bbff7/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 1350w,
-/static/e7fdc138a1fc2de8e27825524408c039/98235/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 1800w,
-/static/e7fdc138a1fc2de8e27825524408c039/88a17/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 8615w&quot;
+        src=&quot;/static/e7fdc138a1fc2de8e27825524408c039/86881/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg&quot;
+        srcset=&quot;/static/e7fdc138a1fc2de8e27825524408c039/b51a4/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 225w,
+/static/e7fdc138a1fc2de8e27825524408c039/f749c/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 450w,
+/static/e7fdc138a1fc2de8e27825524408c039/86881/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 900w,
+/static/e7fdc138a1fc2de8e27825524408c039/dc699/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 1350w,
+/static/e7fdc138a1fc2de8e27825524408c039/1d3a4/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 1800w,
+/static/e7fdc138a1fc2de8e27825524408c039/0c8c9/pietro-de-grandi-iK-Qe1hnsG8-unsplash.jpg 8615w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -462,7 +1388,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/f1bcefa9daad820db835c8d917ad5e25/313cc/skoda_fabia.jpg&quot;
+    href=&quot;/static/f1bcefa9daad820db835c8d917ad5e25/f101d/skoda_fabia.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -475,11 +1401,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;skoda fabia&quot;
         title=&quot;skoda fabia&quot;
-        src=&quot;/static/f1bcefa9daad820db835c8d917ad5e25/2d017/skoda_fabia.jpg&quot;
-        srcset=&quot;/static/f1bcefa9daad820db835c8d917ad5e25/40f63/skoda_fabia.jpg 225w,
-/static/f1bcefa9daad820db835c8d917ad5e25/df2c7/skoda_fabia.jpg 450w,
-/static/f1bcefa9daad820db835c8d917ad5e25/2d017/skoda_fabia.jpg 900w,
-/static/f1bcefa9daad820db835c8d917ad5e25/313cc/skoda_fabia.jpg 1250w&quot;
+        src=&quot;/static/f1bcefa9daad820db835c8d917ad5e25/86881/skoda_fabia.jpg&quot;
+        srcset=&quot;/static/f1bcefa9daad820db835c8d917ad5e25/b51a4/skoda_fabia.jpg 225w,
+/static/f1bcefa9daad820db835c8d917ad5e25/f749c/skoda_fabia.jpg 450w,
+/static/f1bcefa9daad820db835c8d917ad5e25/86881/skoda_fabia.jpg 900w,
+/static/f1bcefa9daad820db835c8d917ad5e25/f101d/skoda_fabia.jpg 1250w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -496,7 +1422,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e3e1a78c09307912f034d5d86f0286e6/1f853/morning-hallstat.jpg&quot;
+    href=&quot;/static/e3e1a78c09307912f034d5d86f0286e6/6b997/morning-hallstat.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -509,11 +1435,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Morning after first night&quot;
         title=&quot;Morning after first night&quot;
-        src=&quot;/static/e3e1a78c09307912f034d5d86f0286e6/2d017/morning-hallstat.jpg&quot;
-        srcset=&quot;/static/e3e1a78c09307912f034d5d86f0286e6/40f63/morning-hallstat.jpg 225w,
-/static/e3e1a78c09307912f034d5d86f0286e6/df2c7/morning-hallstat.jpg 450w,
-/static/e3e1a78c09307912f034d5d86f0286e6/2d017/morning-hallstat.jpg 900w,
-/static/e3e1a78c09307912f034d5d86f0286e6/1f853/morning-hallstat.jpg 1024w&quot;
+        src=&quot;/static/e3e1a78c09307912f034d5d86f0286e6/86881/morning-hallstat.jpg&quot;
+        srcset=&quot;/static/e3e1a78c09307912f034d5d86f0286e6/b51a4/morning-hallstat.jpg 225w,
+/static/e3e1a78c09307912f034d5d86f0286e6/f749c/morning-hallstat.jpg 450w,
+/static/e3e1a78c09307912f034d5d86f0286e6/86881/morning-hallstat.jpg 900w,
+/static/e3e1a78c09307912f034d5d86f0286e6/6b997/morning-hallstat.jpg 1024w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -529,7 +1455,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/589a5c0bdceea6922bfd6adf75788199/b4133/burner.jpg&quot;
+    href=&quot;/static/589a5c0bdceea6922bfd6adf75788199/9e02d/burner.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -542,11 +1468,11 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Alcohol burner&quot;
         title=&quot;Alcohol burner&quot;
-        src=&quot;/static/589a5c0bdceea6922bfd6adf75788199/2d017/burner.jpg&quot;
-        srcset=&quot;/static/589a5c0bdceea6922bfd6adf75788199/40f63/burner.jpg 225w,
-/static/589a5c0bdceea6922bfd6adf75788199/df2c7/burner.jpg 450w,
-/static/589a5c0bdceea6922bfd6adf75788199/2d017/burner.jpg 900w,
-/static/589a5c0bdceea6922bfd6adf75788199/b4133/burner.jpg 1080w&quot;
+        src=&quot;/static/589a5c0bdceea6922bfd6adf75788199/86881/burner.jpg&quot;
+        srcset=&quot;/static/589a5c0bdceea6922bfd6adf75788199/b51a4/burner.jpg 225w,
+/static/589a5c0bdceea6922bfd6adf75788199/f749c/burner.jpg 450w,
+/static/589a5c0bdceea6922bfd6adf75788199/86881/burner.jpg 900w,
+/static/589a5c0bdceea6922bfd6adf75788199/9e02d/burner.jpg 1080w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -591,7 +1517,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/e7bcfa21fd548f1ed3a4f8bec3416db7/7fd22/img_car.jpg&quot;
+    href=&quot;/static/e7bcfa21fd548f1ed3a4f8bec3416db7/22a2b/img_car.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -604,10 +1530,10 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;me in a car where we slept&quot;
         title=&quot;me in a car where we slept&quot;
-        src=&quot;/static/e7bcfa21fd548f1ed3a4f8bec3416db7/7fd22/img_car.jpg&quot;
-        srcset=&quot;/static/e7bcfa21fd548f1ed3a4f8bec3416db7/40f63/img_car.jpg 225w,
-/static/e7bcfa21fd548f1ed3a4f8bec3416db7/df2c7/img_car.jpg 450w,
-/static/e7bcfa21fd548f1ed3a4f8bec3416db7/7fd22/img_car.jpg 768w&quot;
+        src=&quot;/static/e7bcfa21fd548f1ed3a4f8bec3416db7/22a2b/img_car.jpg&quot;
+        srcset=&quot;/static/e7bcfa21fd548f1ed3a4f8bec3416db7/b51a4/img_car.jpg 225w,
+/static/e7bcfa21fd548f1ed3a4f8bec3416db7/f749c/img_car.jpg 450w,
+/static/e7bcfa21fd548f1ed3a4f8bec3416db7/22a2b/img_car.jpg 768w&quot;
         sizes=&quot;(max-width: 768px) 100vw, 768px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -619,7 +1545,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/067160114c1bc4d008cdc0b00f47f851/243ce/IMG_1188.jpg&quot;
+    href=&quot;/static/067160114c1bc4d008cdc0b00f47f851/36dae/IMG_1188.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -632,13 +1558,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;middle austria on mountains&quot;
         title=&quot;middle austria on mountains&quot;
-        src=&quot;/static/067160114c1bc4d008cdc0b00f47f851/2d017/IMG_1188.jpg&quot;
-        srcset=&quot;/static/067160114c1bc4d008cdc0b00f47f851/40f63/IMG_1188.jpg 225w,
-/static/067160114c1bc4d008cdc0b00f47f851/df2c7/IMG_1188.jpg 450w,
-/static/067160114c1bc4d008cdc0b00f47f851/2d017/IMG_1188.jpg 900w,
-/static/067160114c1bc4d008cdc0b00f47f851/bbff7/IMG_1188.jpg 1350w,
-/static/067160114c1bc4d008cdc0b00f47f851/98235/IMG_1188.jpg 1800w,
-/static/067160114c1bc4d008cdc0b00f47f851/243ce/IMG_1188.jpg 4032w&quot;
+        src=&quot;/static/067160114c1bc4d008cdc0b00f47f851/86881/IMG_1188.jpg&quot;
+        srcset=&quot;/static/067160114c1bc4d008cdc0b00f47f851/b51a4/IMG_1188.jpg 225w,
+/static/067160114c1bc4d008cdc0b00f47f851/f749c/IMG_1188.jpg 450w,
+/static/067160114c1bc4d008cdc0b00f47f851/86881/IMG_1188.jpg 900w,
+/static/067160114c1bc4d008cdc0b00f47f851/dc699/IMG_1188.jpg 1350w,
+/static/067160114c1bc4d008cdc0b00f47f851/1d3a4/IMG_1188.jpg 1800w,
+/static/067160114c1bc4d008cdc0b00f47f851/36dae/IMG_1188.jpg 4032w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -651,7 +1577,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/2b471aae98701ad81e5b8ac186cf8ea1/243ce/IMG_9607.jpg&quot;
+    href=&quot;/static/2b471aae98701ad81e5b8ac186cf8ea1/36dae/IMG_9607.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -664,13 +1590,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Stillup lake&quot;
         title=&quot;Stillup lake&quot;
-        src=&quot;/static/2b471aae98701ad81e5b8ac186cf8ea1/2d017/IMG_9607.jpg&quot;
-        srcset=&quot;/static/2b471aae98701ad81e5b8ac186cf8ea1/40f63/IMG_9607.jpg 225w,
-/static/2b471aae98701ad81e5b8ac186cf8ea1/df2c7/IMG_9607.jpg 450w,
-/static/2b471aae98701ad81e5b8ac186cf8ea1/2d017/IMG_9607.jpg 900w,
-/static/2b471aae98701ad81e5b8ac186cf8ea1/bbff7/IMG_9607.jpg 1350w,
-/static/2b471aae98701ad81e5b8ac186cf8ea1/98235/IMG_9607.jpg 1800w,
-/static/2b471aae98701ad81e5b8ac186cf8ea1/243ce/IMG_9607.jpg 4032w&quot;
+        src=&quot;/static/2b471aae98701ad81e5b8ac186cf8ea1/86881/IMG_9607.jpg&quot;
+        srcset=&quot;/static/2b471aae98701ad81e5b8ac186cf8ea1/b51a4/IMG_9607.jpg 225w,
+/static/2b471aae98701ad81e5b8ac186cf8ea1/f749c/IMG_9607.jpg 450w,
+/static/2b471aae98701ad81e5b8ac186cf8ea1/86881/IMG_9607.jpg 900w,
+/static/2b471aae98701ad81e5b8ac186cf8ea1/dc699/IMG_9607.jpg 1350w,
+/static/2b471aae98701ad81e5b8ac186cf8ea1/1d3a4/IMG_9607.jpg 1800w,
+/static/2b471aae98701ad81e5b8ac186cf8ea1/36dae/IMG_9607.jpg 4032w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -683,7 +1609,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/18bc995db07967afd8815e054673927a/3e913/IMG_2169.jpg&quot;
+    href=&quot;/static/18bc995db07967afd8815e054673927a/6da2d/IMG_2169.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -696,13 +1622,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;austrian hallstat village&quot;
         title=&quot;austrian hallstat village&quot;
-        src=&quot;/static/18bc995db07967afd8815e054673927a/2d017/IMG_2169.jpg&quot;
-        srcset=&quot;/static/18bc995db07967afd8815e054673927a/40f63/IMG_2169.jpg 225w,
-/static/18bc995db07967afd8815e054673927a/df2c7/IMG_2169.jpg 450w,
-/static/18bc995db07967afd8815e054673927a/2d017/IMG_2169.jpg 900w,
-/static/18bc995db07967afd8815e054673927a/bbff7/IMG_2169.jpg 1350w,
-/static/18bc995db07967afd8815e054673927a/98235/IMG_2169.jpg 1800w,
-/static/18bc995db07967afd8815e054673927a/3e913/IMG_2169.jpg 3022w&quot;
+        src=&quot;/static/18bc995db07967afd8815e054673927a/86881/IMG_2169.jpg&quot;
+        srcset=&quot;/static/18bc995db07967afd8815e054673927a/b51a4/IMG_2169.jpg 225w,
+/static/18bc995db07967afd8815e054673927a/f749c/IMG_2169.jpg 450w,
+/static/18bc995db07967afd8815e054673927a/86881/IMG_2169.jpg 900w,
+/static/18bc995db07967afd8815e054673927a/dc699/IMG_2169.jpg 1350w,
+/static/18bc995db07967afd8815e054673927a/1d3a4/IMG_2169.jpg 1800w,
+/static/18bc995db07967afd8815e054673927a/6da2d/IMG_2169.jpg 3022w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -715,7 +1641,7 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/0e13c4ca960428fae20e663e6c6dc773/243ce/IMG_0209.jpg&quot;
+    href=&quot;/static/0e13c4ca960428fae20e663e6c6dc773/36dae/IMG_0209.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -728,13 +1654,13 @@ Photo by Matt Howard on Unsplash&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Austrian Gerlos Lake&quot;
         title=&quot;Austrian Gerlos Lake&quot;
-        src=&quot;/static/0e13c4ca960428fae20e663e6c6dc773/2d017/IMG_0209.jpg&quot;
-        srcset=&quot;/static/0e13c4ca960428fae20e663e6c6dc773/40f63/IMG_0209.jpg 225w,
-/static/0e13c4ca960428fae20e663e6c6dc773/df2c7/IMG_0209.jpg 450w,
-/static/0e13c4ca960428fae20e663e6c6dc773/2d017/IMG_0209.jpg 900w,
-/static/0e13c4ca960428fae20e663e6c6dc773/bbff7/IMG_0209.jpg 1350w,
-/static/0e13c4ca960428fae20e663e6c6dc773/98235/IMG_0209.jpg 1800w,
-/static/0e13c4ca960428fae20e663e6c6dc773/243ce/IMG_0209.jpg 4032w&quot;
+        src=&quot;/static/0e13c4ca960428fae20e663e6c6dc773/86881/IMG_0209.jpg&quot;
+        srcset=&quot;/static/0e13c4ca960428fae20e663e6c6dc773/b51a4/IMG_0209.jpg 225w,
+/static/0e13c4ca960428fae20e663e6c6dc773/f749c/IMG_0209.jpg 450w,
+/static/0e13c4ca960428fae20e663e6c6dc773/86881/IMG_0209.jpg 900w,
+/static/0e13c4ca960428fae20e663e6c6dc773/dc699/IMG_0209.jpg 1350w,
+/static/0e13c4ca960428fae20e663e6c6dc773/1d3a4/IMG_0209.jpg 1800w,
+/static/0e13c4ca960428fae20e663e6c6dc773/36dae/IMG_0209.jpg 4032w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -748,7 +1674,7 @@ Actually we end up sleeping here… freaking cold at night
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/763d5f2e06e93a9d1110eb3abb007e95/243ce/IMG_6534.jpg&quot;
+    href=&quot;/static/763d5f2e06e93a9d1110eb3abb007e95/36dae/IMG_6534.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -761,13 +1687,13 @@ Actually we end up sleeping here… freaking cold at night
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Italian lake - Lago di Fedaia&quot;
         title=&quot;Italian lake - Lago di Fedaia&quot;
-        src=&quot;/static/763d5f2e06e93a9d1110eb3abb007e95/2d017/IMG_6534.jpg&quot;
-        srcset=&quot;/static/763d5f2e06e93a9d1110eb3abb007e95/40f63/IMG_6534.jpg 225w,
-/static/763d5f2e06e93a9d1110eb3abb007e95/df2c7/IMG_6534.jpg 450w,
-/static/763d5f2e06e93a9d1110eb3abb007e95/2d017/IMG_6534.jpg 900w,
-/static/763d5f2e06e93a9d1110eb3abb007e95/bbff7/IMG_6534.jpg 1350w,
-/static/763d5f2e06e93a9d1110eb3abb007e95/98235/IMG_6534.jpg 1800w,
-/static/763d5f2e06e93a9d1110eb3abb007e95/243ce/IMG_6534.jpg 4032w&quot;
+        src=&quot;/static/763d5f2e06e93a9d1110eb3abb007e95/86881/IMG_6534.jpg&quot;
+        srcset=&quot;/static/763d5f2e06e93a9d1110eb3abb007e95/b51a4/IMG_6534.jpg 225w,
+/static/763d5f2e06e93a9d1110eb3abb007e95/f749c/IMG_6534.jpg 450w,
+/static/763d5f2e06e93a9d1110eb3abb007e95/86881/IMG_6534.jpg 900w,
+/static/763d5f2e06e93a9d1110eb3abb007e95/dc699/IMG_6534.jpg 1350w,
+/static/763d5f2e06e93a9d1110eb3abb007e95/1d3a4/IMG_6534.jpg 1800w,
+/static/763d5f2e06e93a9d1110eb3abb007e95/36dae/IMG_6534.jpg 4032w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -780,7 +1706,7 @@ Actually we end up sleeping here… freaking cold at night
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/3bf7e851b9224e1b353f26cfbb42a1b0/243ce/IMG_5195.jpg&quot;
+    href=&quot;/static/3bf7e851b9224e1b353f26cfbb42a1b0/36dae/IMG_5195.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -793,13 +1719,13 @@ Actually we end up sleeping here… freaking cold at night
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Italian Karersee&quot;
         title=&quot;Italian Karersee&quot;
-        src=&quot;/static/3bf7e851b9224e1b353f26cfbb42a1b0/2d017/IMG_5195.jpg&quot;
-        srcset=&quot;/static/3bf7e851b9224e1b353f26cfbb42a1b0/40f63/IMG_5195.jpg 225w,
-/static/3bf7e851b9224e1b353f26cfbb42a1b0/df2c7/IMG_5195.jpg 450w,
-/static/3bf7e851b9224e1b353f26cfbb42a1b0/2d017/IMG_5195.jpg 900w,
-/static/3bf7e851b9224e1b353f26cfbb42a1b0/bbff7/IMG_5195.jpg 1350w,
-/static/3bf7e851b9224e1b353f26cfbb42a1b0/98235/IMG_5195.jpg 1800w,
-/static/3bf7e851b9224e1b353f26cfbb42a1b0/243ce/IMG_5195.jpg 4032w&quot;
+        src=&quot;/static/3bf7e851b9224e1b353f26cfbb42a1b0/86881/IMG_5195.jpg&quot;
+        srcset=&quot;/static/3bf7e851b9224e1b353f26cfbb42a1b0/b51a4/IMG_5195.jpg 225w,
+/static/3bf7e851b9224e1b353f26cfbb42a1b0/f749c/IMG_5195.jpg 450w,
+/static/3bf7e851b9224e1b353f26cfbb42a1b0/86881/IMG_5195.jpg 900w,
+/static/3bf7e851b9224e1b353f26cfbb42a1b0/dc699/IMG_5195.jpg 1350w,
+/static/3bf7e851b9224e1b353f26cfbb42a1b0/1d3a4/IMG_5195.jpg 1800w,
+/static/3bf7e851b9224e1b353f26cfbb42a1b0/36dae/IMG_5195.jpg 4032w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -812,7 +1738,7 @@ Actually we end up sleeping here… freaking cold at night
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/ac2568314f7fd59121d2c8ba1be2b7bc/84f37/IMG_52977.jpg&quot;
+    href=&quot;/static/ac2568314f7fd59121d2c8ba1be2b7bc/7c69b/IMG_52977.jpg&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -825,13 +1751,13 @@ Actually we end up sleeping here… freaking cold at night
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Lake Bled&quot;
         title=&quot;Lake Bled&quot;
-        src=&quot;/static/ac2568314f7fd59121d2c8ba1be2b7bc/2d017/IMG_52977.jpg&quot;
-        srcset=&quot;/static/ac2568314f7fd59121d2c8ba1be2b7bc/40f63/IMG_52977.jpg 225w,
-/static/ac2568314f7fd59121d2c8ba1be2b7bc/df2c7/IMG_52977.jpg 450w,
-/static/ac2568314f7fd59121d2c8ba1be2b7bc/2d017/IMG_52977.jpg 900w,
-/static/ac2568314f7fd59121d2c8ba1be2b7bc/bbff7/IMG_52977.jpg 1350w,
-/static/ac2568314f7fd59121d2c8ba1be2b7bc/98235/IMG_52977.jpg 1800w,
-/static/ac2568314f7fd59121d2c8ba1be2b7bc/84f37/IMG_52977.jpg 2965w&quot;
+        src=&quot;/static/ac2568314f7fd59121d2c8ba1be2b7bc/86881/IMG_52977.jpg&quot;
+        srcset=&quot;/static/ac2568314f7fd59121d2c8ba1be2b7bc/b51a4/IMG_52977.jpg 225w,
+/static/ac2568314f7fd59121d2c8ba1be2b7bc/f749c/IMG_52977.jpg 450w,
+/static/ac2568314f7fd59121d2c8ba1be2b7bc/86881/IMG_52977.jpg 900w,
+/static/ac2568314f7fd59121d2c8ba1be2b7bc/dc699/IMG_52977.jpg 1350w,
+/static/ac2568314f7fd59121d2c8ba1be2b7bc/1d3a4/IMG_52977.jpg 1800w,
+/static/ac2568314f7fd59121d2c8ba1be2b7bc/7c69b/IMG_52977.jpg 2965w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -907,7 +1833,7 @@ In the platform in the top right corner there is a leaderboard which shows who h
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/5ee88ac528257c9470fb591a46d0e8ff/ded3f/slither.webp&quot;
+    href=&quot;/static/5ee88ac528257c9470fb591a46d0e8ff/666a5/slither.webp&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -920,12 +1846,12 @@ In the platform in the top right corner there is a leaderboard which shows who h
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;slither game snake image&quot;
         title=&quot;slither game snake image&quot;
-        src=&quot;/static/5ee88ac528257c9470fb591a46d0e8ff/31462/slither.webp&quot;
-        srcset=&quot;/static/5ee88ac528257c9470fb591a46d0e8ff/56eed/slither.webp 225w,
-/static/5ee88ac528257c9470fb591a46d0e8ff/af78d/slither.webp 450w,
-/static/5ee88ac528257c9470fb591a46d0e8ff/31462/slither.webp 900w,
-/static/5ee88ac528257c9470fb591a46d0e8ff/66dde/slither.webp 1350w,
-/static/5ee88ac528257c9470fb591a46d0e8ff/ded3f/slither.webp 1600w&quot;
+        src=&quot;/static/5ee88ac528257c9470fb591a46d0e8ff/3877b/slither.webp&quot;
+        srcset=&quot;/static/5ee88ac528257c9470fb591a46d0e8ff/5392f/slither.webp 225w,
+/static/5ee88ac528257c9470fb591a46d0e8ff/56c9c/slither.webp 450w,
+/static/5ee88ac528257c9470fb591a46d0e8ff/3877b/slither.webp 900w,
+/static/5ee88ac528257c9470fb591a46d0e8ff/5cd90/slither.webp 1350w,
+/static/5ee88ac528257c9470fb591a46d0e8ff/666a5/slither.webp 1600w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -975,7 +1901,7 @@ In software however, things usually aren’t linear. Learning and doing things r
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/fa92b/trees_from_below.png&quot;
+    href=&quot;/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/51a3e/trees_from_below.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -988,12 +1914,12 @@ In software however, things usually aren’t linear. Learning and doing things r
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;looking at the problem&quot;
         title=&quot;looking at the problem&quot;
-        src=&quot;/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/fea0e/trees_from_below.png&quot;
-        srcset=&quot;/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/064a4/trees_from_below.png 225w,
-/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/44727/trees_from_below.png 450w,
-/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/fea0e/trees_from_below.png 900w,
-/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/8013a/trees_from_below.png 1350w,
-/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/fa92b/trees_from_below.png 1400w&quot;
+        src=&quot;/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/fa06e/trees_from_below.png&quot;
+        srcset=&quot;/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/0dcf6/trees_from_below.png 225w,
+/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/054c0/trees_from_below.png 450w,
+/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/fa06e/trees_from_below.png 900w,
+/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/7b015/trees_from_below.png 1350w,
+/static/6cb2ca9437d9a13fd2f3d68b5cd351d8/51a3e/trees_from_below.png 1400w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -1016,7 +1942,7 @@ When you want to solve the problem in computer science, all you see is a problem
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/d543307931fc2957e536f325cfb582cb/d19c0/meme.png&quot;
+    href=&quot;/static/d543307931fc2957e536f325cfb582cb/df209/meme.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -1029,10 +1955,10 @@ When you want to solve the problem in computer science, all you see is a problem
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;employer not sure who to choose&quot;
         title=&quot;employer not sure who to choose&quot;
-        src=&quot;/static/d543307931fc2957e536f325cfb582cb/d19c0/meme.png&quot;
-        srcset=&quot;/static/d543307931fc2957e536f325cfb582cb/064a4/meme.png 225w,
-/static/d543307931fc2957e536f325cfb582cb/44727/meme.png 450w,
-/static/d543307931fc2957e536f325cfb582cb/d19c0/meme.png 500w&quot;
+        src=&quot;/static/d543307931fc2957e536f325cfb582cb/df209/meme.png&quot;
+        srcset=&quot;/static/d543307931fc2957e536f325cfb582cb/0dcf6/meme.png 225w,
+/static/d543307931fc2957e536f325cfb582cb/054c0/meme.png 450w,
+/static/d543307931fc2957e536f325cfb582cb/df209/meme.png 500w&quot;
         sizes=&quot;(max-width: 500px) 100vw, 500px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -1987,13 +2913,13 @@ some really nice name.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;google forms&quot;
         title=&quot;google forms&quot;
-        src=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/fea0e/s1.png&quot;
-        srcset=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/064a4/s1.png 225w,
-/static/e5be2cc7f8d18282385467aac6e02d69/44727/s1.png 450w,
-/static/e5be2cc7f8d18282385467aac6e02d69/fea0e/s1.png 900w,
-/static/e5be2cc7f8d18282385467aac6e02d69/8013a/s1.png 1350w,
-/static/e5be2cc7f8d18282385467aac6e02d69/79a4a/s1.png 1800w,
-/static/e5be2cc7f8d18282385467aac6e02d69/8b984/s1.png 2560w&quot;
+        src=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/fa06e/s1.png&quot;
+        srcset=&quot;/static/e5be2cc7f8d18282385467aac6e02d69/0dcf6/s1.png 225w,
+/static/e5be2cc7f8d18282385467aac6e02d69/054c0/s1.png 450w,
+/static/e5be2cc7f8d18282385467aac6e02d69/fa06e/s1.png 900w,
+/static/e5be2cc7f8d18282385467aac6e02d69/7b015/s1.png 1350w,
+/static/e5be2cc7f8d18282385467aac6e02d69/64a40/s1.png 1800w,
+/static/e5be2cc7f8d18282385467aac6e02d69/1e281/s1.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2012,13 +2938,13 @@ panel with a few options. You need only first menu option - &lt;em&gt;Add questi
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;creating your google form&quot;
         title=&quot;creating your google form&quot;
-        src=&quot;/static/3d68485b6e0a983998e681515c964994/fea0e/s2.png&quot;
-        srcset=&quot;/static/3d68485b6e0a983998e681515c964994/064a4/s2.png 225w,
-/static/3d68485b6e0a983998e681515c964994/44727/s2.png 450w,
-/static/3d68485b6e0a983998e681515c964994/fea0e/s2.png 900w,
-/static/3d68485b6e0a983998e681515c964994/8013a/s2.png 1350w,
-/static/3d68485b6e0a983998e681515c964994/79a4a/s2.png 1800w,
-/static/3d68485b6e0a983998e681515c964994/8b984/s2.png 2560w&quot;
+        src=&quot;/static/3d68485b6e0a983998e681515c964994/fa06e/s2.png&quot;
+        srcset=&quot;/static/3d68485b6e0a983998e681515c964994/0dcf6/s2.png 225w,
+/static/3d68485b6e0a983998e681515c964994/054c0/s2.png 450w,
+/static/3d68485b6e0a983998e681515c964994/fa06e/s2.png 900w,
+/static/3d68485b6e0a983998e681515c964994/7b015/s2.png 1350w,
+/static/3d68485b6e0a983998e681515c964994/64a40/s2.png 1800w,
+/static/3d68485b6e0a983998e681515c964994/1e281/s2.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2052,13 +2978,13 @@ accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;creating your google form&quot;
         title=&quot;creating your google form&quot;
-        src=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/fea0e/s3.png&quot;
-        srcset=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/064a4/s3.png 225w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/44727/s3.png 450w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/fea0e/s3.png 900w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/8013a/s3.png 1350w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/79a4a/s3.png 1800w,
-/static/ba020b2c3c2736a9e46642e9f86c2617/8b984/s3.png 2560w&quot;
+        src=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/fa06e/s3.png&quot;
+        srcset=&quot;/static/ba020b2c3c2736a9e46642e9f86c2617/0dcf6/s3.png 225w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/054c0/s3.png 450w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/fa06e/s3.png 900w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/7b015/s3.png 1350w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/64a40/s3.png 1800w,
+/static/ba020b2c3c2736a9e46642e9f86c2617/1e281/s3.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2078,13 +3004,13 @@ accepts also number like 5.15, which we don’t want :)&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;description of your item&quot;
         title=&quot;description of your item&quot;
-        src=&quot;/static/fbb9747e970651416d1bff0a01963b58/fea0e/s4.png&quot;
-        srcset=&quot;/static/fbb9747e970651416d1bff0a01963b58/064a4/s4.png 225w,
-/static/fbb9747e970651416d1bff0a01963b58/44727/s4.png 450w,
-/static/fbb9747e970651416d1bff0a01963b58/fea0e/s4.png 900w,
-/static/fbb9747e970651416d1bff0a01963b58/8013a/s4.png 1350w,
-/static/fbb9747e970651416d1bff0a01963b58/79a4a/s4.png 1800w,
-/static/fbb9747e970651416d1bff0a01963b58/8b984/s4.png 2560w&quot;
+        src=&quot;/static/fbb9747e970651416d1bff0a01963b58/fa06e/s4.png&quot;
+        srcset=&quot;/static/fbb9747e970651416d1bff0a01963b58/0dcf6/s4.png 225w,
+/static/fbb9747e970651416d1bff0a01963b58/054c0/s4.png 450w,
+/static/fbb9747e970651416d1bff0a01963b58/fa06e/s4.png 900w,
+/static/fbb9747e970651416d1bff0a01963b58/7b015/s4.png 1350w,
+/static/fbb9747e970651416d1bff0a01963b58/64a40/s4.png 1800w,
+/static/fbb9747e970651416d1bff0a01963b58/1e281/s4.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2116,13 +3042,13 @@ let &lt;em&gt;restaurant&lt;/em&gt; be at the very top of your list to make your
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Category&quot;
         title=&quot;Category&quot;
-        src=&quot;/static/067bc64edff49d5024d6a47246b3281c/fea0e/s5.png&quot;
-        srcset=&quot;/static/067bc64edff49d5024d6a47246b3281c/064a4/s5.png 225w,
-/static/067bc64edff49d5024d6a47246b3281c/44727/s5.png 450w,
-/static/067bc64edff49d5024d6a47246b3281c/fea0e/s5.png 900w,
-/static/067bc64edff49d5024d6a47246b3281c/8013a/s5.png 1350w,
-/static/067bc64edff49d5024d6a47246b3281c/79a4a/s5.png 1800w,
-/static/067bc64edff49d5024d6a47246b3281c/8b984/s5.png 2560w&quot;
+        src=&quot;/static/067bc64edff49d5024d6a47246b3281c/fa06e/s5.png&quot;
+        srcset=&quot;/static/067bc64edff49d5024d6a47246b3281c/0dcf6/s5.png 225w,
+/static/067bc64edff49d5024d6a47246b3281c/054c0/s5.png 450w,
+/static/067bc64edff49d5024d6a47246b3281c/fa06e/s5.png 900w,
+/static/067bc64edff49d5024d6a47246b3281c/7b015/s5.png 1350w,
+/static/067bc64edff49d5024d6a47246b3281c/64a40/s5.png 1800w,
+/static/067bc64edff49d5024d6a47246b3281c/1e281/s5.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2142,13 +3068,13 @@ fill the date (when you paid for something).&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Add file&quot;
         title=&quot;Add file&quot;
-        src=&quot;/static/409ed5727a44eefb3461a5599838ce79/fea0e/s6.png&quot;
-        srcset=&quot;/static/409ed5727a44eefb3461a5599838ce79/064a4/s6.png 225w,
-/static/409ed5727a44eefb3461a5599838ce79/44727/s6.png 450w,
-/static/409ed5727a44eefb3461a5599838ce79/fea0e/s6.png 900w,
-/static/409ed5727a44eefb3461a5599838ce79/8013a/s6.png 1350w,
-/static/409ed5727a44eefb3461a5599838ce79/79a4a/s6.png 1800w,
-/static/409ed5727a44eefb3461a5599838ce79/8b984/s6.png 2560w&quot;
+        src=&quot;/static/409ed5727a44eefb3461a5599838ce79/fa06e/s6.png&quot;
+        srcset=&quot;/static/409ed5727a44eefb3461a5599838ce79/0dcf6/s6.png 225w,
+/static/409ed5727a44eefb3461a5599838ce79/054c0/s6.png 450w,
+/static/409ed5727a44eefb3461a5599838ce79/fa06e/s6.png 900w,
+/static/409ed5727a44eefb3461a5599838ce79/7b015/s6.png 1350w,
+/static/409ed5727a44eefb3461a5599838ce79/64a40/s6.png 1800w,
+/static/409ed5727a44eefb3461a5599838ce79/1e281/s6.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2169,13 +3095,13 @@ settings to be as they are (as well as on the screenshot below).&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;File types category&quot;
         title=&quot;File types category&quot;
-        src=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/fea0e/s7.png&quot;
-        srcset=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/064a4/s7.png 225w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/44727/s7.png 450w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/fea0e/s7.png 900w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/8013a/s7.png 1350w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/79a4a/s7.png 1800w,
-/static/8b1ac9578d12603fdb3c86dc172c1e5b/8b984/s7.png 2560w&quot;
+        src=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/fa06e/s7.png&quot;
+        srcset=&quot;/static/8b1ac9578d12603fdb3c86dc172c1e5b/0dcf6/s7.png 225w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/054c0/s7.png 450w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/fa06e/s7.png 900w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/7b015/s7.png 1350w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/64a40/s7.png 1800w,
+/static/8b1ac9578d12603fdb3c86dc172c1e5b/1e281/s7.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2197,13 +3123,13 @@ photo of your receipt.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Preview your form&quot;
         title=&quot;Preview your form&quot;
-        src=&quot;/static/e80b34d523d865dbd5a433820b52738a/fea0e/s8.png&quot;
-        srcset=&quot;/static/e80b34d523d865dbd5a433820b52738a/064a4/s8.png 225w,
-/static/e80b34d523d865dbd5a433820b52738a/44727/s8.png 450w,
-/static/e80b34d523d865dbd5a433820b52738a/fea0e/s8.png 900w,
-/static/e80b34d523d865dbd5a433820b52738a/8013a/s8.png 1350w,
-/static/e80b34d523d865dbd5a433820b52738a/79a4a/s8.png 1800w,
-/static/e80b34d523d865dbd5a433820b52738a/8b984/s8.png 2560w&quot;
+        src=&quot;/static/e80b34d523d865dbd5a433820b52738a/fa06e/s8.png&quot;
+        srcset=&quot;/static/e80b34d523d865dbd5a433820b52738a/0dcf6/s8.png 225w,
+/static/e80b34d523d865dbd5a433820b52738a/054c0/s8.png 450w,
+/static/e80b34d523d865dbd5a433820b52738a/fa06e/s8.png 900w,
+/static/e80b34d523d865dbd5a433820b52738a/7b015/s8.png 1350w,
+/static/e80b34d523d865dbd5a433820b52738a/64a40/s8.png 1800w,
+/static/e80b34d523d865dbd5a433820b52738a/1e281/s8.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2226,13 +3152,13 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Preview your form and create&quot;
         title=&quot;Preview your form and create&quot;
-        src=&quot;/static/b451a55f895ab14904475fb97e5f4585/fea0e/s9.png&quot;
-        srcset=&quot;/static/b451a55f895ab14904475fb97e5f4585/064a4/s9.png 225w,
-/static/b451a55f895ab14904475fb97e5f4585/44727/s9.png 450w,
-/static/b451a55f895ab14904475fb97e5f4585/fea0e/s9.png 900w,
-/static/b451a55f895ab14904475fb97e5f4585/8013a/s9.png 1350w,
-/static/b451a55f895ab14904475fb97e5f4585/79a4a/s9.png 1800w,
-/static/b451a55f895ab14904475fb97e5f4585/8b984/s9.png 2560w&quot;
+        src=&quot;/static/b451a55f895ab14904475fb97e5f4585/fa06e/s9.png&quot;
+        srcset=&quot;/static/b451a55f895ab14904475fb97e5f4585/0dcf6/s9.png 225w,
+/static/b451a55f895ab14904475fb97e5f4585/054c0/s9.png 450w,
+/static/b451a55f895ab14904475fb97e5f4585/fa06e/s9.png 900w,
+/static/b451a55f895ab14904475fb97e5f4585/7b015/s9.png 1350w,
+/static/b451a55f895ab14904475fb97e5f4585/64a40/s9.png 1800w,
+/static/b451a55f895ab14904475fb97e5f4585/1e281/s9.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2250,13 +3176,13 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Click on the create&quot;
         title=&quot;Click on the create&quot;
-        src=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/fea0e/s10.png&quot;
-        srcset=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/064a4/s10.png 225w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/44727/s10.png 450w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/fea0e/s10.png 900w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/8013a/s10.png 1350w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/79a4a/s10.png 1800w,
-/static/8f7e39f70e7648a679ccca325d0c11ee/8b984/s10.png 2560w&quot;
+        src=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/fa06e/s10.png&quot;
+        srcset=&quot;/static/8f7e39f70e7648a679ccca325d0c11ee/0dcf6/s10.png 225w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/054c0/s10.png 450w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/fa06e/s10.png 900w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/7b015/s10.png 1350w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/64a40/s10.png 1800w,
+/static/8f7e39f70e7648a679ccca325d0c11ee/1e281/s10.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2274,13 +3200,13 @@ and you will see &lt;em&gt;Google Docs&lt;/em&gt; icon. Click on that.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Sheet page&quot;
         title=&quot;Sheet page&quot;
-        src=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/fea0e/s11.png&quot;
-        srcset=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/064a4/s11.png 225w,
-/static/5f5a8114038940e8f6ac21aa6655f476/44727/s11.png 450w,
-/static/5f5a8114038940e8f6ac21aa6655f476/fea0e/s11.png 900w,
-/static/5f5a8114038940e8f6ac21aa6655f476/8013a/s11.png 1350w,
-/static/5f5a8114038940e8f6ac21aa6655f476/79a4a/s11.png 1800w,
-/static/5f5a8114038940e8f6ac21aa6655f476/8b984/s11.png 2560w&quot;
+        src=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/fa06e/s11.png&quot;
+        srcset=&quot;/static/5f5a8114038940e8f6ac21aa6655f476/0dcf6/s11.png 225w,
+/static/5f5a8114038940e8f6ac21aa6655f476/054c0/s11.png 450w,
+/static/5f5a8114038940e8f6ac21aa6655f476/fa06e/s11.png 900w,
+/static/5f5a8114038940e8f6ac21aa6655f476/7b015/s11.png 1350w,
+/static/5f5a8114038940e8f6ac21aa6655f476/64a40/s11.png 1800w,
+/static/5f5a8114038940e8f6ac21aa6655f476/1e281/s11.png 2560w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2313,13 +3239,13 @@ valid values and you will be fine. &lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;Copy link&quot;
         title=&quot;Copy link&quot;
-        src=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/fea0e/s12.png&quot;
-        srcset=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/064a4/s12.png 225w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/44727/s12.png 450w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/fea0e/s12.png 900w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/8013a/s12.png 1350w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/79a4a/s12.png 1800w,
-/static/3b3c4d7663b310f948316c4d5338a7b8/6de9f/s12.png 2542w&quot;
+        src=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/fa06e/s12.png&quot;
+        srcset=&quot;/static/3b3c4d7663b310f948316c4d5338a7b8/0dcf6/s12.png 225w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/054c0/s12.png 450w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/fa06e/s12.png 900w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/7b015/s12.png 1350w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/64a40/s12.png 1800w,
+/static/3b3c4d7663b310f948316c4d5338a7b8/40e1a/s12.png 2542w&quot;
         sizes=&quot;(max-width: 900px) 100vw, 900px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2345,10 +3271,10 @@ Android phones should support this feature.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;safari form&quot;
         title=&quot;safari form&quot;
-        src=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/e49a9/s13.png&quot;
-        srcset=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/064a4/s13.png 225w,
-/static/63fcc287d8a1c4365233d62b3c60ec48/44727/s13.png 450w,
-/static/63fcc287d8a1c4365233d62b3c60ec48/e49a9/s13.png 640w&quot;
+        src=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/a0a86/s13.png&quot;
+        srcset=&quot;/static/63fcc287d8a1c4365233d62b3c60ec48/0dcf6/s13.png 225w,
+/static/63fcc287d8a1c4365233d62b3c60ec48/054c0/s13.png 450w,
+/static/63fcc287d8a1c4365233d62b3c60ec48/a0a86/s13.png 640w&quot;
         sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2370,10 +3296,10 @@ Android phones should support this feature.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;safari form11&quot;
         title=&quot;safari form11&quot;
-        src=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/e49a9/s14.png&quot;
-        srcset=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/064a4/s14.png 225w,
-/static/d0e23d5b109d7b7acaffa1b1d64c617b/44727/s14.png 450w,
-/static/d0e23d5b109d7b7acaffa1b1d64c617b/e49a9/s14.png 640w&quot;
+        src=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/a0a86/s14.png&quot;
+        srcset=&quot;/static/d0e23d5b109d7b7acaffa1b1d64c617b/0dcf6/s14.png 225w,
+/static/d0e23d5b109d7b7acaffa1b1d64c617b/054c0/s14.png 450w,
+/static/d0e23d5b109d7b7acaffa1b1d64c617b/a0a86/s14.png 640w&quot;
         sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2395,10 +3321,10 @@ Android phones should support this feature.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;safari form add to home screen&quot;
         title=&quot;safari form add to home screen&quot;
-        src=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/e49a9/s15.png&quot;
-        srcset=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/064a4/s15.png 225w,
-/static/8cabf1078498fbdb93466daa1b0b01d2/44727/s15.png 450w,
-/static/8cabf1078498fbdb93466daa1b0b01d2/e49a9/s15.png 640w&quot;
+        src=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/a0a86/s15.png&quot;
+        srcset=&quot;/static/8cabf1078498fbdb93466daa1b0b01d2/0dcf6/s15.png 225w,
+/static/8cabf1078498fbdb93466daa1b0b01d2/054c0/s15.png 450w,
+/static/8cabf1078498fbdb93466daa1b0b01d2/a0a86/s15.png 640w&quot;
         sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2420,10 +3346,10 @@ Android phones should support this feature.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;safari name app&quot;
         title=&quot;safari name app&quot;
-        src=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/e49a9/s16.png&quot;
-        srcset=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/064a4/s16.png 225w,
-/static/985eae3e4a5914e5a04930c4e5ea9226/44727/s16.png 450w,
-/static/985eae3e4a5914e5a04930c4e5ea9226/e49a9/s16.png 640w&quot;
+        src=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/a0a86/s16.png&quot;
+        srcset=&quot;/static/985eae3e4a5914e5a04930c4e5ea9226/0dcf6/s16.png 225w,
+/static/985eae3e4a5914e5a04930c4e5ea9226/054c0/s16.png 450w,
+/static/985eae3e4a5914e5a04930c4e5ea9226/a0a86/s16.png 640w&quot;
         sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2445,10 +3371,10 @@ Android phones should support this feature.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;safari home screen app&quot;
         title=&quot;safari home screen app&quot;
-        src=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/e49a9/s17.png&quot;
-        srcset=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/064a4/s17.png 225w,
-/static/dcfffd9ca27e5053d4bb42819c348ce6/44727/s17.png 450w,
-/static/dcfffd9ca27e5053d4bb42819c348ce6/e49a9/s17.png 640w&quot;
+        src=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/a0a86/s17.png&quot;
+        srcset=&quot;/static/dcfffd9ca27e5053d4bb42819c348ce6/0dcf6/s17.png 225w,
+/static/dcfffd9ca27e5053d4bb42819c348ce6/054c0/s17.png 450w,
+/static/dcfffd9ca27e5053d4bb42819c348ce6/a0a86/s17.png 640w&quot;
         sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
@@ -2470,10 +3396,10 @@ and submit.&lt;/p&gt;
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;safari app&quot;
         title=&quot;safari app&quot;
-        src=&quot;/static/9462fa48036db73cd5baa89f3c78118c/e49a9/s18.png&quot;
-        srcset=&quot;/static/9462fa48036db73cd5baa89f3c78118c/064a4/s18.png 225w,
-/static/9462fa48036db73cd5baa89f3c78118c/44727/s18.png 450w,
-/static/9462fa48036db73cd5baa89f3c78118c/e49a9/s18.png 640w&quot;
+        src=&quot;/static/9462fa48036db73cd5baa89f3c78118c/a0a86/s18.png&quot;
+        srcset=&quot;/static/9462fa48036db73cd5baa89f3c78118c/0dcf6/s18.png 225w,
+/static/9462fa48036db73cd5baa89f3c78118c/054c0/s18.png 450w,
+/static/9462fa48036db73cd5baa89f3c78118c/a0a86/s18.png 640w&quot;
         sizes=&quot;(max-width: 640px) 100vw, 640px&quot;
         loading=&quot;lazy&quot;
       /&gt;
