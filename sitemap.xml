@@ -30,5 +30,8 @@
 <url> <loc>https://martinschnurer.github.io/calculators/realestatebus/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.github.io/calculators/stocksinvest/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.github.io/categories/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.github.io/cv/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.github.io/gsap/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://martinschnurer.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://martinschnurer.github.io/portfolio/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
